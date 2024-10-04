@@ -1,0 +1,444 @@
+[
+  {
+    "titre PATHO": "",
+    "object": "pathologie",
+    "id": "0000000001",
+    "Specialite": [
+      {
+        "id": "patho"
+      }
+    ],
+    "archived": false,
+    "nombre_utilisation": 0,
+    "tag_recherche": [{ "id": "" }],
+    "contenu": {
+      "score": [
+        {
+          "nom": "score_1",
+          "caracteristique": {
+            "description": "",
+            "but": "diagnostic/pronostic/Autres",
+            "type": "calcul/critere",
+            "Se_Sp": "",
+            "contexte_utilisation": ""
+          },
+          "contenu_calcul": {
+            "actif": false,
+            "calcul_final": "A+B/92",
+            "unite": "",
+            "variable": [
+              {
+                "titre": "",
+                "description": "",
+                "unite": "",
+                "rang": "1-10",
+                "valeur_entiere_uniquement": false
+              }
+            ]
+          },
+          "contenu_critere": {
+            "actif": false,
+            "unite": "",
+            "variable": [
+              {
+                "titre": "",
+                "id": 1,
+                "description": "",
+                "menu_deroulant": {
+                  "actif": false,
+                  "options": {
+                    "options_1": {
+                      "descritpion": "",
+                      "valeur": "",
+                      "affichage_score_final": ""
+                    },
+                    "options_2": {
+                      "descritpion": "",
+                      "valeur": "",
+                      "affichage_score_final": ""
+                    }
+                  }
+                },
+                "case_cocher": {
+                  "actif": false,
+                  "options": {
+                    "coche_true": {
+                      "valeur": "",
+                      "affichage_score_final": ""
+                    },
+                    "coche_false": {
+                      "valeur": ""
+                    }
+                  }
+                }
+              }
+            ]
+          }
+        },
+        {
+          "nom": "score_2",
+          "caracteristique": {
+            "description": "",
+            "but": "diagnostic/pronostic/Autres",
+            "type": "calcul/critere",
+            "Se_Sp": "",
+            "contexte_utilisation": ""
+          },
+          "contenu_calcul": {
+            "actif": false,
+            "calcul_final": "A+B/92",
+            "unite": "",
+            "variable_A": {
+              "titre": "",
+              "description": "",
+              "unite": "",
+              "rang": "1-10",
+              "valeur_entiere_uniquement": false
+            },
+            "variable_B": {
+              "titre": "",
+              "description": "",
+              "unite": "",
+              "rang": "1-10",
+              "valeur_entiere_uniquement": false
+            }
+          },
+          "contenu_critere": {
+            "actif": false,
+            "unite": "",
+            "variable_A": {
+              "titre": "",
+              "description": "",
+              "menu_deroulant": {
+                "actif": false,
+                "options": {
+                  "options_1": {
+                    "descritpion": "",
+                    "valeur": "",
+                    "affichage_score_final": ""
+                  },
+                  "options_2": {
+                    "descritpion": "",
+                    "valeur": "",
+                    "affichage_score_final": ""
+                  }
+                }
+              },
+              "case_cocher": {
+                "actif": false,
+                "options": {
+                  "coche_true": {
+                    "valeur": "",
+                    "affichage_score_final": ""
+                  },
+                  "coche_false": {
+                    "valeur": ""
+                  }
+                }
+              }
+            },
+            "variable_B": {
+              "titre": "",
+              "description": "",
+              "menu_deroulant": {
+                "actif": false,
+                "options": {
+                  "options_1": {
+                    "descritpion": "",
+                    "valeur": "",
+                    "affichage_score_final": ""
+                  },
+                  "options_2": {
+                    "descritpion": "",
+                    "valeur": "",
+                    "affichage_score_final": ""
+                  }
+                }
+              },
+              "case_cocher": {
+                "actif": false,
+                "options": {
+                  "coche_true": {
+                    "valeur": "",
+                    "affichage_score_final": ""
+                  },
+                  "coche_false": {
+                    "valeur": ""
+                  }
+                }
+              }
+            }
+          }
+        }
+      ],
+      "rappel": {
+        "physiopatholgie": "",
+        "diagnostic": {
+          "type": "clinique / paraclinique",
+          "geste_lie": ""
+        },
+        "prise_en_charge": ""
+      },
+      "ressource": {
+        "avis_specaliste": "",
+        "conseil_patient": {
+          "fiche_conseil_1": {
+            "titre": "",
+            "langue": "francais",
+            "contenu": ""
+          }
+        },
+        "recommandation": ""
+      }
+    }
+  },
+  {"titre SCORE": "",
+    "object": "score",
+    "id": "0000000001",
+    "archived": false,
+    "nombre_utilisation": 0,
+    "tag_recherche": [{ "id": "" }],
+    "contenu": {
+      "caracteristique": {
+        "description": "",
+        "but": "diagnostic",
+        "Se_Sp": "",
+        "contexte_utilisation": ""
+      },
+      "contenu_critere": {
+        "actif": false,
+        "unite": "",
+        "variable": [
+          {
+            "titre": "",
+            "id": 1,
+            "description": "",
+            "menu_deroulant": {
+              "actif": false,
+              "options": {
+                "options_1": {
+                  "descritpion": "",
+                  "valeur": "",
+                  "affichage_score_final": ""
+                },
+                "options_2": {
+                  "descritpion": "",
+                  "valeur": "",
+                  "affichage_score_final": ""
+                }
+              }
+            },
+            "case_cocher": {
+              "actif": false,
+              "options": {
+                "coche_true": {
+                  "valeur": "",
+                  "affichage_score_final": ""
+                },
+                "coche_false": {
+                  "valeur": ""
+                }
+              }
+            }
+          }
+        ]
+      }
+    }
+  },
+
+
+
+  {
+    "titre BROUILLON": "",
+    "object": "pathologie",
+    "id": "0000000001",
+    "Specialite": [
+      {
+        "id": ""
+      }
+    ],
+    "archived": false,
+    "nombre_utilisation": 0,
+    "tag_recherche": [{ "id": "" }],
+    "contenu": {
+      "score": [
+        {
+          "nom": "score_1",
+          "caracteristique": {
+            "description": "",
+            "but": "diagnostic/pronostic/Autres",
+            "type": "calcul/critere",
+            "Se_Sp": "",
+            "contexte_utilisation": ""
+          },
+          "contenu_calcul": {
+            "actif": false,
+            "calcul_final": "A+B/92",
+            "unite": "",
+            "variable": [
+              {
+                "titre": "",
+                "description": "",
+                "unite": "",
+                "rang": "1-10",
+                "valeur_entiere_uniquement": false
+              }
+            ]
+          },
+          "contenu_critere": {
+            "actif": false,
+            "unite": "",
+            "variable": [
+              {
+                "titre": "",
+                "id": 1,
+                "description": "",
+                "menu_deroulant": {
+                  "actif": false,
+                  "options": {
+                    "options_1": {
+                      "descritpion": "",
+                      "valeur": "",
+                      "affichage_score_final": ""
+                    },
+                    "options_2": {
+                      "descritpion": "",
+                      "valeur": "",
+                      "affichage_score_final": ""
+                    }
+                  }
+                },
+                "case_cocher": {
+                  "actif": false,
+                  "options": {
+                    "coche_true": {
+                      "valeur": "",
+                      "affichage_score_final": ""
+                    },
+                    "coche_false": {
+                      "valeur": ""
+                    }
+                  }
+                }
+              }
+            ]
+          }
+        },
+        {
+          "nom": "score_2",
+          "caracteristique": {
+            "description": "",
+            "but": "diagnostic/pronostic/Autres",
+            "type": "calcul/critere",
+            "Se_Sp": "",
+            "contexte_utilisation": ""
+          },
+          "contenu_calcul": {
+            "actif": false,
+            "calcul_final": "A+B/92",
+            "unite": "",
+            "variable_A": {
+              "titre": "",
+              "description": "",
+              "unite": "",
+              "rang": "1-10",
+              "valeur_entiere_uniquement": false
+            },
+            "variable_B": {
+              "titre": "",
+              "description": "",
+              "unite": "",
+              "rang": "1-10",
+              "valeur_entiere_uniquement": false
+            }
+          },
+          "contenu_critere": {
+            "actif": false,
+            "unite": "",
+            "variable_A": {
+              "titre": "",
+              "description": "",
+              "menu_deroulant": {
+                "actif": false,
+                "options": {
+                  "options_1": {
+                    "descritpion": "",
+                    "valeur": "",
+                    "affichage_score_final": ""
+                  },
+                  "options_2": {
+                    "descritpion": "",
+                    "valeur": "",
+                    "affichage_score_final": ""
+                  }
+                }
+              },
+              "case_cocher": {
+                "actif": false,
+                "options": {
+                  "coche_true": {
+                    "valeur": "",
+                    "affichage_score_final": ""
+                  },
+                  "coche_false": {
+                    "valeur": ""
+                  }
+                }
+              }
+            },
+            "variable_B": {
+              "titre": "",
+              "description": "",
+              "menu_deroulant": {
+                "actif": false,
+                "options": {
+                  "options_1": {
+                    "descritpion": "",
+                    "valeur": "",
+                    "affichage_score_final": ""
+                  },
+                  "options_2": {
+                    "descritpion": "",
+                    "valeur": "",
+                    "affichage_score_final": ""
+                  }
+                }
+              },
+              "case_cocher": {
+                "actif": false,
+                "options": {
+                  "coche_true": {
+                    "valeur": "",
+                    "affichage_score_final": ""
+                  },
+                  "coche_false": {
+                    "valeur": ""
+                  }
+                }
+              }
+            }
+          }
+        }
+      ],
+      "rappel": {
+        "physiopatholgie": "",
+        "diagnostic": {
+          "type": "clinique / paraclinique",
+          "geste_lie": ""
+        },
+        "prise_en_charge": ""
+      },
+      "ressource": {
+        "avis_specaliste": "",
+        "conseil_patient": {
+          "fiche_conseil_1": {
+            "titre": "",
+            "langue": "francais",
+            "contenu": ""
+          }
+        },
+        "recommandation": ""
+      }
+    }
+  }
+]

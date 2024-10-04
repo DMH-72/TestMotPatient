@@ -1,0 +1,481 @@
+[
+  {"titre": "",
+    "object": "score",
+    "id": "0000000001",
+    "archived": false,
+    "nombre_utilisation": 0,
+    "tag_recherche": [{ "id": "" }],
+    "intitulé_recherche" : "",
+    "description": "",
+    "but": "diagnostic",
+    "Se_Sp": "",
+    "contexte_utilisation": "",
+    "affichage_debutResultat": "",
+    "unite": "",
+    "interpretation" : "",
+    "contenu_critere": [
+      {
+        "titre": "",
+        "id": 1,
+        "description": "",
+        "menu_deroulant": {
+          "actif": false,
+          "options": {
+            "options_1": {
+              "description": "",
+              "valeur": "",
+              "affichage_score_final": ""
+            },
+            "options_2": {
+              "description": "",
+              "valeur": "",
+              "affichage_score_final": ""
+            }
+          }
+        },
+        "case_cocher": {
+          "actif": false,
+          "options": {
+            "coche_true": {
+              "valeur": "",
+              "affichage_score_final": ""
+            },
+            "coche_false": {
+              "valeur": ""
+            }
+          }
+        }
+      }
+    ]
+  },
+  {"titre": "Score de Glasgow",
+    "object": "score",
+    "id": "0000000001",
+    "archived": false,
+    "nombre_utilisation": 0,
+    "tag_recherche": [
+      { "id": "Conscience" },
+      {"id" : "Score de Glasgow"},
+      { "id": "GSC" },
+      { "id": "Glasgow Coma Scale" }
+    ],
+    "intitulé_recherche" : "Échelle de conscience",
+    "description": "Échelle d'évaluation clinique de l'état de conscience utilisée après un traumatisme cranio-encéphalique et au cours d’un coma, permettant d’apprécier rapidement l’état initial et d’en suivre l’évolution.",
+    "but": "diagnostic",
+    "Se_Sp": "",
+    "contexte_utilisation": "",
+    "affichage_debutResultat": "Glasgow",
+    "unite": "",
+    "interpretation" : "15 correspond à un état lucide, de 14 à 10 à une somnolence ou à un coma léger, de 9 à 7 à un coma de plus en plus profond, 3 à un coma probablement irréversible.",
+    "contenu_critere": [
+      {"titre": "Réponse oculaire",
+        "id": 1,
+        "description": "Réponse oculaire à la stimulation vocale et douloureuse",
+        "menu_deroulant": {
+          "actif": true,
+          "options": {
+            "options_1": {
+              "description": "Spontanée",
+              "valeur": "4",
+              "affichage_score_final": "E4"
+            },
+            "options_2": {
+              "description": "A la demande",
+              "valeur": "3",
+              "affichage_score_final": "E3"
+            },            
+            "options_3": {
+                "description": "A la douleur",
+                "valeur": "2",
+                "affichage_score_final": "E2"
+              },                       
+            "options_4": {
+                "description": "Aucune réponse",
+                "valeur": "1",
+                "affichage_score_final": "E1"
+              }
+          }
+        },
+        "case_cocher": {
+          "actif": false,
+          "options": {
+            "coche_true": {
+              "valeur": "",
+              "affichage_score_final": ""
+            },
+            "coche_false": {
+              "valeur": ""
+            }
+          }
+        }
+      },
+      {"titre": "Réponse verbale",
+        "id": 2,
+        "description": "Réponse verbale à la stimulation vocale et douloureuse",
+        "menu_deroulant": {
+          "actif": true,
+          "options": {
+            "options_1": {
+              "description": "Orientée",
+              "valeur": "5",
+              "affichage_score_final": "V5"
+            },
+            "options_2": {
+              "description": "Confuse",
+              "valeur": "4",
+              "affichage_score_final": "V4"
+            },
+            "options_3": {
+              "description": "Inappropriée",
+              "valeur": "3",
+              "affichage_score_final": "V3"
+            },
+            "options_4": {
+              "description": "Incompréhensive",
+              "valeur": "2",
+              "affichage_score_final": "V2"
+            },
+            "options_5": {
+              "description": "Pas de réponse",
+              "valeur": "1",
+              "affichage_score_final": "V1"
+            }
+          }
+        },
+        "case_cocher": {
+          "actif": false,
+          "options": {
+            "coche_true": {
+              "valeur": "",
+              "affichage_score_final": ""
+            },
+            "coche_false": {
+              "valeur": ""
+            }
+          }
+        }
+      },
+      {"titre": "Réponse motrice",
+        "id": 3,
+        "description": "Réponse motrice à la stimulation vocale et douloureuse",
+        "menu_deroulant": {
+          "actif": true,
+          "options": {
+            "options_1": {
+              "description": "Obéit à l'ordre",
+              "valeur": "6",
+              "affichage_score_final": "M6"
+            },
+            "options_2": {
+              "description": "Réponse appropriée",
+              "valeur": "5",
+              "affichage_score_final": "M5"
+            },
+            "options_3": {
+              "description": "Retrait / évitement",
+              "valeur": "4",
+              "affichage_score_final": "M4"
+            },
+            "options_4": {
+              "description": "Flexion anormale / décortication",
+              "valeur": "3",
+              "affichage_score_final": "M3"
+            },
+            "options_5": {
+              "description": "Extension anormale / décérébration",
+              "valeur": "2",
+              "affichage_score_final": "M2"
+            },
+            "options_6": {
+              "description": "Pas de réponse",
+              "valeur": "1",
+              "affichage_score_final": "M1"
+            }
+          }
+        },
+        "case_cocher": {
+          "actif": false,
+          "options": {
+            "coche_true": {
+              "valeur": "",
+              "affichage_score_final": ""
+            },
+            "coche_false": {
+              "valeur": ""
+            }
+          }
+        }
+      }
+    ]
+  },
+  {"titre": "CHA2DS2-VASc",
+  "object": "score",
+  "id": "0000000002",
+  "archived": false,
+  "nombre_utilisation": 0,
+  "tag_recherche": [
+    {"id": "Fibrillation atriale" },
+    {"id": "CHADSVASc"},
+    {"id": "Anticoagulation"},
+    {"id": "CHA2DS2-VASc"}
+],
+  "intitulé_recherche" : "Indication anticoagulant dans la FA",
+  "description": "Permet d'estimer le risque d'embolie arterielle lors d'une fibrillation auriculaire sans maladie valvulaire mitrale. Il permet d'aider à la decision de la mise en place d'un traitement anticoagulant ou non",
+  "but": "diagnostic",
+  "Se_Sp": "",
+  "contexte_utilisation": "Fibrillation non valvulaire",
+  "affichage_debutResultat": "CHA2DS2-VASc =",
+  "unite": "",
+  "interpretation" : "> 1 : indication formelle d'anticoagulation sous reserve d'un score de risque hemorragique acceptable (si = 1 se discute)",
+  "contenu_critere": [
+    {"titre": "C",
+      "id": 1,
+      "description": "Insuffisance cardiaque ou FEVG diminue",
+      "menu_deroulant": {
+        "actif": false,
+        "options": {
+          "options_1": {
+            "description": "",
+            "valeur": "",
+            "affichage_score_final": ""
+          },
+          "options_2": {
+            "description": "",
+            "valeur": "",
+            "affichage_score_final": ""
+          }
+        }
+      },
+      "case_cocher": {
+        "actif": true,
+        "options": {
+          "coche_true": {
+            "valeur": "1",
+            "affichage_score_final": ""
+          },
+          "coche_false": {
+            "valeur": "0"
+          }
+        }
+      }
+    },
+    {"titre": "H",
+        "id": 1,
+        "description": "HTA",
+        "menu_deroulant": {
+          "actif": false,
+          "options": {
+            "options_1": {
+              "description": "",
+              "valeur": "",
+              "affichage_score_final": ""
+            },
+            "options_2": {
+              "description": "",
+              "valeur": "",
+              "affichage_score_final": ""
+            }
+          }
+        },
+        "case_cocher": {
+          "actif": true,
+          "options": {
+            "coche_true": {
+              "valeur": "1",
+              "affichage_score_final": ""
+            },
+            "coche_false": {
+              "valeur": "0"
+            }
+          }
+        }
+      },
+      {"titre": "A2",
+        "id": 1,
+        "description": "Âge > 75 ans",
+        "menu_deroulant": {
+          "actif": false,
+          "options": {
+            "options_1": {
+              "description": "",
+              "valeur": "",
+              "affichage_score_final": ""
+            },
+            "options_2": {
+              "description": "",
+              "valeur": "",
+              "affichage_score_final": ""
+            }
+          }
+        },
+        "case_cocher": {
+          "actif": true,
+          "options": {
+            "coche_true": {
+              "valeur": "2",
+              "affichage_score_final": ""
+            },
+            "coche_false": {
+              "valeur": "0"
+            }
+          }
+        }
+      },
+      {"titre": "D",
+        "id": 1,
+        "description": "Diabète",
+        "menu_deroulant": {
+          "actif": false,
+          "options": {
+            "options_1": {
+              "description": "",
+              "valeur": "",
+              "affichage_score_final": ""
+            },
+            "options_2": {
+              "description": "",
+              "valeur": "",
+              "affichage_score_final": ""
+            }
+          }
+        },
+        "case_cocher": {
+          "actif": true,
+          "options": {
+            "coche_true": {
+              "valeur": "1",
+              "affichage_score_final": ""
+            },
+            "coche_false": {
+              "valeur": "0"
+            }
+          }
+        }
+      },
+      {"titre": "S2",
+        "id": 1,
+        "description": "Stroke = ATCD d'AVC",
+        "menu_deroulant": {
+          "actif": false,
+          "options": {
+            "options_1": {
+              "description": "",
+              "valeur": "",
+              "affichage_score_final": ""
+            },
+            "options_2": {
+              "description": "",
+              "valeur": "",
+              "affichage_score_final": ""
+            }
+          }
+        },
+        "case_cocher": {
+          "actif": true,
+          "options": {
+            "coche_true": {
+              "valeur": "2",
+              "affichage_score_final": ""
+            },
+            "coche_false": {
+              "valeur": "0"
+            }
+          }
+        }
+      },
+      {"titre": "V",
+        "id": 1,
+        "description": "Vasculaire = ATCD maladie vasculaire",
+        "menu_deroulant": {
+          "actif": false,
+          "options": {
+            "options_1": {
+              "description": "",
+              "valeur": "",
+              "affichage_score_final": ""
+            },
+            "options_2": {
+              "description": "",
+              "valeur": "",
+              "affichage_score_final": ""
+            }
+          }
+        },
+        "case_cocher": {
+          "actif": true,
+          "options": {
+            "coche_true": {
+              "valeur": "1",
+              "affichage_score_final": ""
+            },
+            "coche_false": {
+              "valeur": "0"
+            }
+          }
+        }
+      },
+      {"titre": "A",
+        "id": 1,
+        "description": "Âge entre 65 ans et 74 ans",
+        "menu_deroulant": {
+          "actif": false,
+          "options": {
+            "options_1": {
+              "description": "",
+              "valeur": "",
+              "affichage_score_final": ""
+            },
+            "options_2": {
+              "description": "",
+              "valeur": "",
+              "affichage_score_final": ""
+            }
+          }
+        },
+        "case_cocher": {
+          "actif": true,
+          "options": {
+            "coche_true": {
+              "valeur": "1",
+              "affichage_score_final": ""
+            },
+            "coche_false": {
+              "valeur": "0"
+            }
+          }
+        }
+      },
+      {"titre": "Sc",
+        "id": 1,
+        "description": "Sexe feminin, uniquement si >65 ans",
+        "menu_deroulant": {
+          "actif": false,
+          "options": {
+            "options_1": {
+              "description": "",
+              "valeur": "",
+              "affichage_score_final": ""
+            },
+            "options_2": {
+              "description": "",
+              "valeur": "",
+              "affichage_score_final": ""
+            }
+          }
+        },
+        "case_cocher": {
+          "actif": true,
+          "options": {
+            "coche_true": {
+              "valeur": "1",
+              "affichage_score_final": ""
+            },
+            "coche_false": {
+              "valeur": "0"
+            }
+          }
+        }
+      }
+  ]
+  }   
+]
