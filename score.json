@@ -289,193 +289,193 @@
             }
           }
         }
-      },
-      {"titre": "A2",
-        "id": 1,
-        "description": "Âge > 75 ans",
-        "menu_deroulant": {
-          "actif": false,
-          "options": {
-            "options_1": {
-              "description": "",
-              "valeur": "",
-              "affichage_score_final": ""
-            },
-            "options_2": {
-              "description": "",
-              "valeur": "",
-              "affichage_score_final": ""
-            }
-          }
-        },
-        "case_cocher": {
-          "actif": true,
-          "options": {
-            "coche_true": {
-              "valeur": "2",
-              "affichage_score_final": ""
-            },
-            "coche_false": {
-              "valeur": "0"
-            }
+    },
+    {"titre": "A2",
+      "id": 1,
+      "description": "Âge > 75 ans",
+      "menu_deroulant": {
+        "actif": false,
+        "options": {
+          "options_1": {
+            "description": "",
+            "valeur": "",
+            "affichage_score_final": ""
+          },
+          "options_2": {
+            "description": "",
+            "valeur": "",
+            "affichage_score_final": ""
           }
         }
       },
-      {"titre": "D",
-        "id": 1,
-        "description": "Diabète",
-        "menu_deroulant": {
-          "actif": false,
-          "options": {
-            "options_1": {
-              "description": "",
-              "valeur": "",
-              "affichage_score_final": ""
-            },
-            "options_2": {
-              "description": "",
-              "valeur": "",
-              "affichage_score_final": ""
-            }
-          }
-        },
-        "case_cocher": {
-          "actif": true,
-          "options": {
-            "coche_true": {
-              "valeur": "1",
-              "affichage_score_final": ""
-            },
-            "coche_false": {
-              "valeur": "0"
-            }
-          }
-        }
-      },
-      {"titre": "S2",
-        "id": 1,
-        "description": "Stroke = ATCD d'AVC",
-        "menu_deroulant": {
-          "actif": false,
-          "options": {
-            "options_1": {
-              "description": "",
-              "valeur": "",
-              "affichage_score_final": ""
-            },
-            "options_2": {
-              "description": "",
-              "valeur": "",
-              "affichage_score_final": ""
-            }
-          }
-        },
-        "case_cocher": {
-          "actif": true,
-          "options": {
-            "coche_true": {
-              "valeur": "2",
-              "affichage_score_final": ""
-            },
-            "coche_false": {
-              "valeur": "0"
-            }
-          }
-        }
-      },
-      {"titre": "V",
-        "id": 1,
-        "description": "Vasculaire = ATCD maladie vasculaire",
-        "menu_deroulant": {
-          "actif": false,
-          "options": {
-            "options_1": {
-              "description": "",
-              "valeur": "",
-              "affichage_score_final": ""
-            },
-            "options_2": {
-              "description": "",
-              "valeur": "",
-              "affichage_score_final": ""
-            }
-          }
-        },
-        "case_cocher": {
-          "actif": true,
-          "options": {
-            "coche_true": {
-              "valeur": "1",
-              "affichage_score_final": ""
-            },
-            "coche_false": {
-              "valeur": "0"
-            }
-          }
-        }
-      },
-      {"titre": "A",
-        "id": 1,
-        "description": "Âge entre 65 ans et 74 ans",
-        "menu_deroulant": {
-          "actif": false,
-          "options": {
-            "options_1": {
-              "description": "",
-              "valeur": "",
-              "affichage_score_final": ""
-            },
-            "options_2": {
-              "description": "",
-              "valeur": "",
-              "affichage_score_final": ""
-            }
-          }
-        },
-        "case_cocher": {
-          "actif": true,
-          "options": {
-            "coche_true": {
-              "valeur": "1",
-              "affichage_score_final": ""
-            },
-            "coche_false": {
-              "valeur": "0"
-            }
-          }
-        }
-      },
-      {"titre": "Sc",
-        "id": 1,
-        "description": "Sexe feminin, uniquement si >65 ans",
-        "menu_deroulant": {
-          "actif": false,
-          "options": {
-            "options_1": {
-              "description": "",
-              "valeur": "",
-              "affichage_score_final": ""
-            },
-            "options_2": {
-              "description": "",
-              "valeur": "",
-              "affichage_score_final": ""
-            }
-          }
-        },
-        "case_cocher": {
-          "actif": true,
-          "options": {
-            "coche_true": {
-              "valeur": "1",
-              "affichage_score_final": ""
-            },
-            "coche_false": {
-              "valeur": "0"
-            }
+      "case_cocher": {
+        "actif": true,
+        "options": {
+          "coche_true": {
+            "valeur": "2",
+            "affichage_score_final": ""
+          },
+          "coche_false": {
+            "valeur": "0"
           }
         }
       }
+    },
+    {"titre": "D",
+      "id": 1,
+      "description": "Diabète",
+      "menu_deroulant": {
+        "actif": false,
+        "options": {
+          "options_1": {
+            "description": "",
+            "valeur": "",
+            "affichage_score_final": ""
+          },
+          "options_2": {
+            "description": "",
+            "valeur": "",
+            "affichage_score_final": ""
+          }
+        }
+      },
+      "case_cocher": {
+        "actif": true,
+        "options": {
+          "coche_true": {
+            "valeur": "1",
+            "affichage_score_final": ""
+          },
+          "coche_false": {
+            "valeur": "0"
+          }
+        }
+      }
+    },
+    {"titre": "S2",
+      "id": 1,
+      "description": "Stroke = ATCD d'AVC",
+      "menu_deroulant": {
+        "actif": false,
+        "options": {
+          "options_1": {
+            "description": "",
+            "valeur": "",
+            "affichage_score_final": ""
+          },
+          "options_2": {
+            "description": "",
+            "valeur": "",
+            "affichage_score_final": ""
+          }
+        }
+      },
+      "case_cocher": {
+        "actif": true,
+        "options": {
+          "coche_true": {
+            "valeur": "2",
+            "affichage_score_final": ""
+          },
+          "coche_false": {
+            "valeur": "0"
+          }
+        }
+      }
+    },
+    {"titre": "V",
+      "id": 1,
+      "description": "Vasculaire = ATCD maladie vasculaire",
+      "menu_deroulant": {
+        "actif": false,
+        "options": {
+          "options_1": {
+            "description": "",
+            "valeur": "",
+            "affichage_score_final": ""
+          },
+          "options_2": {
+            "description": "",
+            "valeur": "",
+            "affichage_score_final": ""
+          }
+        }
+      },
+      "case_cocher": {
+        "actif": true,
+        "options": {
+          "coche_true": {
+            "valeur": "1",
+            "affichage_score_final": ""
+          },
+          "coche_false": {
+            "valeur": "0"
+          }
+        }
+      }
+    },
+    {"titre": "A",
+      "id": 1,
+      "description": "Âge entre 65 ans et 74 ans",
+      "menu_deroulant": {
+        "actif": false,
+        "options": {
+          "options_1": {
+            "description": "",
+            "valeur": "",
+            "affichage_score_final": ""
+          },
+          "options_2": {
+            "description": "",
+            "valeur": "",
+            "affichage_score_final": ""
+          }
+        }
+      },
+      "case_cocher": {
+        "actif": true,
+        "options": {
+          "coche_true": {
+            "valeur": "1",
+            "affichage_score_final": ""
+          },
+          "coche_false": {
+            "valeur": "0"
+          }
+        }
+      }
+    },
+    {"titre": "Sc",
+      "id": 1,
+      "description": "Sexe feminin, uniquement si >65 ans",
+      "menu_deroulant": {
+        "actif": false,
+        "options": {
+          "options_1": {
+            "description": "",
+            "valeur": "",
+            "affichage_score_final": ""
+          },
+          "options_2": {
+            "description": "",
+            "valeur": "",
+            "affichage_score_final": ""
+          }
+        }
+      },
+      "case_cocher": {
+        "actif": true,
+        "options": {
+          "coche_true": {
+            "valeur": "1",
+            "affichage_score_final": ""
+          },
+          "coche_false": {
+            "valeur": "0"
+          }
+        }
+      }
+    }
   ]
   }   
 ]
