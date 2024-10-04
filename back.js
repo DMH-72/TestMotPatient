@@ -282,6 +282,7 @@ function showScoreModal(score) {
                     <div id="scorePreview"></div>
                     <button type="button" onclick="addScoreToCR('${score.titre}', '${score.affichage_debutResultat}', '${score.unite}')">Ajouter le score au CR</button>
                 </form>
+                <p><i style="font-size: 0.9em;"><u>Interprétation :</u> ${score.interpretation}</i></p>
             </div>
         </div>
     `;
