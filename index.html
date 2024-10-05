@@ -22,12 +22,11 @@
     <header>
         <h1>Rédaction d'Observations Cliniques</h1>
         <nav class="enTeteNav">
-            <div class="enTete"><a href="#Identité">Identité</a></div>
+            <div class="enTete"><a href="#Identité">Informations générales</a></div>
             <div class="enTete"><a href="#constantes">Constantes</a></div>
-            <div class="enTete"><a href="#FDRCV">FDRCV</a></div>
-            <div class="enTete"><a href="#allergie">Allergie</a></div>
-            <div class="enTete"><a href="#ATCD&TRT">ATCD et TRT</a></div>
-            <div class="enTete"><a href="#HDM">HDM</a></div>
+            <div class="enTete"><a href="#ModeDeVie">Mode de vie</a></div>
+            <div class="enTete"><a href="#ATCD_Allergie_TRT">ATCD, Allergie et TRT</a></div>
+            <div class="enTete"><a href="#HDM">Histoire de la maladie</a></div>
             <div class="enTete"><a href="#examenClinique">Clinique</a></div>
             <div class="enTete"><a href="#scoreSection">Score</a></div>
             <div class="enTete"><a href="#Paraclinique">Paraclinique</a></div>
@@ -119,13 +118,17 @@
                         <label for="constant_diurese_jour"></label>
                         <input type="number" id="constant_diurese_jour" placeholder="Diurèse"
                             style="width: 55px; height: 15px;"> ml/24h
-                        <br><i>Soit : <span id="constant_diurese_horraire">xx,xx</span> ml/kg/h</i>
+                        <br><i style="font-size: 0.9em;">Soit : <span id="constant_diurese_horraire">xx,xx</span> ml/kg/h</i>
                     </td>
                     <td rowspan="2">
                         <label for="constant_glycemie"></label>
                         <input type="number" id="constant_glycemie" placeholder="Glycémie"
-                            style="width: 55px; height: 15px;"> g/L
-                        <br><i>Soit : <span id="constant_glycemie">xx,xx</span> mmol/L</i>
+                            style="width: 55px; height: 15px;"> 
+                        <select name="uniteGlycemie" id="uniteGlycemie">
+                            <option value="0">g/L</option>
+                            <option value="1">mmol/L</option>
+                        </select>
+                        <br><i style="font-size: 0.9em;">Soit : <span id="constant_glycemieConvert">xx,xx mmol/L</span></i>
                     </td>
                 <tr>
                         <td>
@@ -159,7 +162,7 @@
                     </td>
                     <td>
                         IMC = <span id="constante_IMC">xx,x</span> kg/m²<br>
-                        <i><span id="interpretIMC">Interprétation</span></i>
+                        <span id="interpretIMC"><i style="font-size: 0.8em;">Interprétation</i></span>
                     </td>
                     <td colspan="3">
                         <label for="constante_poids_anterieur"></label>
@@ -169,32 +172,28 @@
                         <input type="number" id="constante_poids_date" placeholder="Date"
                             style="width: 55px; height: 15px;"> mois, soit
                         <span id="constante_pertePoids">xx</span> %
-                    </td>
-                    
+                    </td>                    
                 </tr>
             </table>
 
         </div> <br>
 
-        <div id="FDRCV" class="observation">
-            <h3>Facteurs de risques cardio-vasculaires</h3>
-            Tabac <input type="checkbox"> <br>
-            Alcool <input type="checkbox"> <br>
-            Familiaux <input type="text"> <br>
+        <div id="ModeDeVie" class="observation">
+            <h3>Mode de vie</h3>
+            <label for="tabac">Tabagisme : </label><input id="tabac" type="checkbox"> <br>
+            <label for="alcool">Consommation alcoolique : </label><input id="alcool" type="checkbox"> <br>
         </div> <br>
 
-        <div id="allergie" class="observation">
-            <h3>Allergie</h3>
-            <textarea id="AllergieText">Ø </textarea>
-        </div> <br>
-
-        <div id="ATCD&TRT" class="observation">
+        <div id="ATCD_Allergie_TRT" class="observation">
             <h3>Antécédents et Traitements : </h3>
             <div style="margin-left: 20px;">                
-                <label for="ATCD">Antécédents</label>
-                <div id="ATCD" contenteditable="true" class="clinic"></div>         
-                <label>Traitements actuels</label>
-                <div id="TRT" contenteditable="true" class="clinic"></div>
+                <label for="ATCD">Antécédents :</label>
+                    <div id="ATCD" contenteditable="true" class="clinic"></div>         
+                <label>Traitements actuels :</label>
+                    <div id="TRT" contenteditable="true" class="clinic"></div>
+                <label for="allergie">Allergie :</label>
+                    <div id="allergie" contenteditable="true" class="clinic"></div>
+                </div> <br>
             </div>
         </div>
 

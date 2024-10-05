@@ -1,6 +1,5 @@
 [
-  {
-    "titre": "",
+  {"titre": "",
     "object": "score",
     "id": "0000000001",
     "archived": false,
@@ -49,8 +48,7 @@
       }
     ]
   },
-  {
-    "titre": "Score de Glasgow",
+  {"titre": "Score de Glasgow",
     "object": "score",
     "id": "0000000001",
     "archived": false,
@@ -213,8 +211,7 @@
       }
     ]
   },
-  {
-    "titre": "CHA2DS2-VASc",
+  {"titre": "CHA2DS2-VASc",
     "object": "score",
     "id": "0000000002",
     "archived": false,
@@ -633,22 +630,38 @@
   },
   {"titre": "Score ABCD2",
     "object": "score",
-    "tag_recherche": ["ABCD2", "AIT", "AVC", "risque"],
+    "tag_recherche": [
+      { "id": "ABCD2"}, 
+      { "id": "AIT"}, 
+      { "id": "Accident ischémique transitoire"}, 
+      { "id": "AVC"}
+    ],
     "intitulé_recherche": "Evaluation du risque d'AVC post-AIT",
     "description": "Score ABCD2 pour évaluer le risque d'AVC après un AIT.",
     "but": "pronostic",
     "contexte_utilisation": "AIT (Accident Ischémique Transitoire)",
     "affichage_debutResultat": "Score ABCD2 =",
     "unite": "",
-    "interpretation": {
-      "0-3": "1% de risque d'AVC à J2, 1,2% à J7, 3,1% à 3 mois",
-      "4-5": "4,1% de risque d'AVC à J2, 5,9% à J7, 9,8% à 3 mois",
-      "6-7": "8,1% de risque d'AVC à J2, 11,7% à J7, 17,8% à 3 mois"
-    },
+    "interpretation": "1% de risque d'AVC à J2, 1,2% à J7, 3,1% à 3 mois, 4-5: 4,1% de risque d'AVC à J2, 5,9% à J7, 9,8% à 3 mois, 6-7: 8,1% de risque d'AVC à J2, 11,7% à J7, 17,8% à 3 mois",
     "contenu_critere": [
       {
         "titre": "Âge",
         "description": "Patient âgé de 60 ans ou plus.",
+        "menu_deroulant": {
+          "actif": false,
+          "options": {
+            "options_1": {
+              "description": "",
+              "valeur": "",
+              "affichage_score_final": ""
+            },
+            "options_2": {
+              "description": "",
+              "valeur": "",
+              "affichage_score_final": ""
+            }
+          }
+        },
         "case_cocher": {
           "actif": true,
           "options": {
@@ -660,6 +673,21 @@
       {
         "titre": "Pression artérielle",
         "description": "PAS > 140 et/ou PAD ≥ 90 mmHg.",
+        "menu_deroulant": {
+          "actif": false,
+          "options": {
+            "options_1": {
+              "description": "",
+              "valeur": "",
+              "affichage_score_final": ""
+            },
+            "options_2": {
+              "description": "",
+              "valeur": "",
+              "affichage_score_final": ""
+            }
+          }
+        },
         "case_cocher": {
           "actif": true,
           "options": {
@@ -695,6 +723,21 @@
       {
         "titre": "Diabète",
         "description": "Antécédents de diabète.",
+        "menu_deroulant": {
+          "actif": false,
+          "options": {
+            "options_1": {
+              "description": "",
+              "valeur": "",
+              "affichage_score_final": ""
+            },
+            "options_2": {
+              "description": "",
+              "valeur": "",
+              "affichage_score_final": ""
+            }
+          }
+        },
         "case_cocher": {
           "actif": true,
           "options": {
@@ -704,6 +747,5 @@
         }
       }
     ]
-  }
-  
+  }  
 ]

@@ -47,7 +47,25 @@ document.addEventListener('DOMContentLoaded', function () {
     function IMCCalc() {
         const taille = document.getElementById("constante_taille").value / 100;
         const poids = document.getElementById("constante_poids").value;
-        document.getElementById("constante_IMC").innerHTML = `${(poids / (taille*taille)).toFixed(2)}`;
+        const IMC = (poids / (taille*taille))
+        document.getElementById("constante_IMC").innerHTML = `${IMC.toFixed(2)}`;
+
+        if (IMC.toFixed(1) < 18.5) {
+            document.getElementById("interpretIMC").innerHTML = `<i style="font-size: 0.8em; color:red;">Maigreur</i>`;
+        } else if (IMC.toFixed(1)<25) {
+            document.getElementById("interpretIMC").innerHTML = `<i style="font-size: 0.8em; color:green;">Normal</i>`;
+        } else if (IMC.toFixed(1)<30) {
+            document.getElementById("interpretIMC").innerHTML = `<i style="font-size: 0.8em; color:red;">Surpoids</i>`;
+        }
+        else if (IMC.toFixed(1)<35) {
+            document.getElementById("interpretIMC").innerHTML = `<i style="font-size: 0.8em; color:red;">Obésité modérée</i>`;
+        }
+        else if (IMC.toFixed(1)<40) {
+            document.getElementById("interpretIMC").innerHTML = `<i style="font-size: 0.8em; color:red;">Obésité sévère</i>`;
+        }
+        else {
+            document.getElementById("interpretIMC").innerHTML = `<i style="font-size: 0.8em; color:red;"><b>Obésité morbide</b></i>`;
+        }
     }
 
     function DiureseCalc() {
@@ -62,6 +80,17 @@ document.addEventListener('DOMContentLoaded', function () {
         document.getElementById("constante_pertePoids").innerHTML = `${Math.abs(((poids_ant - poids) / poids_ant * 100)).toFixed(1)}`;
     }
 
+    function GlycemieCalc(){
+        const uniteGlycemie = document.getElementById("uniteGlycemie").value;
+        const glycemie = parseFloat(document.getElementById("constant_glycemie").value); // Convertir en nombre
+
+        if (uniteGlycemie === "0") {
+            document.getElementById("constant_glycemieConvert").innerHTML = `${(glycemie * 5.5).toFixed(2)} mmol/L`;
+        } else {
+            document.getElementById("constant_glycemieConvert").innerHTML = `${(glycemie * 0.18).toFixed(2)} g/L`;
+        }
+    }
+    
 dateNaissance.addEventListener('input',ageCalc);
 constante_pressionArterielleSGauche.addEventListener('input',PAMCalcGauche);
 constante_pressionArterielleDGauche.addEventListener('input',PAMCalcGauche);
@@ -72,6 +101,8 @@ constante_taille.addEventListener('input',IMCCalc);
 constant_diurese_jour.addEventListener('input',DiureseCalc);
 constante_poids.addEventListener('input',variationPoids);
 constante_poids_anterieur.addEventListener('input',variationPoids);
+constant_glycemie.addEventListener('input', GlycemieCalc);
+uniteGlycemie.addEventListener('change',GlycemieCalc);
 });
 
 function InitialisationClinic() {
@@ -129,6 +160,7 @@ function InitialisationRT() {
     document.getElementById("hold_RT").innerHTML = `<div id="examenRT" contenteditable="true" class="clinic">Blablabla
     </div>`;
 }
+
 
 
 let scores = [];
@@ -316,6 +348,7 @@ function generateScoreFormFields(criteria) {
                             <option value="${option.valeur}" data-affichage="${option.affichage_score_final}">${option.description}</option>
                         `).join('')}
                     </select>
+                    <br><i style="font-size: 0.8em;">${critere.description}</i>
                 </div>
             `;
         }
@@ -327,7 +360,7 @@ function generateScoreFormFields(criteria) {
                     <label>
                         <input type="checkbox" name="${critere.titre}" value="${critere.case_cocher.options.coche_true.valeur}">
                         ${critere.titre} (${critere.case_cocher.options.coche_true.valeur})
-                        <br><i>${critere.description}</i>
+                        <br><i style="font-size: 0.8em;">${critere.description}</i>
                     </label>
                 </div>
             `;
@@ -352,7 +385,7 @@ function addScoreToCR(titre, affichage_debutResultat, unite) {
         if (inputElement.tagName === 'SELECT') {
             scoreTotal += parseInt(value);
             const selectedOption = inputElement.selectedOptions[0];
-            scoreDetail += `${selectedOption.dataset.affichage} `;
+            scoreDetail += `${selectedOption.dataset.affichage}, `;
         }
 
         // Si c'est une case à cocher
@@ -360,7 +393,7 @@ function addScoreToCR(titre, affichage_debutResultat, unite) {
             if (inputElement.checked) {
                 const checkboxValue = parseInt(inputElement.value);
                 scoreTotal += checkboxValue;
-                scoreDetail += `${key} `;
+                scoreDetail += `${key}, `;
             }
         }
     });
@@ -406,7 +439,7 @@ function updateScorePreview(affichage_debutResultat, unite) {
         if (inputElement.tagName === 'SELECT') {
             scoreTotal += parseInt(value);
             const selectedOption = inputElement.selectedOptions[0];
-            scoreDetail += `${selectedOption.dataset.affichage} `;
+            scoreDetail += `${selectedOption.dataset.affichage}, `;
         }
 
         // Si c'est une case à cocher
@@ -414,7 +447,7 @@ function updateScorePreview(affichage_debutResultat, unite) {
             if (inputElement.checked) {
                 const checkboxValue = parseInt(inputElement.value);
                 scoreTotal += checkboxValue;
-                scoreDetail += `${key} `;
+                scoreDetail += `${key}, `;
             }
         }
     });
