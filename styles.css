@@ -86,6 +86,10 @@ h3{
     scroll-margin-top: 105px;
 }
 
+.sousSection {
+    margin-left: 20px;
+}
+
 .text-area-section {
     margin: 20px 0;
 }
@@ -265,10 +269,6 @@ input{
 
 .form-group {
     margin-bottom: 5px;
-}
-
-.ajoutS {
-    align-items: center;
 }
 
 /* button {

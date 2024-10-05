@@ -1,11 +1,11 @@
 [
-  {"titre": "",
+  {"titre": "Score",
     "object": "score",
     "id": "0000000001",
     "archived": false,
     "nombre_utilisation": 0,
     "tag_recherche": [{ "id": "" }],
-    "intitulé_recherche": "",
+    "intitulé_recherche": "Intitulé Recherche",
     "description": "",
     "but": "diagnostic",
     "Se_Sp": "",

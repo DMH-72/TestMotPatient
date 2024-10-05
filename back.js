@@ -186,8 +186,9 @@ fetch('score.json')  // Remplacez par le chemin de votre fichier JSON
 // Initialisation de la recherche
 function initializeSearchInput(scores) {
     const searchInput = document.getElementById('ajoutScore');
+    const localisationButton = document.getElementById('ajoutSelectionScore');
     suggestionsContainer = document.createElement('div');
-    searchInput.parentNode.insertBefore(suggestionsContainer, searchInput.nextSibling);
+    localisationButton.parentNode.insertBefore(suggestionsContainer, localisationButton.nextSibling);
 
     searchInput.addEventListener('input', function () {
         const query = this.value.toLowerCase();
@@ -402,7 +403,7 @@ function addScoreToCR(titre, affichage_debutResultat, unite) {
     const resultDiv = document.createElement('div');
     resultDiv.classList.add('score-entry'); // Ajouter une classe pour pouvoir styliser le score et le bouton de suppression
     resultDiv.innerHTML = `
-        <p class="scoreP">${affichage_debutResultat} ${scoreTotal} ${unite} (${scoreDetail.trim()})</p>
+        <p class="scoreP">${affichage_debutResultat} ${scoreTotal} ${unite} (${scoreDetail.trim().slice(0, -1)})</p>
         <button type="button" class="remove-score-btn" onclick="removeScore(this)">x</button>
     `;
     document.getElementById('compteRendu').appendChild(resultDiv);
@@ -454,7 +455,46 @@ function updateScorePreview(affichage_debutResultat, unite) {
 
     // Mettre à jour l'aperçu du score
     const scorePreview = document.getElementById('scorePreview');
-    scorePreview.innerHTML = `<p>Aperçu: ${affichage_debutResultat} ${scoreTotal} ${unite} (${scoreDetail.trim()})</p>`;
+    scorePreview.innerHTML = `<p>Aperçu: ${affichage_debutResultat} ${scoreTotal} ${unite} (${scoreDetail.trim().slice(0, -1)})</p>`;
 }
+
+
+// ---------------------------ZONE TEST ----------------------
+
+function extraireTitre() {
+
+    let tableScore = ""; // utiliser let au lieu de const pour pouvoir modifier la valeur
+    fetch('./score.json')
+        .then(response => response.json())
+        .then(jsonToObject => {
+            // Parcours les objets et affiche les titres du premier niveau
+            jsonToObject.forEach((item) => {
+                tableScore += `
+                    <tr>
+                        <td>${item.titre}</td>
+                        <td>${item.intitulé_recherche}</td>
+                    </tr>
+                `;
+            });
+
+            // Construire la modale seulement après avoir récupéré les données
+            const modalContent = `
+            <div class="modal-overlay">
+                <div class="modal-content">
+                    <button class="close-button" onclick="closeModal()">×</button>
+                    <h2>Base de données des scores</h2>
+                    <table>
+                        ${tableScore}
+                    </table>
+                </div>
+            </div>
+            `;
+
+            // Ajouter la modale au DOM
+            document.body.insertAdjacentHTML('beforeend', modalContent);
+        })
+        .catch(error => console.error('Erreur lors du chargement du fichier JSON:', error));
+}
+
 
 

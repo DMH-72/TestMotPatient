@@ -186,14 +186,14 @@
 
         <div id="ATCD_Allergie_TRT" class="observation">
             <h3>Antécédents et Traitements : </h3>
-            <div style="margin-left: 20px;">                
+            <div id="sousSection">                
                 <label for="ATCD">Antécédents :</label>
-                    <div id="ATCD" contenteditable="true" class="clinic"></div>         
+                    <div id="ATCD" contenteditable="true" class="clinic"></div><br>   
                 <label>Traitements actuels :</label>
-                    <div id="TRT" contenteditable="true" class="clinic"></div>
+                    <div id="TRT" contenteditable="true" class="clinic"></div><br>  
                 <label for="allergie">Allergie :</label>
                     <div id="allergie" contenteditable="true" class="clinic"></div>
-                </div> <br>
+                </div>
             </div>
         </div>
 
@@ -227,10 +227,11 @@
         <div id="scoreSection" class="observation">
             <h3>Scores</h3>
             <div style="margin-left: 20px;">
+                <button id="testBtn" onclick="extraireTitre()">Afficher la base de donnée des scores</button><br><br>
                 <div class="input-score">
                     <label for="ajoutScore">Rechercher un score : </label>
-                    <button id="ajoutSelectionScore" onclick="addScore()" class="ajoutS">Ajouter le score</button>
                     <input type="text" id="ajoutScore" autocomplete="off">
+                    <button id="ajoutSelectionScore" onclick="addScore()" >Ajouter le score</button>
                 </div>
                 <div id="compteRendu">
                     <!-- Les scores remplis seront ajoutés ici -->
@@ -238,7 +239,7 @@
             </div>
         </div> <br>
 
-        <div id="Paraclinique" class="observation"></div>
+        <div id="Paraclinique" class="observation">
         <h3>Examens paracliniques</h3>
         <div style="margin-left: 20px;">
             <label>Electrocardiogramme</label>
