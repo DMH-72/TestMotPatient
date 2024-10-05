@@ -11,12 +11,27 @@ header {
     color: white;
     padding: 0px;
     padding-top: 5px;
-    text-align: center;
+    text-align: left;
     width: 100%;
     position: sticky;
     top : 0px;
     z-index: 2;    
     margin-bottom: -0px;
+    display: grid;
+    grid-template-columns: 3em minmax(220px,1fr) 8fr;
+    grid-gap : 8px;
+    grid-auto-flow: row;
+}
+
+img {
+    z-index : 2;
+    width: 100%;    
+    margin : 5px
+}
+
+.logo {
+    max-width: 20px;
+    max-height: 20px;
 }
 
 nav {
@@ -34,34 +49,19 @@ nav {
 .enTete {
     flex-basis: auto;
     flex-grow: 1;
-    background-color: #fff;
-    border: 1px solid #7a7a7a;
-    border-radius: 0px;
-    padding-left: 10px;
-    padding-right: 10px;
-    padding-inline: 4px;
-    margin: 0px;
-}
-
-.enTete :hover{
-    background-color: #e6e6e6;
-    border: 1px solid #505050;
-    border-radius: 0px;
-    padding-left: 10px;
-    padding-right: 10px;
-    padding-inline: 4px;
-    margin: 0px;
-    flex-basis: auto;
-    flex-grow: 1;
 }
 
 .enTete a {
     display: block;
     text-align: center;
     text-decoration: none;
-    color: rgb(0, 0, 0);
-    padding: 8px;
-    font-size: 14px;
+    color: rgb(255, 255, 255);
+    padding: 3px;
+    font-size: 16px;    
+}
+
+.enTete a:hover {
+    font-weight:bolder;
 }
 
 main {
@@ -83,11 +83,7 @@ h3{
 
 
 .observation {
-    scroll-margin-top: 105px;
-}
-
-.sousSection {
-    margin-left: 20px;
+    scroll-margin-top: 72px;
 }
 
 .text-area-section {
