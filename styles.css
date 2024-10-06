@@ -1,6 +1,6 @@
 /* Style global */
 body {
-  font-family: Arial, sans-serif;
+  font-family: system-ui;
   background-color: #f4f4f9;
   margin: 0;
   padding: 0;
@@ -117,9 +117,9 @@ h3 {
 }
 
 .observation {
-  scroll-margin-top: 72px;
+  scroll-margin-top: 68px;
   background-color: white;
-  border : 1px solid black;
+  border : 1px solid black;  
   border-radius: 8px;
   margin: 5px;
   margin-bottom: 20px;
