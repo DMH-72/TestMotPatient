@@ -35,52 +35,66 @@
     </header>
 
     <main>
-
         <div id="Identité" class="observation">
             <h3>Identité et informations générales</h3>
-            <label for="prenom">Prénom : </label>
-            <input id="prenom" placeholder="Prénom" autocomplete="off">
-            <label for="nom">Nom : </label>
-            <input id="nom" placeholder="Nom" autocomplete="off">
-            <label for="sex">Sexe : </label>
-            <select id="sex">
-                <option value="0">Femme</option>
-                <option value="1">Homme</option>
-            </select>
-            <label for="dateNaissance">Date de Naissance : </label>
-            <input id="dateNaissance" placeholder="JJ/MM/AAAA" style="width: 84px" autocomplete="off">
-            <span id="age"></span><br>
-            <label for="modeArrivee">Mode d'arrivée : </label>
-            <select name="modeArrivee" id="selectModeArrivee">
-                <option value="0">Pompiers</option>
-                <option value="1">Propres moyens</option>
-                <option value="2">Ambulance privée</option>
-                <option value="3">SMUR</option>
-            </select>
-
-            <label for="groupeSanguin">  Groupe sanguin : </label>
-            <select name="groupeSanguin" id="groupeSanguin">
-                <option value="0">Inconnu</option>
-                <option value="1">A+</option>
-                <option value="2">A-</option>
-                <option value="3">AB+</option>
-                <option value="4">AB-</option>
-                <option value="5">B+</option>
-                <option value="6">B-</option>
-                <option value="7">O+</option>                
-                <option value="8">O-</option>
-            </select>
-
-            <label for="lateralite">  Latéralité : </label>
-            <select name="lateralite" id="lateralite">
-                <option value="0">Droitier</option>
-                <option value="1">Gaucher</option>
-                <option value="2">Inconnue</option>
-            </select>
-            <p>             
-                <label>Motif de consultation</label>
-                <textarea id="pancarteText" placeholder="Brièvement"></textarea>
-            </p>
+            <div class="divobsersationFlex">
+                <div class="subdivobservationFlex">
+                    <label for="prenom">Prénom : </label>
+                    <input id="prenom" placeholder="Prénom" autocomplete="off">
+                </div>
+                <div class="subdivobservationFlex">
+                    <label for="nom">Nom : </label>
+                    <input id="nom" placeholder="Nom" autocomplete="off">
+                </div>
+                <div class="subdivobservationFlex">
+                    <label for="sex">Sexe : </label>
+                    <select id="sex">
+                        <option value="0">Femme</option>
+                        <option value="1">Homme</option>
+                    </select>
+                </div>
+                <div class="subdivobservationFlex">
+                    <label for="dateNaissance">Date de Naissance : </label>
+                    <input id="dateNaissance" placeholder="JJ/MM/AAAA" style="width: 84px" autocomplete="off">
+                    <span id="age"></span><br>
+                </div>
+                <div class="subdivobservationFlex">
+                    <label for="modeArrivee">Mode d'arrivée : </label>
+                    <select name="modeArrivee" id="selectModeArrivee">
+                        <option value="0">Pompiers</option>
+                        <option value="1">Propres moyens</option>
+                        <option value="2">Ambulance privée</option>
+                        <option value="3">SMUR</option>
+                    </select>
+                </div>
+                <div class="subdivobservationFlex">
+                    <label for="groupeSanguin"> Groupe sanguin : </label>
+                    <select name="groupeSanguin" id="groupeSanguin">
+                        <option value="0">Inconnu</option>
+                        <option value="1">A+</option>
+                        <option value="2">A-</option>
+                        <option value="3">AB+</option>
+                        <option value="4">AB-</option>
+                        <option value="5">B+</option>
+                        <option value="6">B-</option>
+                        <option value="7">O+</option>
+                        <option value="8">O-</option>
+                    </select>
+                </div>
+                <div class="subdivobservationFlex">
+                    <label for="lateralite"> Latéralité : </label>
+                    <select name="lateralite" id="lateralite">
+                        <option value="0">Droitier</option>
+                        <option value="1">Gaucher</option>
+                        <option value="2">Inconnue</option>
+                    </select>
+                </div>
+            </div>
+            <div class="divobsersationFlex">             
+                <label>Motif : </label>
+                <div id="pancarteText" contenteditable="true" class="clinic"></div>
+            
+            </div>
         </div>
 
         <div id="constantes" class="observation">
@@ -99,7 +113,7 @@
                     <td rowspan="2">
                         <label for="constante_pressionArterielleDroite">Droite</label><br>
                         <input id="constante_pressionArterielleSDroite" placeholder="PaS"
-                            style="width: 35px; height: 15px;"autocomplete="off"> /
+                            style="width: 35px; height: 15px;" autocomplete="off"> /
                         <label for="constante_pressionArterielleDDroite"></label>
                         <input id="constante_pressionArterielleDDroite" placeholder="PaD"
                             style="width: 35px; height: 15px;" autocomplete="off">
@@ -119,33 +133,36 @@
                         <label for="constant_diurese_jour"></label>
                         <input type="number" id="constant_diurese_jour" placeholder="Diurèse"
                             style="width: 55px; height: 15px;"> ml/24h
-                        <br><i style="font-size: 0.9em;">Soit : <span id="constant_diurese_horraire">xx,xx</span> ml/kg/h</i>
+                        <br><i style="font-size: 0.9em;">Soit : <span id="constant_diurese_horraire">xx,xx</span>
+                            ml/kg/h</i>
                     </td>
                     <td rowspan="2">
                         <label for="constant_glycemie"></label>
                         <input type="number" id="constant_glycemie" placeholder="Glycémie"
-                            style="width: 55px; height: 15px;"> 
+                            style="width: 55px; height: 15px;">
                         <select name="uniteGlycemie" id="uniteGlycemie">
                             <option value="0">g/L</option>
                             <option value="1">mmol/L</option>
                         </select>
-                        <br><i style="font-size: 0.9em;">Soit : <span id="constant_glycemieConvert">xx,xx mmol/L</span></i>
+                        <br><i style="font-size: 0.9em;">Soit : <span id="constant_glycemieConvert">xx,xx
+                                mmol/L</span></i>
                     </td>
+                </tr>
                 <tr>
-                        <td>
-                            <label for="constante_frequenceRespiratoire"></label>
-                            <input type="number" id="constante_frequenceRespiratoire" placeholder="FR"
-                                style="width: 35px; height: 15px;"> rpm
-                        </td>
-                        <td>
-                            
+                    <td>
+                        <label for="constante_frequenceRespiratoire"></label>
+                        <input type="number" id="constante_frequenceRespiratoire" placeholder="FR"
+                            style="width: 35px; height: 15px;"> rpm
+                    </td>
+                    <td>
+
                         <label for="constante_02"></label>
                         <input type="number" id="constante_02" placeholder="O₂"
                             style="width: 35px; height: 15px; text-align: center;"> L
-                        </td>
+                    </td>
                 </tr>
                 <tr>
-                    
+
                     <td>
                         <label for="constante_temperature"></label>
                         <input type="number" id="constante_temperature" placeholder="T°"
@@ -173,7 +190,7 @@
                         <input type="number" id="constante_poids_date" placeholder="Date"
                             style="width: 55px; height: 15px;"> mois, soit
                         <span id="constante_pertePoids">xx</span> %
-                    </td>                    
+                    </td>
                 </tr>
             </table>
 
@@ -187,15 +204,15 @@
 
         <div id="ATCD_Allergie_TRT" class="observation">
             <h3>Antécédents et Traitements : </h3>
-            <div style="margin-left: 20px">                
-                <label for="ATCD">Antécédents :</label><br>  
-                    <div id="ATCD" contenteditable="true" class="clinic"></div><br>   
-                <label>Traitements actuels :</label><br>  
-                    <div id="TRT" contenteditable="true" class="clinic"></div><br>  
-                <label for="allergie">Allergie :</label><br>  
-                    <div id="allergie" contenteditable="true" class="clinic"></div>
-                </div>
+            <div style="margin-left: 20px">
+                <label for="ATCD">Antécédents :</label><br>
+                <div id="ATCD" contenteditable="true" class="clinic"></div><br>
+                <label>Traitements actuels :</label><br>
+                <div id="TRT" contenteditable="true" class="clinic"></div><br>
+                <label for="allergie">Allergie :</label><br>
+                <div id="allergie" contenteditable="true" class="clinic"></div>
             </div>
+        </div>
         </div>
 
         <div id="HDM" class="observation">
@@ -204,53 +221,88 @@
         </div> <br>
 
         <div id="examenClinique" class="observation">
-        <h3>Examen clinique</h3>
-        <button id="CliniqueNormal" onclick="InitialisationClinic()">Examen normal</button>
-        <div style="margin-left: 20px;">
-            <label>Examen cardio-vasculaires</label><br>
-            <div id="examenCliniqueCardio" contenteditable="true" class="clinic"></div><br>
-            <label>Examen pneumologique</label><br>
-            <div id="examenCliniquePneumo" contenteditable="true" class="clinic"></div><br>
-            <label>Examen neurologique</label><br>
-            <div id="examenCliniqueNeuro" contenteditable="true" class="clinic"></div><br>
-            <label>Examen digestif</label><br>
-            <div id="examenCliniqueDig" contenteditable="true" class="clinic"></div><br>
-            <label>Examen urologique</label><br>
-            <div id="examenCliniqueUro" contenteditable="true" class="clinic"></div><br>
-            <label>Examen locomoteur</label><br>
-            <div id="examenCliniqueRhumato" contenteditable="true" class="clinic"></div><br>
-            <label>Examen gynécologique</label><br>
-            <div id="examenCliniqueGyneco" contenteditable="true" class="clinic"></div><br>
-            <label>Examen psychiatrique</label><br>
-            <div id="examenCliniquePsy" contenteditable="true" class="clinic"></div><br>
+            <h3>Examen clinique</h3>
+            <button id="CliniqueNormal" onclick="InitialisationClinic()">Examen normal</button>
+            <div style="margin-left: 20px;">
+                <label>Examen cardio-vasculaires</label><br>
+                <div id="examenCliniqueCardio" contenteditable="true" class="clinic"></div><br>
+                <label>Examen pneumologique</label><br>
+                <div id="examenCliniquePneumo" contenteditable="true" class="clinic"></div><br>
+                <label>Examen neurologique</label><br>
+                <div id="examenCliniqueNeuro" contenteditable="true" class="clinic"></div><br>
+                <label>Examen digestif</label><br>
+                <div id="examenCliniqueDig" contenteditable="true" class="clinic"></div><br>
+                <label>Examen urologique</label><br>
+                <div id="examenCliniqueUro" contenteditable="true" class="clinic"></div><br>
+                <label>Examen locomoteur</label><br>
+                <div id="examenCliniqueRhumato" contenteditable="true" class="clinic"></div><br>
+                <label>Examen gynécologique</label><br>
+                <div id="examenCliniqueGyneco" contenteditable="true" class="clinic"></div><br>
+                <label>Examen psychiatrique</label><br>
+                <div id="examenCliniquePsy" contenteditable="true" class="clinic"></div><br>
+            </div>
         </div>
 
         <div id="scoreSection" class="observation">
             <h3>Scores</h3>
             <div style="margin-left: 20px;">
-                <button id="testBtn" onclick="extraireTitre()">Afficher la base de donnée des scores</button><br><br>
+                <button id="testBtn" onclick="extraireTitre()">Afficher la base de donnée des
+                    scores</button><br><br>
                 <div class="input-score">
                     <label for="ajoutScore">Rechercher un score : </label>
                     <input type="text" id="ajoutScore" autocomplete="off">
-                    <button id="ajoutSelectionScore" onclick="addScore()" >Ajouter le score</button>
+                    <button id="ajoutSelectionScore" onclick="addScore()">Ajouter le score</button>
                 </div>
                 <div id="compteRendu">
                     <!-- Les scores remplis seront ajoutés ici -->
-                </div>            
+                </div>
             </div>
         </div> <br>
 
         <div id="Paraclinique" class="observation">
-        <h3>Examens paracliniques</h3>
-        <div style="margin-left: 20px;">
-            <label>Electrocardiogramme</label>
-            <button id="ECGNormal" onclick="InitialisationECG()">ECG Normal</button>
-            <span id="hold_ECG"></span>
-            <br><br>
-            <label>Radiographie thoracique</label>
-            <button id="RadioNormal" onclick="InitialisationRT()">Radiographie Normal</button>
-            <span id="hold_RT"></span>
+            <h3>Examens paracliniques</h3>
+            <div style="margin-left: 20px;">
+                <label>Electrocardiogramme</label>
+                <button id="ECGNormal" onclick="InitialisationECG()">ECG Normal</button>
+                <span id="hold_ECG"></span>
+                <br><br>
+                <label>Radiographie thoracique</label>
+                <button id="RadioNormal" onclick="InitialisationRT()">Radiographie Normal</button>
+                <span id="hold_RT"></span>
+            </div>
         </div>
+
+        <div>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
         </div>
 
     </main>

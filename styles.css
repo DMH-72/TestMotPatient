@@ -48,7 +48,15 @@ nav {
 
 .enTete {
     flex-basis: auto;
-    flex-grow: 1;
+    flex-grow: 1;    
+    min-height: 25px;
+    height: 1fr;
+}
+
+.enTete:hover {
+    flex-basis: auto;
+    flex-grow: 1;    
+    background-color: #1576dd;
 }
 
 .enTete a {
@@ -56,18 +64,39 @@ nav {
     text-align: center;
     text-decoration: none;
     color: rgb(255, 255, 255);
-    padding: 3px;
     font-size: 16px;    
+    padding: 3px
 }
 
 .enTete a:hover {
-    font-weight:bolder;
+    font-weight:bolder;    
+    border-radius: 8px;
+}
+
+@media (max-width: 835px) {
+    header {
+        grid-template-columns: 3em 1fr; /* Passer en disposition sur une seule colonne */
+        grid-template-rows: auto;   /* Ajustement automatique des lignes */
+    }
+
+    img {
+        width: auto;
+        margin: 0 auto;
+        max-height: 3em;
+    }
+
+    nav {
+        order: 3;  /* Déplacer nav sous l'image et le titre */
+        grid-column: 1 / span 2;
+        width: 100%; /* Occuper toute la largeur */
+        margin-top: 10px;
+    }
 }
 
 main {
     padding: 20px;
     z-index: 1;
-    position: relative;
+    /* position: relative; */
     padding-top:0px;
 }
 
@@ -77,25 +106,39 @@ h1 {
 }
 
 h3{
-    margin-bottom: 10px;
-    margin-top:15px
+    padding: 15px;
+    padding-bottom: 10px;
+    background-color: rgb(226, 226, 226);
+    border-top-left-radius: 8px;    
+    border-top-right-radius: 8px;
+    margin: 0px;
+    color : rgb(39, 39, 39);
 }
 
 
 .observation {
     scroll-margin-top: 72px;
+    background-color: white;
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+    margin : 5px;
+    margin-bottom: 20px;
 }
 
-.text-area-section {
-    margin: 20px 0;
+.divobsersationFlex {
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    align-content: center;
+    padding : 5px;
 }
 
-.insideTable {
-    border: 1px solid rgb(0, 0, 0);
-    padding: 12px;
-    border-collapse: collapse;
-    margin: 0px;
+.subdivobservationFlex {
+    padding: 5px;
+    display: block;
 }
+
+
 
 
 .tableConstante {
@@ -117,7 +160,7 @@ h3{
   }
 
 textarea {
-    width: 95%;
+    width: 90%;
     height: fit-content(100%);
     padding: 10px;
     font-size: 16px;
@@ -130,10 +173,6 @@ input{
     margin-bottom: 3px;
 }
 
-.identité input {
-    width: fit-content;
-    min-width: 55px;
-}
 
 .menu-section {
     border: 1px solid #ccc;
@@ -154,8 +193,8 @@ input{
 
 .clinic {
     border: 2px solid #ccc; /* Bordure grise */
-    padding: 10px;          /* Espacement interne (padding) */
-    width: 95%;            /* Largeur de l'élément */
+    padding: 15px;          /* Espacement interne (padding) */
+    width: 100%;            /* Largeur de l'élément */
     /* height: 100px;          Hauteur de l'élément */
     overflow-y: auto;       /* Activation du défilement vertical si le contenu dépasse */
     background-color: #ffffff; /* Couleur de fond claire */
