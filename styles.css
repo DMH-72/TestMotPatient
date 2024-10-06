@@ -119,10 +119,10 @@ h3{
 .observation {
     scroll-margin-top: 72px;
     background-color: white;
-    border-bottom-left-radius: 8px;
-    border-bottom-right-radius: 8px;
+    border-radius: 8px;
     margin : 5px;
     margin-bottom: 20px;
+    box-shadow: 0px 0px 5px 1px rgb(80, 80, 80);
 }
 
 .divobsersationFlex {
