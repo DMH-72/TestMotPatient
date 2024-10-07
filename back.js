@@ -3,34 +3,52 @@ document.addEventListener('DOMContentLoaded', function () {
     function ageCalc() {
         // Récupérer la valeur de la date de naissance dans l'input
         var dateNaissanceInput = document.getElementById("dateNaissance").value;
-        
+    
         // Vérifier si une date a été entrée
         if (dateNaissanceInput) {
-            // Diviser la date européenne JJ/MM/AAAA
+            // Assurer que la date est au format JJ/MM/AAAA
             var parts = dateNaissanceInput.split('/');
+            if (parts.length !== 3) {
+                document.getElementById("age").innerHTML = "(Date invalide)";
+                return;
+            }
             var day = parseInt(parts[0], 10);
-            var month = parseInt(parts[1], 10) - 1; // Mois en JS est de 0 (janvier) à 11 (décembre)
+            var month = parseInt(parts[1], 10) - 1;
             var year = parseInt(parts[2], 10);
-            
-            // Créer un objet Date avec les composants réarrangés (AAAA, MM, JJ)
+    
+            // Créer un objet Date avec les composants
             var dateNaissance = new Date(year, month, day);
-            
+    
             // Récupérer la date actuelle
             var today = new Date();
-            
-            // Calculer la différence en années
+    
+            // Calculer l'âge en années
             var age = today.getFullYear() - dateNaissance.getFullYear();
-            
-            // Vérifier si l'anniversaire n'est pas encore passé cette année
             var monthDiff = today.getMonth() - dateNaissance.getMonth();
-            if (monthDiff < 0 || (monthDiff === 0 && today.getDate() < dateNaissance.getDate())) {
+            var dayDiff = today.getDate() - dateNaissance.getDate();
+    
+            // Ajustement si l'anniversaire n'est pas encore passé cette année
+            if (monthDiff < 0 || (monthDiff === 0 && dayDiff < 0)) {
                 age--;
             }
-            
+    
+            // Calculer l'âge en mois pour les enfants de moins de 3 ans
+            var ageInMonths = (today.getFullYear() - dateNaissance.getFullYear()) * 12 + monthDiff;
+            if (dayDiff < 0) {
+                ageInMonths--;
+            }
+    
             // Afficher l'âge dans le span "age"
-            document.getElementById("age").innerHTML = `(${age} ans)`;
+            if (age < 3) {
+                document.getElementById("age").innerHTML = `(${ageInMonths} mois)`;
+            } else {
+                document.getElementById("age").innerHTML = `(${age} ans)`;
+            }
+        } else {
+            document.getElementById("age").innerHTML = "";
         }
-    };
+    }
+    
 
     function PAMCalcDroite() {
         const PASD = document.getElementById("constante_pressionArterielleSDroite").value;
@@ -38,33 +56,46 @@ document.addEventListener('DOMContentLoaded', function () {
         document.getElementById("PAMDroite").innerHTML = `${(((1/3)*PASD)+ ((2/3) * PADD)).toFixed(0)}`;
     }
 
-    function PAMCalcGauche() {
-        const PASG = document.getElementById("constante_pressionArterielleSGauche").value;
-        const PADG = document.getElementById("constante_pressionArterielleDGauche").value;
-        document.getElementById("PAMGauche").innerHTML = `${(((1/3)*PASG)+ ((2/3) * PADG)).toFixed(0)}`;
-    }
-
-    function IMCCalc() {
-        const taille = document.getElementById("constante_taille").value / 100;
-        const poids = document.getElementById("constante_poids").value;
-        const IMC = (poids / (taille*taille))
-        document.getElementById("constante_IMC").innerHTML = `${IMC.toFixed(2)}`;
-
-        if (IMC.toFixed(1) < 18.5) {
-            document.getElementById("interpretIMC").innerHTML = `<i style="font-size: 0.8em; color:red;">Maigreur</i>`;
-        } else if (IMC.toFixed(1)<25) {
-            document.getElementById("interpretIMC").innerHTML = `<i style="font-size: 0.8em; color:green;">Normal</i>`;
-        } else if (IMC.toFixed(1)<30) {
-            document.getElementById("interpretIMC").innerHTML = `<i style="font-size: 0.8em; color:red;">Surpoids</i>`;
-        }
-        else if (IMC.toFixed(1)<35) {
-            document.getElementById("interpretIMC").innerHTML = `<i style="font-size: 0.8em; color:red;">Obésité modérée</i>`;
-        }
-        else if (IMC.toFixed(1)<40) {
-            document.getElementById("interpretIMC").innerHTML = `<i style="font-size: 0.8em; color:red;">Obésité sévère</i>`;
-        }
-        else {
-            document.getElementById("interpretIMC").innerHTML = `<i style="font-size: 0.8em; color:red;"><b>Obésité morbide</b></i>`;
+    function ageCalc() {
+        // Récupérer la valeur de la date de naissance dans l'input
+        var dateNaissanceInput = document.getElementById("dateNaissance").value;
+    
+        // Vérifier si une date a été entrée
+        if (dateNaissanceInput) {
+            // Créer un objet Date avec la date de naissance (le format est AAAA-MM-JJ)
+            var dateNaissance = new Date(dateNaissanceInput);
+            
+            // Récupérer la date actuelle
+            var today = new Date();
+    
+            // Calculer l'âge en années
+            var age = today.getFullYear() - dateNaissance.getFullYear();
+            var monthDiff = today.getMonth() - dateNaissance.getMonth();
+            var dayDiff = today.getDate() - dateNaissance.getDate();
+    
+            // Ajustement si l'anniversaire n'est pas encore passé cette année
+            if (monthDiff < 0 || (monthDiff === 0 && dayDiff < 0)) {
+                age--;
+            }
+    
+            // Calculer l'âge en mois pour les enfants de moins de 3 ans
+            var ageInMonths = (today.getFullYear() - dateNaissance.getFullYear()) * 12 + today.getMonth() - dateNaissance.getMonth();
+            if (dayDiff < 0) {
+                ageInMonths--;
+            }
+    
+            // Afficher l'âge seulement si le résultat est entre 0 et 150 ans
+            if (age >= 0 && age < 150) {
+                if (age < 3) {
+                    document.getElementById("age").innerHTML = `(${ageInMonths} mois)`;
+                } else {
+                    document.getElementById("age").innerHTML = `(${age} ans)`;
+                }
+            } else {
+                document.getElementById("age").innerHTML = ""; // Ne rien afficher si hors de l'intervalle
+            }
+        } else {
+            document.getElementById("age").innerHTML = "";
         }
     }
 
@@ -160,6 +191,17 @@ function InitialisationRT() {
     document.getElementById("hold_RT").innerHTML = `<div id="examenRT" contenteditable="true" class="clinic">Blablabla
     </div>`;
 }
+
+const editableDiv = document.querySelector('.editable-div');
+const fieldset = document.querySelector('.fieldsetText');
+
+editableDiv.addEventListener('focus', () => {
+  fieldset.classList.add('focused');
+});
+
+editableDiv.addEventListener('blur', () => {
+  fieldset.classList.remove('focused');
+});
 
 
 
@@ -495,6 +537,4 @@ function extraireTitre() {
         })
         .catch(error => console.error('Erreur lors du chargement du fichier JSON:', error));
 }
-
-
 

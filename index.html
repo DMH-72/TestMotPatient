@@ -53,10 +53,10 @@
                         <option value="1">Homme</option>
                     </select>
                 </div>
-                <div class="subdivobservationFlex">
-                    <label for="dateNaissance">Date de Naissance : </label>
-                    <input id="dateNaissance" placeholder="JJ/MM/AAAA" style="width: 84px" autocomplete="off">
-                    <span id="age"></span><br>
+                <div class="subdivobservationFlexDate">
+                    <label for="dateNaissance">Date de naissance </label>
+                    <input type="date" id="dateNaissance" placeholder="JJ/MM/AAAA" style="width: 84px" autocomplete="off">
+                    <span id="age"></span>
                 </div>
                 <div class="subdivobservationFlex">
                     <label for="modeArrivee">Mode d'arrivée : </label>
@@ -90,11 +90,10 @@
                     </select>
                 </div>
             </div>
-            <div class="divobsersationFlex">
-                <label>Motif : </label>
-                <div id="pancarteText" contenteditable="true" class="clinic"></div>
-
-            </div>
+            <fieldset class="fieldsetText" style="margin:10px;">
+                <legend>Motif de consultation :</legend>
+                <div id="motifConsult" class="editable-div" contenteditable="true"></div>
+            </fieldset>
         </div>
 
         <div id="constantes" class="observation">
@@ -183,7 +182,7 @@
                 </div>
                 <div class="subdivConstantesFlex">
                     <label for="AVPU">AVPU : </label>
-                    <select id="AVPU"> 
+                    <select id="AVPU">
                         <option value="4">Awake</option>
                         <option value="3">Verbal</option>
                         <option value="2">Pain</option>
@@ -207,7 +206,7 @@
         </div> <br>
 
         <div id="ATCD_Allergie_TRT" class="observation">
-            <h3>Antécédents et Traitements : </h3>
+            <h3>Antécédents, Allergies et Traitements : </h3>
             <div class="subSectionTemporaire">
                 <label for="ATCD">Antécédents :</label>
                 <div id="ATCD" contenteditable="true" class="clinic"></div>
@@ -230,22 +229,114 @@
             <h3>Examen clinique</h3>
             <button id="CliniqueNormal" onclick="InitialisationClinic()">Examen normal</button>
             <div class="subSectionTemporaire">
-                <label>Examen cardio-vasculaires</label>
-                <div id="examenCliniqueCardio" contenteditable="true" class="clinic"></div><br>
-                <label>Examen pneumologique</label>
-                <div id="examenCliniquePneumo" contenteditable="true" class="clinic"></div><br>
-                <label>Examen neurologique</label>
-                <div id="examenCliniqueNeuro" contenteditable="true" class="clinic"></div><br>
-                <label>Examen digestif</label>
-                <div id="examenCliniqueDig" contenteditable="true" class="clinic"></div><br>
-                <label>Examen urologique</label>
-                <div id="examenCliniqueUro" contenteditable="true" class="clinic"></div><br>
-                <label>Examen locomoteur</label>
-                <div id="examenCliniqueRhumato" contenteditable="true" class="clinic"></div><br>
-                <label>Examen gynécologique</label>
-                <div id="examenCliniqueGyneco" contenteditable="true" class="clinic"></div><br>
-                <label>Examen psychiatrique</label>
-                <div id="examenCliniquePsy" contenteditable="true" class="clinic"></div><br>
+
+                <fieldset class="fieldsetText">
+                    <legend>Examen général :
+                        <button>N</button>
+                        <button>C</button>
+                        <button>O</button>
+                    </legend>
+                    <div id="examenCliniqueCardio" contenteditable="true" class="editable-div"></div>
+                </fieldset>
+
+                <fieldset class="fieldsetText">
+                    <legend>Cardio-vasculaires :
+                        <button>N</button>
+                        <button>C</button>
+                        <button>O</button>
+                    </legend>
+                    <div id="examenCliniqueCardio" contenteditable="true" class="editable-div"></div>
+                </fieldset>
+
+                <fieldset class="fieldsetText">
+                    <legend>Pneumologique :
+                        <button>N</button>
+                        <button>C</button>
+                        <button>O</button>
+                    </legend>
+                    <div id="examenCliniquePneumo" contenteditable="true" class="editable-div"></div>
+                </fieldset>
+
+                <fieldset class="fieldsetText">
+                    <legend>Neurologique :
+                        <button>N</button>
+                        <button>C</button>
+                        <button>O</button>
+                    </legend>
+                    <div id="examenCliniqueNeuro" contenteditable="true" class="editable-div"></div>
+                </fieldset>
+
+                <fieldset class="fieldsetText">
+                    <legend>Digestif :
+                        <button>N</button>
+                        <button>C</button>
+                        <button>O</button>
+                    </legend>
+                    <div id="examenCliniqueDig" contenteditable="true" class="editable-div"></div>
+                </fieldset>
+
+                <fieldset class="fieldsetText">
+                    <legend>Urologique :
+                        <button>N</button>
+                        <button>C</button>
+                        <button>O</button>
+                    </legend>
+                    <div id="examenCliniqueUro" contenteditable="true" class="editable-div"></div>
+                </fieldset>
+
+                <fieldset class="fieldsetText">
+                    <legend>Locomoteur / Rhumatologie :
+                        <button>N</button>
+                        <button>C</button>
+                        <button>O</button>
+                    </legend>
+                    <div id="examenCliniqueRhumato" contenteditable="true" class="editable-div"></div>
+                </fieldset>
+
+                <fieldset class="fieldsetText">
+                    <legend>Gynécologique :
+                        <button>N</button>
+                        <button>C</button>
+                        <button>O</button>
+                    </legend>
+                    <div id="examenCliniqueGyneco" contenteditable="true" class="editable-div"></div>
+                </fieldset>
+
+                <fieldset class="fieldsetText">
+                    <legend>Psychiatrique :
+                        <button>N</button>
+                        <button>C</button>
+                        <button>O</button>
+                    </legend>
+                    <div id="examenCliniquePsy" class="editable-div" contenteditable="true"></div>
+                </fieldset>
+
+                <fieldset class="fieldsetText">
+                    <legend>ORL / CMF :
+                        <button>N</button>
+                        <button>C</button>
+                        <button>O</button>
+                    </legend>
+                    <div id="examenCliniqueORL" class="editable-div" contenteditable="true"></div>
+                </fieldset>
+
+                <fieldset class="fieldsetText">
+                    <legend>Dermatologique :
+                        <button>N</button>
+                        <button>C</button>
+                        <button>O</button>
+                    </legend>
+                    <div id="examenCliniqueDermato" class="editable-div" contenteditable="true"></div>
+                </fieldset>
+
+                <fieldset class="fieldsetText">
+                    <legend>Pédiatrique :
+                        <button>N</button>
+                        <button>C</button>
+                        <button>O</button>
+                    </legend>
+                    <div id="examenCliniquePed" class="editable-div" contenteditable="true"></div>
+                </fieldset>
             </div>
         </div>
 

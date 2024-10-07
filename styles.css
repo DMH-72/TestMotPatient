@@ -7,7 +7,7 @@ body {
 }
 
 header {
-  background-color: #007bff;
+  background-color: #054293;
   color: white;
   padding: 0px;
   padding-top: 5px;
@@ -50,13 +50,7 @@ nav {
   flex-basis: auto;
   flex-grow: 1;
   min-height: 25px;
-  height: 1fr;
-}
-
-.enTete:hover {
-  flex-basis: auto;
-  flex-grow: 1;
-  background-color: #1576dd;
+  height: 1fr;  
 }
 
 .enTete a {
@@ -65,11 +59,12 @@ nav {
   text-decoration: none;
   color: rgb(255, 255, 255);
   font-size: 16px;
-  padding: 3px;
+  padding: 3px;  
+  transition: font-weight 0.1s ease;
 }
 
 .enTete a:hover {
-  font-weight: bolder;
+  font-weight: bold;
   border-radius: 8px;
 }
 
@@ -116,6 +111,15 @@ h3 {
   color: rgb(39, 39, 39);
 }
 
+input[type="date"]::-webkit-calendar-picker-indicator {
+  display: none;
+}
+
+input[type="date"] {
+  font-family: system-ui;
+}
+
+
 .observation {
   scroll-margin-top: 68px;
   background-color: white;
@@ -136,13 +140,25 @@ h3 {
 
 .subdivobservationFlex {
   padding: 5px;
-  width: 270px;
+  width: 260px;
   display: grid;
   grid-auto-flow: column;
   justify-items: stretch;
   justify-content: start;
   align-content: center;
-  align-items: center;
+  align-items: normal;
+  gap: 5px;
+}
+
+.subdivobservationFlexDate {
+  padding: 5px;
+  width: 290px;
+  display: grid;
+  grid-auto-flow: column;
+  justify-items: stretch;
+  justify-content: start;
+  align-content: center;
+  align-items: normal;
   gap: 5px;
 }
 
@@ -153,7 +169,7 @@ h3 {
 }
 
 .subdivobservationFlex select {
-  height: 1.7em;
+  height: 1.9em;
 }
 
 .divConstantesFlex {
@@ -204,15 +220,33 @@ h3 {
   overflow: hidden;
   display: inline-block;
   min-height: 1.6em;
-  padding: 2px
+  padding: 4px
 }
 
-.clinicClass:focus {
-  outline: none;
-  border-color: #66afe9; /* Couleur de bordure plus visible lorsqu'on clique sur la zone */
-  box-shadow: 0 0 5px rgba(102, 175, 233, 0.6); /* Ombre pour un effet visuel lors du focus */
+.fieldsetText {
+  border-radius: 8px;
+  border: 2px solid #ccc;
+  transition: border 0.1s ease, border-radius 0.1s ease;
+  padding-top: 0px;
+  margin-bottom: 10px;
 }
 
+.fieldsetText:hover {
+  border-radius: 8px;
+  border: 2px solid #c00606; 
+}
+
+.fieldsetText.focused {
+  border-radius: 8px;
+  border: 2px solid #c00606; 
+  padding-top: 0px;
+}
+
+.editable-div {
+  padding: 4px;
+  background-color: white;
+  outline: 0px solid transparent
+}
 
 textarea {
   width: 90%;
