@@ -173,7 +173,6 @@
                     <span id="interpretIMC"><i style="font-size: 0.8em;">Interprétation</i></span>
                 </div>
                 <div class="subdivConstantesFlex">
-
                     <label for="constante_poids_anterieur"></label>
                     <input type="number" id="constante_poids_anterieur" placeholder="Poids"
                         style="width: 55px; height: 15px;"> kg il y a
@@ -182,100 +181,15 @@
                         style="width: 55px; height: 15px;"> mois, soit
                     <span id="constante_pertePoids">xx</span> %
                 </div>
-                <!-- <table class="tableConstante">
-                    <tr>
-                        <td rowspan="2">
-                            <label for="constante_pressionArterielleGauche">Gauche</label><br>
-                            <input id="constante_pressionArterielleSGauche" placeholder="PaS"
-                                style="width: 35px; height: 15px;" autocomplete="off"> /
-                            <label for="constante_pressionArterielleDGauche"></label>
-                            <input id="constante_pressionArterielleDGauche" placeholder="PaD"
-                                style="width: 35px; height: 15px;" autocomplete="off">
-                            <br><i style="font-size: 0.9em;">PAM = <span id="PAMGauche">xx</span> mmHg</i>
-                        </td>
-                        <td rowspan="2">
-                            <label for="constante_pressionArterielleDroite">Droite</label><br>
-                            <input id="constante_pressionArterielleSDroite" placeholder="PaS"
-                                style="width: 35px; height: 15px;" autocomplete="off"> /
-                            <label for="constante_pressionArterielleDDroite"></label>
-                            <input id="constante_pressionArterielleDDroite" placeholder="PaD"
-                                style="width: 35px; height: 15px;" autocomplete="off">
-                            <br><i style="font-size: 0.9em;">PAM = <span id="PAMDroite">xx</span> mmHg</i>
-                        </td>
-                        <td>
-                            <label for="constante_frequenceCardiaque"></label>
-                            <input type="number" id="constante_frequenceCardiaque" placeholder="FC"
-                                style="width: 35px; height: 15px;"> bpm
-                        </td>
-                        <td>
-                            <label for="constante_saturation"></label>
-                            <input type="number" id="constante_saturation" placeholder="SpO₂"
-                                style="width: 35px; height: 15px;"> %
-                        </td>
-                        <td rowspan="2">
-                            <label for="constant_diurese_jour"></label>
-                            <input type="number" id="constant_diurese_jour" placeholder="Diurèse"
-                                style="width: 55px; height: 15px;"> ml/24h
-                            <br><i style="font-size: 0.9em;">Soit : <span id="constant_diurese_horraire">xx,xx</span>
-                                ml/kg/h</i>
-                        </td>
-                        <td rowspan="2">
-                            <label for="constant_glycemie"></label>
-                            <input type="number" id="constant_glycemie" placeholder="Glycémie"
-                                style="width: 55px; height: 15px;">
-                            <select name="uniteGlycemie" id="uniteGlycemie">
-                                <option value="0">g/L</option>
-                                <option value="1">mmol/L</option>
-                            </select>
-                            <br><i style="font-size: 0.9em;">Soit : <span id="constant_glycemieConvert">xx,xx
-                                    mmol/L</span></i>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <label for="constante_frequenceRespiratoire"></label>
-                            <input type="number" id="constante_frequenceRespiratoire" placeholder="FR"
-                                style="width: 35px; height: 15px;"> rpm
-                        </td>
-                        <td>
-
-                            <label for="constante_02"></label>
-                            <input type="number" id="constante_02" placeholder="O₂"
-                                style="width: 35px; height: 15px; text-align: center;"> L
-                        </td>
-                    </tr>
-                    <tr>
-
-                        <td>
-                            <label for="constante_temperature"></label>
-                            <input type="number" id="constante_temperature" placeholder="T°"
-                                style="width: 35px; height: 15px;"> °C
-                        </td>
-                        <td>
-                            <label for="constante_poids"></label>
-                            <input type="number" id="constante_poids" placeholder="Poids"
-                                style="width: 55px; height: 15px;"> kg
-                        </td>
-                        <td>
-                            <label for="constante_taille"></label>
-                            <input type="number" id="constante_taille" placeholder="Taille"
-                                style="width: 55px; height: 15px;"> cm
-                        </td>
-                        <td>
-                            IMC = <span id="constante_IMC">xx,x</span> kg/m²<br>
-                            <span id="interpretIMC"><i style="font-size: 0.8em;">Interprétation</i></span>
-                        </td>
-                        <td colspan="3">
-                            <label for="constante_poids_anterieur"></label>
-                            <input type="number" id="constante_poids_anterieur" placeholder="Poids"
-                                style="width: 55px; height: 15px;"> kg il y a
-                            <label for="constante_poids_anterieur_date"></label>
-                            <input type="number" id="constante_poids_date" placeholder="Date"
-                                style="width: 55px; height: 15px;"> mois, soit
-                            <span id="constante_pertePoids">xx</span> %
-                        </td>
-                    </tr>
-                </table> -->
+                <div class="subdivConstantesFlex">
+                    <label for="AVPU">AVPU : </label>
+                    <select id="AVPU"> 
+                        <option value="4">Awake</option>
+                        <option value="3">Verbal</option>
+                        <option value="2">Pain</option>
+                        <option value="1">Unresponsive</option>
+                    </select>
+                </div>
             </div>
 
         </div> <br>
@@ -283,8 +197,12 @@
         <div id="ModeDeVie" class="observation">
             <h3>Mode de vie</h3>
             <div class="subSectionTemporaire">
-                <label for="tabac">Tabagisme : </label><input id="tabac" type="checkbox">
-                <label for="alcool">Consommation alcoolique : </label><input id="alcool" type="checkbox">
+                <div class="subdivobservationFlex">
+                    <label for="tabac">Tabagisme : </label><input id="tabac" type="checkbox">
+                </div>
+                <div class="subdivobservationFlex">
+                    <label for="alcool">Consommation alcoolique : </label><input id="alcool" type="checkbox">
+                </div>
             </div>
         </div> <br>
 
