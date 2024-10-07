@@ -1,7 +1,7 @@
 /* Style global */
 body {
   font-family: system-ui;
-  background-color: #f4f4f9;
+  background-color: rgb(244, 244, 249);
   margin: 0;
   padding: 0;
 }
@@ -183,7 +183,7 @@ input[type="date"] {
 
 .subdivConstantesFlex {
   border: 1px solid #a5a5a5;
-  background-color: #dadada;
+  background-color: rgb(218, 218, 218);
   border-radius : 4px;  
   box-shadow: 0px 0px 3px 1px rgb(155, 155, 155);
   gap: 5px;
@@ -226,7 +226,7 @@ input[type="date"] {
 .fieldsetText {
   border-radius: 8px;
   border: 2px solid #ccc;
-  transition: border 0.1s ease, border-radius 0.1s ease;
+  transition: border 0.2s ease, border-radius 0.2s ease;
   padding-top: 0px;
   margin-bottom: 10px;
 }
@@ -246,6 +246,28 @@ input[type="date"] {
   padding: 4px;
   background-color: white;
   outline: 0px solid transparent
+}
+
+.fieldsetText legend{
+  font-weight: bold;
+}
+
+.clinicButton {
+  text-align: center;
+  padding: 4px;
+  padding-bottom: 6px;
+  border-radius: 6px;
+  border: 2px solid #ccc;  
+  transition: border 0.15s ease, border-radius 0.15s ease, font-size 0.15s ease;
+}
+
+.clinicButton:hover {
+  border: 2px solid #c00606;
+  font-size: 101%;
+}
+
+.clinicButton:active {
+  background-color: #d8d8d8;
 }
 
 textarea {
