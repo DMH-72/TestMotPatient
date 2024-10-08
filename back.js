@@ -105,7 +105,6 @@ document.addEventListener('DOMContentLoaded', function () {
     function GlycemieCalc(){
         const uniteGlycemie = document.getElementById("uniteGlycemie").value;
         const glycemie = parseFloat(document.getElementById("constant_glycemie").value); // Convertir en nombre
-
         if (uniteGlycemie === "0") {
             document.getElementById("constant_glycemieConvert").innerHTML = `${(glycemie * 5.5).toFixed(2)} mmol/L`;
         } else {
@@ -113,6 +112,37 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     }
 
+    function IMCCalc() {
+        const taille = document.getElementById("constante_taille").value / 100;
+        const poids = document.getElementById("constante_poids").value;
+        document.getElementById("constante_IMC").innerHTML = `${(poids / (taille*taille)).toFixed(2)}`;
+        const IMC = (poids / (taille*taille))
+        document.getElementById("constante_IMC").innerHTML = `${IMC.toFixed(2)}`;
+        if (IMC.toFixed(1) < 18.5) {
+            document.getElementById("interpretIMC").innerHTML = `<i style="font-size: 0.8em; color:red;">Maigreur</i>`;
+        } else if (IMC.toFixed(1)<25) {
+            document.getElementById("interpretIMC").innerHTML = `<i style="font-size: 0.8em; color:green;">Normal</i>`;
+        } else if (IMC.toFixed(1)<30) {
+            document.getElementById("interpretIMC").innerHTML = `<i style="font-size: 0.8em; color:red;">Surpoids</i>`;
+        }
+        else if (IMC.toFixed(1)<35) {
+            document.getElementById("interpretIMC").innerHTML = `<i style="font-size: 0.8em; color:red;">Obésité modérée</i>`;
+        }
+        else if (IMC.toFixed(1)<40) {
+            document.getElementById("interpretIMC").innerHTML = `<i style="font-size: 0.8em; color:red;">Obésité sévère</i>`;
+        }
+        else {
+            document.getElementById("interpretIMC").innerHTML = `<i style="font-size: 0.8em; color:red;"><b>Obésité morbide</b></i>`;
+        }
+    }
+
+    function paquetAnneeCal() {
+        const nbAnneeTabacConst = document.getElementById("nbAnneeT").value; 
+        const cigParJourConst = document.getElementById("cParJour").value; 
+        
+        const pa = nbAnneeTabacConst * (cigParJourConst / 20);
+        document.getElementById("paquetAnneeConst").innerHTML = `Soit ${pa} PA`;
+    }
 
     
 dateNaissance.addEventListener('input',ageCalc);
@@ -130,8 +160,20 @@ constante_poids.addEventListener('input',variationPoids);
 constante_poids_anterieur.addEventListener('input',variationPoids);
 constant_glycemie.addEventListener('input', GlycemieCalc);
 uniteGlycemie.addEventListener('change',GlycemieCalc);
-
+document.getElementById("nbAnneeT").addEventListener('input',paquetAnneeCal);
+document.getElementById("cParJour").addEventListener('input',paquetAnneeCal);
 });
+
+
+
+function paquetAnneeDisp() {
+    var checkbox = document.getElementById(`tabac`).checked;
+    if (checkbox === true) {
+        document.getElementById(`paquetAnnee`).style.display = "block";
+    } else {
+        document.getElementById(`paquetAnnee`).style.display = "none";
+    }
+}
 
 function InitialisationClinic() {
     document.getElementById("examenCliniqueCardio").innerHTML = 

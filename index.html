@@ -99,7 +99,7 @@
         </div>
 
         <div id="constantes" class="observationConstantes">
-            <h3>Constantes 
+            <h3>   Constantes 
                 <fieldset class="fieldDeroulant">
                         <summary>Sélections complémentaires
                         <span class="arrow"></span></summary>
@@ -270,14 +270,24 @@
             <h3>Mode de vie</h3>
             <div class="subSectionTemporaire">
                 <div class="subdivobservationFlex">
-                    <label for="tabac">Tabagisme : </label><input id="tabac" type="checkbox" >
+                    <label for="tabac">Tabagisme : </label><input id="tabac" type="checkbox" onchange="paquetAnneeDisp()">                    
+                </div>
+                <div id="paquetAnnee" class="subdivobservationFlex" style="display: none">
+                    <input id="nbAnneeT" placeholder="Années" autocomplete="off" style="width: 50px;">
+                    <input id="cParJour" placeholder="cig/jour" autocomplete="off" style="width: 50px;">
+                    <span id="paquetAnneeConst">Soit xx PA</span>
                 </div>
                 <div class="subdivobservationFlex">
-                    <label for="alcool">Consommation alcoolique : </label><input id="alcool" type="checkbox">
+                    <label for="alcool">Consommation OH : </label>
+                    <select id="consoAlcool">
+                        <option value="0">Jamais</option>
+                        <option value="1">Occasionnelle</option>
+                        <option value="2">Régulière</option>
+                    </select>
                 </div>                
                 <div class="subdivobservationFlex">
                     <label for="toxique">Autres toxiques : </label>
-                    <input id="toxique" type="text">
+                    <input id="toxique" type="text" style="width: 125px;">
                 </div>                             
                 <div class="subdivobservationFlex">
                 </div>                             
