@@ -119,6 +119,113 @@ input[type="date"] {
   font-family: system-ui;
 }
 
+/* input[type="checkbox"] {
+  display: none;
+}
+input[type="checkbox"] + label {
+  box-sizing: border-box;
+  display: inline-block;
+  width: 1.5rem;
+  height: 1rem;
+  border-radius: 1rem;
+  padding:2px;
+  background-color: #c0ceda ;
+  transition: all 0.5s ;
+}
+input[type="checkbox"] + label::before {
+  box-sizing: border-box;
+  display: block;
+  content: "";
+  height: calc(1rem - 2px);
+  width: calc(1rem - 2px);
+  border-radius: 50%;
+  background-color: #fff;
+  transition: all 0.5s ;
+}
+input[type="checkbox"]:checked + label {
+  background-color: #00B7E8 ;
+}
+input[type="checkbox"]:checked + label::before {
+  margin-left: 1rem ;
+} */
+
+
+
+
+
+
+
+
+.fieldDeroulant {
+  font-size: 0.8em;
+  border: 0px solid;
+  padding-bottom: 0px;
+} 
+
+
+.fieldDeroulant div {
+  max-height: 0; /* Hauteur initiale à 0 */
+  overflow: hidden; /* Cache le contenu quand la hauteur est 0 */
+  transition: max-height 0.3s ease-out; /* Transition fluide sur max-height */
+  transition-delay: 0s;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: baseline;
+}
+
+.fieldDeroulant:hover div {
+  max-height: 300px; /* Hauteur maximale après le survol */
+  transition-delay: 0.4s;
+}
+
+.fieldDeroulant summary {
+  display: flex;
+    align-items: baseline;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    gap: 15px;
+}
+
+.fieldDeroulant .arrow {
+  border: solid black;
+  border-width: 0 2px 2px 0;
+  display: inline-block;
+  padding: 5px;
+  margin-bottom: 15px;
+  transform: rotate(45deg); /* Flèche pointant vers le bas */
+  transition: transform 0.5s ease;
+  transition-delay: 0.3s;
+}
+
+.fieldDeroulant:hover .arrow {
+  transform: rotate(-135deg); /* Flèche pointant vers le haut */
+}
+
+.btnCt {
+  width: 220px;
+  padding-top: 5px;
+}
+
+.observationConstantes {
+  scroll-margin-top: 68px;
+  background-color: white;
+  border : 1px solid black;  
+  border-radius: 8px;
+  margin: 5px;
+  margin-bottom: 20px;
+  box-shadow: 0px 0px 5px 1px rgb(80, 80, 80);
+}
+
+.observationConstantes h3{
+  display: grid;
+  grid-template-columns: 120px 1fr;
+}
+
+
+
+
 
 .observation {
   scroll-margin-top: 68px;

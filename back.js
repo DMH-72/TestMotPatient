@@ -1,59 +1,34 @@
-document.addEventListener('DOMContentLoaded', function () {
-
-    function ageCalc() {
-        // Récupérer la valeur de la date de naissance dans l'input
-        var dateNaissanceInput = document.getElementById("dateNaissance").value;
-    
-        // Vérifier si une date a été entrée
-        if (dateNaissanceInput) {
-            // Assurer que la date est au format JJ/MM/AAAA
-            var parts = dateNaissanceInput.split('/');
-            if (parts.length !== 3) {
-                document.getElementById("age").innerHTML = "(Date invalide)";
-                return;
-            }
-            var day = parseInt(parts[0], 10);
-            var month = parseInt(parts[1], 10) - 1;
-            var year = parseInt(parts[2], 10);
-    
-            // Créer un objet Date avec les composants
-            var dateNaissance = new Date(year, month, day);
-    
-            // Récupérer la date actuelle
-            var today = new Date();
-    
-            // Calculer l'âge en années
-            var age = today.getFullYear() - dateNaissance.getFullYear();
-            var monthDiff = today.getMonth() - dateNaissance.getMonth();
-            var dayDiff = today.getDate() - dateNaissance.getDate();
-    
-            // Ajustement si l'anniversaire n'est pas encore passé cette année
-            if (monthDiff < 0 || (monthDiff === 0 && dayDiff < 0)) {
-                age--;
-            }
-    
-            // Calculer l'âge en mois pour les enfants de moins de 3 ans
-            var ageInMonths = (today.getFullYear() - dateNaissance.getFullYear()) * 12 + monthDiff;
-            if (dayDiff < 0) {
-                ageInMonths--;
-            }
-    
-            // Afficher l'âge dans le span "age"
-            if (age < 3) {
-                document.getElementById("age").innerHTML = `(${ageInMonths} mois)`;
-            } else {
-                document.getElementById("age").innerHTML = `(${age} ans)`;
-            }
-        } else {
-            document.getElementById("age").innerHTML = "";
-        }
+function toggleSection(checkboxId, sectionId) {
+    var checkbox = document.getElementById(checkboxId).checked;
+    if (checkbox === true) {
+        document.getElementById(sectionId).style.display = "block";
+    } else {
+        document.getElementById(sectionId).style.display = "none";
     }
-    
+}
 
-    function PAMCalcDroite() {
-        const PASD = document.getElementById("constante_pressionArterielleSDroite").value;
-        const PADD = document.getElementById("constante_pressionArterielleDDroite").value;
-        document.getElementById("PAMDroite").innerHTML = `${(((1/3)*PASD)+ ((2/3) * PADD)).toFixed(0)}`;
+
+document.addEventListener('DOMContentLoaded', function () {
+ 
+    function PAMCalc1() {
+        const PASD = document.getElementById("constante_pressionArterielleS1").value;
+        const PADD = document.getElementById("constante_pressionArterielleD1").value;
+        document.getElementById("PAM1").innerHTML = `${(((1/3)*PASD)+ ((2/3) * PADD)).toFixed(0)}`;
+    }
+
+    function PAMCalcControlat() {
+        const PASD = document.getElementById("constante_pressionArterielleSControlat").value;
+        const PADD = document.getElementById("constante_pressionArterielleDControlat").value;
+        const cote = parseFloat(document.getElementById("constante_pressionArterielleCote1").value);
+
+        document.getElementById("PAMControlat").innerHTML = `${(((1/3)*PASD)+ ((2/3) * PADD)).toFixed(0)}`;
+
+        if (cote == 1) {
+            document.getElementById("constante_pressionArterielleCoteControlat").innerHTML = `G`;
+        } else {
+            document.getElementById("constante_pressionArterielleCoteControlat").innerHTML = `D`;
+        }
+
     }
 
     function ageCalc() {
@@ -97,6 +72,22 @@ document.addEventListener('DOMContentLoaded', function () {
         } else {
             document.getElementById("age").innerHTML = "";
         }
+
+        if (age >= 0 && age < 18) {
+            document.getElementById(`identiteAccompagnant`).style.display = "block";
+        } else {
+            document.getElementById(`identiteAccompagnant`).style.display = "none";
+        }
+
+        if (age >= 0 && age < 5) {
+            document.getElementById('btnPed').checked = true; 
+            addEventListener('input',toggleSection(`btnPed`,`sectionPed`));
+        } else {
+            document.getElementById('btnPed').checked = false; 
+            addEventListener('input',toggleSection(`btnPed`,`sectionPed`));
+        }
+
+
     }
 
     function DiureseCalc() {
@@ -121,12 +112,17 @@ document.addEventListener('DOMContentLoaded', function () {
             document.getElementById("constant_glycemieConvert").innerHTML = `${(glycemie * 0.18).toFixed(2)} g/L`;
         }
     }
+
+
     
 dateNaissance.addEventListener('input',ageCalc);
-constante_pressionArterielleSGauche.addEventListener('input',PAMCalcGauche);
-constante_pressionArterielleDGauche.addEventListener('input',PAMCalcGauche);
-constante_pressionArterielleSDroite.addEventListener('input',PAMCalcDroite);
-constante_pressionArterielleDDroite.addEventListener('input',PAMCalcDroite);
+constante_pressionArterielleS1.addEventListener('input',PAMCalc1);
+constante_pressionArterielleD1.addEventListener('input',PAMCalc1);
+constante_pressionArterielleS1.addEventListener('input',PAMCalcControlat);
+constante_pressionArterielleD1.addEventListener('input',PAMCalcControlat);
+constante_pressionArterielleCote1.addEventListener('change',PAMCalcControlat);
+constante_pressionArterielleSControlat.addEventListener('input',PAMCalcControlat);
+constante_pressionArterielleDControlat.addEventListener('input',PAMCalcControlat);
 constante_poids.addEventListener('input',IMCCalc);
 constante_taille.addEventListener('input',IMCCalc);
 constant_diurese_jour.addEventListener('input',DiureseCalc);
@@ -134,6 +130,7 @@ constante_poids.addEventListener('input',variationPoids);
 constante_poids_anterieur.addEventListener('input',variationPoids);
 constant_glycemie.addEventListener('input', GlycemieCalc);
 uniteGlycemie.addEventListener('change',GlycemieCalc);
+
 });
 
 function InitialisationClinic() {
