@@ -214,7 +214,7 @@ input[type="checkbox"]:checked + label::before {
 }
 
 .fieldDeroulant:hover .arrow {
-  transform: rotate(-135deg) translate(0px, -5px); /* Flèche pointant vers le haut */
+  transform:  translate(0px, 5px) rotate(-135deg); /* Flèche pointant vers le haut */
 }
 
 .btnCt {
@@ -376,7 +376,7 @@ input[type="checkbox"]:checked + label::before {
 
 
 .subdivinline {
-  width: 150px;
+  width: 100%;
   display: flex;
   justify-content: center;
   gap: 8px;
@@ -391,6 +391,70 @@ input[type="checkbox"]:checked + label::before {
   padding:15px;
 }
 
+.subdivobservationTemporaire {
+  padding: 5px;
+  width: 50%;
+  display: grid;
+  grid-auto-flow: column;
+  justify-items: stretch;
+  justify-content: start;
+  align-content: center;
+  align-items: normal;
+  gap: 5px;
+}
+
+.subdivinlineModeDeVie{
+  justify-content: flex-start;
+  padding-left: 15px;
+}
+
+.subdivobservationTemporaire input {
+  width: fit-content;
+  height: 1.6em;
+  margin: 0px;
+  border-radius: 5px;
+  border: 2px solid rgb(204, 204, 204);
+  box-shadow: none;
+}
+
+.subdivobservationTemporaire input:hover {
+  border: 2px solid #c00606;
+}
+
+.subdivobservationTemporaire input:focus {
+  outline: none;
+  border: 2px solid #c00606;
+}
+
+.subdivobservationTemporaire select {
+  border-radius: 5px;
+  border: 2px solid rgb(204, 204, 204);
+  box-shadow: none;
+  height: 1.9em;
+  outline: none;
+}
+
+.subdivobservationTemporaire select:hover {
+  border: 2px solid #c00606;
+}
+
+.subdivobservationTemporaire select:focus {
+  border: 2px solid #c00606;
+}
+
+#volumeOH1,#volumeOH2,#volumeOH3,#degre1,#degre3,#degre2, #verreSemaine{
+  width: 25px;
+  height: 17px;
+}
+
+#verreSemaine {
+  width: 25px;
+  height: 20px;
+}
+
+.unit {
+  margin-left: -5px;
+}
 
 .clinic {
   border: 2px solid #ccc; 

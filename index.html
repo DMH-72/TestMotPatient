@@ -182,10 +182,10 @@
                         <label for="constante_taille"></label>
                         <input type="number" id="constante_taille" placeholder="Taille" >cm                    
                     </div>
-                    <div class="subdivinline" style="margin-bottom: -5px;">
+                    <div class="subdivinline" style="margin-top:-5px; margin-bottom: -6px;">
                         IMC = <span id="constante_IMC">xx,x</span> kg/m²
                     </div>
-                    <div class="subdivinline" style="margin-top: -1px;">
+                    <div class="subdivinline" style="margin-top: -5px;">
                         <span id="interpretIMC"><i style="font-size: 0.8em;">Interprétation</i></span>
                     </div>
                 </div>
@@ -286,61 +286,74 @@
         <div id="ModeDeVie" class="observation">
             <h3>Mode de vie</h3>
             <div class="subSectionTemporaire">
-                <div class="subdivobservationFlex">
+                <div class="subdivobservationTemporaire">
                     <label for="tabac">Tabagisme : </label><input id="tabac" type="checkbox" onchange="paquetAnneeDisp()">                    
                 </div>
-                <div id="paquetAnnee" class="subdivobservationFlex" style="display: none">
+                <div id="paquetAnnee" class="subdivobservationTemporaire" style="display: none">
                     <input id="nbAnneeT" placeholder="Années" autocomplete="off" style="width: 50px;">
                     <input id="cParJour" placeholder="cig/jour" autocomplete="off" style="width: 50px;">
                     <span id="paquetAnneeConst">Soit xx PA</span>
                 </div>
-                <div class="subdivobservationFlex">
+                <div class="subdivobservationTemporaire">
                     <label for="alcool">Consommation OH : </label>
-                    <select id="consoAlcool">
+                    <select id="consoAlcool" onchange="grammeOHDisp()">
                         <option value="0">Jamais</option>
                         <option value="1">Occasionnelle</option>
                         <option value="2">Régulière</option>
                     </select>
                 </div>
-                <div id="grammeAlcool" class="subdivobservationFlex" style="display: none">
-                    <span id="grammeAlcoolConst">Soit xx gramme/jour</span>
+                <div id="grammeAlcool" class="subdivobservationTemporaire" style="display: none">
+                    <span id="grammeAlcoolConst" class="subdivinlineModeDeVie">xx gramme/jour, soit xU/j</span>
 
-                    <div id="grammeAlcool1" class="subdivinline">
-                        <label>Alcool 1 :</label>
-                        <input id="volumeOH1" placeholder="cL" autocomplete="off" style="width: 50px;">
-                        <input id="degré1" placeholder="°" autocomplete="off" style="width: 50px;">
+                    <div id="grammeAlcool1" class="subdivinlineModeDeVie" style="width: 100%; justify-content: flex-start">
+                        <label>🍷 1 :</label>
+                        <input id="volumeOH1" autocomplete="off">
+                        <span class="unitcL">cL</span>
+                        <input id="degre1" autocomplete="off">
+                        <span class="unitdegre">°</span>
                     </div>
-                    <div id="grammeAlcool2" class="subdivinline">
-                        <label>Alcool 2 :</label>
-                        <input id="volumeOH2" placeholder="cL " autocomplete="off" style="width: 50px;">
-                        <input id="degré2" placeholder="°" autocomplete="off" style="width: 50px;">
+                    <div id="grammeAlcool2" class="subdivinlineModeDeVie" style="width: 100%; justify-content: flex-start">
+                        <label>🍷 2 :</label>
+                        <input id="volumeOH2" autocomplete="off">
+                        <span class="unitcL">cL</span>
+                        <input id="degre2" autocomplete="off">
+                        <span class="unitdegre">°</span>
                     </div>
-                    <div id="grammeAlcool3" class="subdivinline">
-                        <label>Alcool 3 :</label>
-                        <input id="volumeOH2" placeholder="cL " autocomplete="off" style="width: 50px;">
-                        <input id="degré3" placeholder="°" autocomplete="off" style="width: 50px;">
+                    <div id="grammeAlcool3" class="subdivinlineModeDeVie" style="width: 100%; justify-content: flex-start">
+                        <label>🍷 3 :</label>
+                        <input id="volumeOH3" autocomplete="off">
+                        <span class="unit">cL</span>
+                        <input id="degre3" autocomplete="off">
+                        <span class="unit">°</span>
+                    </div>
+                </div>
+                <div id="consoSemaine" class="subdivobservationTemporaire" style="display: none"> 
+                    <div class="subdivinlineModeDeVie">
+                        <input id="verreSemaine" autocomplete="off">
+                        <span class="unite">verres/semaine</span>
+                        <input id="typeAlcoolOccasionnel" placeholder="Types d'alcool consommé" autocomplete="off">
                     </div>
                 </div>                
-                <div class="subdivobservationFlex">
+                <div class="subdivobservationTemporaire">
                     <label for="toxique">Autres toxiques : </label>
                     <input id="toxique" type="text" style="width: 125px;" autocomplete="off">
                 </div>                             
-                <div class="subdivobservationFlex" id="ModuleVaccinEnfant" style="display: none">
+                <div class="subdivobservationTemporaire" id="ModuleVaccinEnfant" style="display: none">
                     <button class="btnVaccin" id="btnVaccin" onclick="calendrierVaccinal()">Calendrier vaccinal</button><br>
                     <span id="etatVaccinal">N'est pas à jour de ses vaccinations</span><br>
                     <span id="etatVaccinal">Vaccins devant être prescrits : </span>
                 </div>                             
-                <div class="subdivobservationFlex"  id="ModuleAlimentationEnfant" style="display: none">
+                <div class="subdivobservationTemporaire"  id="ModuleAlimentationEnfant" style="display: none">
                     <label for="diversification">Diversification :</label>                  
                     <input id="diversification" placeholder="Date et difficulté" autocomplete="off" style="width: 300px;">
                     <label for="alimentation">Alimentation :</label>  
                     <input id="alimentation" placeholder="Stade et difficulé" autocomplete="off" style="width: 300px;">
                 </div>                                          
-                <div class="subdivobservationFlex" style="display: none">
+                <div class="subdivobservationTemporaire" style="display: none">
                 </div>                          
-                <div class="subdivobservationFlex" style="display: none">
+                <div class="subdivobservationTemporaire" style="display: none">
                 </div>                          
-                <div class="subdivobservationFlex" style="display: none">
+                <div class="subdivobservationTemporaire" style="display: none">
                 </div>
             </div>
         </div> <br>

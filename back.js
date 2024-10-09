@@ -120,13 +120,21 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     }
 
+
+    // régler pb une des deux valeurs rentrer sans l'autre + limiter les valeurs rentrables (positif, pas plus de 250cm)
     function IMCCalc() {
         const taille = document.getElementById("constante_taille").value / 100;
         const poids = document.getElementById("constante_poids").value;
-        document.getElementById("constante_IMC").innerHTML = `${(poids / (taille*taille)).toFixed(2)}`;
         const IMC = (poids / (taille*taille))
-        document.getElementById("constante_IMC").innerHTML = `${IMC.toFixed(2)}`;
-        if (IMC.toFixed(1) < 18.5) {
+
+        if (IMC > 0 && IMC < 100) {
+            document.getElementById("constante_IMC").innerHTML = `${IMC.toFixed(2)}`;
+        } else {
+            document.getElementById("constante_IMC").innerHTML = `xx,x`; 
+        }
+
+
+        if (taille!="" && taille!="" && IMC.toFixed(1) < 18.5) {
             document.getElementById("interpretIMC").innerHTML = `<i style="font-size: 0.8em; color:red;">Maigreur</i>`;
         } else if (IMC.toFixed(1)<25) {
             document.getElementById("interpretIMC").innerHTML = `<i style="font-size: 0.8em; color:green;">Normal</i>`;
@@ -139,8 +147,12 @@ document.addEventListener('DOMContentLoaded', function () {
         else if (IMC.toFixed(1)<40) {
             document.getElementById("interpretIMC").innerHTML = `<i style="font-size: 0.8em; color:red;">Obésité sévère</i>`;
         }
-        else {
+        else if (IMC.toFixed(1)>40) {
             document.getElementById("interpretIMC").innerHTML = `<i style="font-size: 0.8em; color:red;"><b>Obésité morbide</b></i>`;
+        }
+        else {
+            document.getElementById("interpretIMC").innerHTML = `<i style="font-size: 0.8em;">Interprétation</i>`;
+
         }
     }
 
@@ -150,6 +162,19 @@ document.addEventListener('DOMContentLoaded', function () {
         
         const pa = nbAnneeTabacConst * (cigParJourConst / 20);
         document.getElementById("paquetAnneeConst").innerHTML = `Soit ${pa} PA`;
+    }
+
+    function grammeAlcoolCalc() {
+        const const_volumeOH1 = document.getElementById("volumeOH1").value;
+        const const_degre1 = document.getElementById("degre1").value;
+        const const_volumeOH2 = document.getElementById("volumeOH2").value;
+        const const_degre2 = document.getElementById("degre2").value;
+        const const_volumeOH3 = document.getElementById("volumeOH3").value;
+        const const_degre3 = document.getElementById("degre3").value;
+
+        const grammeOH = 0.08* ( (const_volumeOH1*const_degre1) + (const_volumeOH2*const_degre2) + (const_volumeOH3*const_degre3));
+
+        document.getElementById("grammeAlcoolConst").innerHTML = `${grammeOH} gramme/jour, soit ${(grammeOH/10).toFixed(1)} U/j`;
     }
 
     // function calendrierVaccinal(){
@@ -191,6 +216,7 @@ document.addEventListener('DOMContentLoaded', function () {
     // }
 
     
+
 dateNaissance.addEventListener('input',ageCalc);
 constante_pressionArterielleS1.addEventListener('input',PAMCalc1);
 constante_pressionArterielleD1.addEventListener('input',PAMCalc1);
@@ -209,6 +235,12 @@ constant_glycemie.addEventListener('input', GlycemieCalc);
 uniteGlycemie.addEventListener('change',GlycemieCalc);
 document.getElementById("nbAnneeT").addEventListener('input',paquetAnneeCal);
 document.getElementById("cParJour").addEventListener('input',paquetAnneeCal);
+document.getElementById("volumeOH1").addEventListener('input', grammeAlcoolCalc);
+document.getElementById("degre1").addEventListener('input', grammeAlcoolCalc);
+document.getElementById("volumeOH2").addEventListener('input', grammeAlcoolCalc);
+document.getElementById("degre2").addEventListener('input', grammeAlcoolCalc);
+document.getElementById("volumeOH3").addEventListener('input', grammeAlcoolCalc);
+document.getElementById("degre3").addEventListener('input', grammeAlcoolCalc);
 // document.getElementById("btnVaccin").addEventListener('onclick',calendrierVaccinal);
 });
 
@@ -220,6 +252,20 @@ function paquetAnneeDisp() {
         document.getElementById(`paquetAnnee`).style.display = "block";
     } else {
         document.getElementById(`paquetAnnee`).style.display = "none";
+    }
+}
+
+function grammeOHDisp(){
+    var test = document.getElementById(`consoAlcool`).value;
+    if (test == 0){
+        document.getElementById(`grammeAlcool`).style.display = "none";
+        document.getElementById(`consoSemaine`).style.display = "none";
+    } else if (test ==1){
+        document.getElementById(`grammeAlcool`).style.display = "none";
+        document.getElementById(`consoSemaine`).style.display = "block";
+    } else {
+        document.getElementById(`grammeAlcool`).style.display = "block";
+        document.getElementById(`consoSemaine`).style.display = "none";
     }
 }
 
