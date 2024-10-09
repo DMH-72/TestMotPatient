@@ -75,8 +75,10 @@ document.addEventListener('DOMContentLoaded', function () {
 
         if (age >= 0 && age < 18) {
             document.getElementById(`identiteAccompagnant`).style.display = "block";
+            document.getElementById(`ModuleVaccinEnfant`).style.display = "block";
         } else {
-            document.getElementById(`identiteAccompagnant`).style.display = "none";
+            document.getElementById(`identiteAccompagnant`).style.display = "none";            
+            document.getElementById(`ModuleVaccinEnfant`).style.display = "none";
         }
 
         if (age >= 0 && age < 5) {
@@ -85,6 +87,12 @@ document.addEventListener('DOMContentLoaded', function () {
         } else {
             document.getElementById('btnPed').checked = false; 
             addEventListener('input',toggleSection(`btnPed`,`sectionPed`));
+        }
+
+        if (age >= 0 && age < 5) {
+            document.getElementById(`ModuleAlimentationEnfant`).style.display = "block";
+        } else {
+            document.getElementById(`ModuleAlimentationEnfant`).style.display = "none";  
         }
 
 
@@ -144,6 +152,44 @@ document.addEventListener('DOMContentLoaded', function () {
         document.getElementById("paquetAnneeConst").innerHTML = `Soit ${pa} PA`;
     }
 
+    // function calendrierVaccinal(){
+    //     alert("test");
+    //     // pour l'instant c'est juste la même fonction que celle qui calcule l'âge, mot à mot 
+    
+    //     var dateNaissance = new Date(getElementById("dateNaissance"));
+                
+    //     // Récupérer la date actuelle
+    //     var today = new Date();
+    
+    //     // Calculer l'âge en années
+    //     var age = today.getFullYear() - dateNaissance.getFullYear();
+    //     var monthDiff = today.getMonth() - dateNaissance.getMonth();
+    //     var dayDiff = today.getDate() - dateNaissance.getDate();
+    
+    //     // Ajustement si l'anniversaire n'est pas encore passé cette année
+    //     if (monthDiff < 0 || (monthDiff === 0 && dayDiff < 0)) {
+    //         age--;
+    //     }
+    
+    //     // Calculer l'âge en mois pour les enfants de moins de 3 ans
+    //     var ageInMonths = (today.getFullYear() - dateNaissance.getFullYear()) * 12 + today.getMonth() - dateNaissance.getMonth();
+    //     if (dayDiff < 0) {
+    //         ageInMonths--;
+    //     }
+    
+    //     // Afficher l'âge seulement si le résultat est entre 0 et 150 ans
+    //     if (age >= 0 && age < 150) {
+    //         if (age < 3) {
+    //             alert(`Test (${ageInMonths} mois)`);
+    //         } else {
+    //             alert(`Test (${age} ans)`);
+    //         }
+    //     } else {
+    //         alert(`Test erreur âge`);; // Ne rien afficher si hors de l'intervalle
+    //     } 
+    
+    // }
+
     
 dateNaissance.addEventListener('input',ageCalc);
 constante_pressionArterielleS1.addEventListener('input',PAMCalc1);
@@ -156,12 +202,14 @@ constante_pressionArterielleDControlat.addEventListener('input',PAMCalcControlat
 constante_poids.addEventListener('input',IMCCalc);
 constante_taille.addEventListener('input',IMCCalc);
 constant_diurese_jour.addEventListener('input',DiureseCalc);
+constante_poids.addEventListener('input',DiureseCalc);
 constante_poids.addEventListener('input',variationPoids);
 constante_poids_anterieur.addEventListener('input',variationPoids);
 constant_glycemie.addEventListener('input', GlycemieCalc);
 uniteGlycemie.addEventListener('change',GlycemieCalc);
 document.getElementById("nbAnneeT").addEventListener('input',paquetAnneeCal);
 document.getElementById("cParJour").addEventListener('input',paquetAnneeCal);
+// document.getElementById("btnVaccin").addEventListener('onclick',calendrierVaccinal);
 });
 
 
@@ -231,16 +279,24 @@ function InitialisationRT() {
     </div>`;
 }
 
-const editableDiv = document.querySelector('.editable-div');
-const fieldset = document.querySelector('.fieldsetText');
+const editableDivs = document.querySelectorAll('.editable-div');
 
-editableDiv.addEventListener('focus', () => {
-  fieldset.classList.add('focused');
+editableDivs.forEach(editableDiv => {
+  editableDiv.addEventListener('focus', () => {
+    const fieldset = editableDiv.closest('.fieldsetText');
+    if (fieldset) {
+      fieldset.classList.add('focused');
+    }
+  });
+
+  editableDiv.addEventListener('blur', () => {
+    const fieldset = editableDiv.closest('.fieldsetText');
+    if (fieldset) {
+      fieldset.classList.remove('focused');
+    }
+  });
 });
 
-editableDiv.addEventListener('blur', () => {
-  fieldset.classList.remove('focused');
-});
 
 
 

@@ -8,6 +8,8 @@ body {
 
 header {
   background-color: #054293;
+  
+  border-bottom: 4px solid #333;
   color: white;
   padding: 0px;
   padding-top: 5px;
@@ -117,6 +119,18 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 
 input[type="date"] {
   font-family: system-ui;
+  outline: none;
+  height: 22px;
+  padding : 2px;
+  border-radius: 4px;
+  border: 2px solid rgb(204, 204, 204); 
+  text-align: center;
+}
+input[type="date"]:hover {  
+  border: 2px solid #c00606; 
+}
+input[type="date"]:focus {  
+  border: 2px solid #c00606; 
 }
 
 /* input[type="checkbox"] {
@@ -200,7 +214,7 @@ input[type="checkbox"]:checked + label::before {
 }
 
 .fieldDeroulant:hover .arrow {
-  transform: rotate(-135deg); /* Flèche pointant vers le haut */
+  transform: rotate(-135deg) translate(0px, -5px); /* Flèche pointant vers le haut */
 }
 
 .btnCt {
@@ -209,7 +223,7 @@ input[type="checkbox"]:checked + label::before {
 }
 
 .observationConstantes {
-  scroll-margin-top: 68px;
+  scroll-margin-top: 85px;
   background-color: white;
   border : 1px solid black;  
   border-radius: 8px;
@@ -223,12 +237,8 @@ input[type="checkbox"]:checked + label::before {
   grid-template-columns: 120px 1fr;
 }
 
-
-
-
-
 .observation {
-  scroll-margin-top: 68px;
+  scroll-margin-top: 85px;
   background-color: white;
   border : 1px solid black;  
   border-radius: 8px;
@@ -270,13 +280,33 @@ input[type="checkbox"]:checked + label::before {
 }
 
 .subdivobservationFlex input {
-  width: auto;
+  width: fit-content;
   height: 1.6em;
   margin: 0px;
+  border-radius: 5px;
+  border: 2px solid rgb(204, 204, 204);
+  box-shadow: none;
+}
+.subdivobservationFlex input:hover {
+  border: 2px solid #c00606; 
+}
+.subdivobservationFlex input:focus {
+  outline: none;
+  border: 2px solid #c00606; 
 }
 
-.subdivobservationFlex select {
+.subdivobservationFlex select {  
+  border-radius: 5px;
+  border: 2px solid rgb(204, 204, 204);
+  box-shadow: none;
   height: 1.9em;
+  outline:none;
+}
+.subdivobservationFlex select:hover {  
+  border: 2px solid #c00606; 
+}
+.subdivobservationFlex select:focus {
+  border: 2px solid #c00606; 
 }
 
 .divConstantesFlex {
@@ -290,8 +320,10 @@ input[type="checkbox"]:checked + label::before {
 
 .subdivConstantesFlex {
   border: 1px solid #a5a5a5;
-  background-color: rgb(218, 218, 218);
-  border-radius : 4px;  
+  background-color:  #054293;
+  border: 2px solid #333;
+  color: rgb(247, 247, 247);
+  border-radius : 6px;  
   box-shadow: 0px 0px 3px 1px rgb(155, 155, 155);
   gap: 5px;
   padding: 5px;
@@ -306,6 +338,52 @@ input[type="checkbox"]:checked + label::before {
   align-content: center;
 }
 
+.subdivConstantesFlex input {
+  width: 40px;
+  height: 26px;
+  margin: 0px;
+  padding : 0px;
+  text-align: center;
+  line-height: 2px;
+  border-radius: 5px;
+  border: 2px solid rgb(204, 204, 204);
+  box-shadow: none;
+  outline: none;
+}
+.subdivConstantesFlex input:hover {  
+  border: 2px solid #c00606; 
+}
+.subdivConstantesFlex input:focus {
+  border: 2px solid #c00606; 
+}
+.subdivConstantesFlex select {
+  height: 30px;
+  margin: 0px;
+  padding : 2px;
+  text-align: center;
+  line-height: 2px;
+  border-radius: 5px;
+  border: 2px solid rgb(204, 204, 204);
+  box-shadow: none;
+  outline: none;
+}
+.subdivConstantesFlex select:hover {  
+  border: 2px solid #c00606; 
+}
+.subdivConstantesFlex select:focus {
+  border: 2px solid #c00606; 
+}
+
+
+.subdivinline {
+  width: 150px;
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  align-items: baseline;
+  flex-direction: row;
+  flex-wrap: nowrap;
+}
 
 .subSectionTemporaire{
   display : flex;

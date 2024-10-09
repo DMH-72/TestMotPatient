@@ -35,6 +35,7 @@
     </header>
 
     <main>
+        <br>
         <div id="Identité" class="observation">
             <h3>Identité et informations générales</h3>
             <div class="divobsersationFlex">
@@ -149,41 +150,44 @@
                         <option value="0">G</option>
                         <option value="1">D</option>
                     </select>
-                    <input id="constante_pressionArterielleS1" placeholder="PaS" style="width: 35px; height: 15px;"
-                        autocomplete="off"> /
-                    <label for="constante_pressionArterielleD1"></label>
-                    <input id="constante_pressionArterielleD1" placeholder="PaD" style="width: 35px; height: 15px;"
+                    <input id="constante_pressionArterielleS1" placeholder="PaS" "
+                        autocomplete="off">/
+                    <input id="constante_pressionArterielleD1" placeholder="PaD""
                         autocomplete="off">
                     <br><i style="font-size: 0.9em;">PAM = <span id="PAM1">xx</span> mmHg</i>
                 </div>
                 <div class="subdivConstantesFlex">
                     <label for="constante_frequenceCardiaque"></label>
-                    <input type="number" id="constante_frequenceCardiaque" placeholder="FC"
-                        style="width: 35px; height: 15px;"> bpm
+                    <input type="number" id="constante_frequenceCardiaque" placeholder="FC"> bpm
                 </div>
                 <div class="subdivConstantesFlex">
-                    <label for="constante_frequenceRespiratoire">Fqc resp : </label>
-                    <input type="number" id="constante_frequenceRespiratoire" placeholder="FR"
-                        style="width: 35px; height: 15px;"> rpm 
-                    <label for="constante_saturation"></label>
-                    <input type="number" id="constante_saturation" placeholder="SpO₂"
-                        style="width: 35px; height: 15px;"> % sous
-                    <label for="constante_02"></label>
-                    <input type="number" id="constante_02" placeholder="O₂"
-                        style="width: 35px; height: 15px; text-align: center;"> L
+                    <div class="subdivinline">
+                        <label for="constante_frequenceRespiratoire"></label>
+                        <input type="number" id="constante_frequenceRespiratoire" placeholder="FR"> rpm 
+                    </div>
+                    <div class="subdivinline" style="width:180px;">
+                        <input type="number" id="constante_saturation" placeholder="SpO₂">% sous
+                        <input type="number" id="constante_02" placeholder="O₂">L
+                    </div>
                 </div>                
                 <div class="subdivConstantesFlex">
                     <label for="constante_temperature"></label>
-                    <input type="number" id="constante_temperature" placeholder="T°" style="width: 35px; height: 15px;">
+                    <input type="number" id="constante_temperature" placeholder="T°">
                     °C
                 </div>
                 <div class="subdivConstantesFlex">
-                    <label for="constante_poids"></label>
-                    <input type="number" id="constante_poids" placeholder="Poids" style="width: 55px; height: 15px;">kg
-                    <label for="constante_taille"></label>
-                    <input type="number" id="constante_taille" placeholder="Taille" style="width: 55px; height: 15px;">cm                    
-                    IMC = <span id="constante_IMC">xx,x</span> kg/m²<br>
-                    <span id="interpretIMC"><i style="font-size: 0.8em;">Interprétation</i></span>
+                    <div class="subdivinline">
+                        <label for="constante_poids"></label>
+                        <input type="number" id="constante_poids" placeholder="Poids">kg
+                        <label for="constante_taille"></label>
+                        <input type="number" id="constante_taille" placeholder="Taille" >cm                    
+                    </div>
+                    <div class="subdivinline" style="margin-bottom: -5px;">
+                        IMC = <span id="constante_IMC">xx,x</span> kg/m²
+                    </div>
+                    <div class="subdivinline" style="margin-top: -1px;">
+                        <span id="interpretIMC"><i style="font-size: 0.8em;">Interprétation</i></span>
+                    </div>
                 </div>
                 <div class="subdivConstantesFlex">
                     <label for="AVPU">AVPU : </label>
@@ -195,14 +199,18 @@
                     </select>
                 </div>
 
-                <div class="subdivConstantesFlex" id="sectionPAControlat" style="display: none;">
-                    <p id="constante_pressionArterielleCoteControlat">D</p>
-                    <input id="constante_pressionArterielleSControlat" placeholder="PaS" style="width: 35px; height: 15px;"
+                <div class="subdivConstantesFlex" id="sectionPAControlat" style="display: none;">                    
+                    <div class="subdivinline" style="margin-top: 0px;>
+                        <p id="constante_pressionArterielleCoteControlat" style="margin-right: 10px;">D :</p>
+                        <input id="constante_pressionArterielleSControlat" placeholder="PaS""
                         autocomplete="off"> /
-                    <label for="constante_pressionArterielleDControlat"></label>
-                    <input id="constante_pressionArterielleDControlat" placeholder="PaD" style="width: 35px; height: 15px;"
+                    <input id="constante_pressionArterielleDControlat" placeholder="PaD"
                         autocomplete="off">
-                    <br><i style="font-size: 0.9em;">PAM = <span id="PAMControlat">xx</span> mmHg</i>
+                    </div>
+                    <div class="subdivinline" style="margin-top: 0px;">
+                        <i style="font-size: 0.9em;">PAM = <span id="PAMControlat">xx</span> mmHg</i>
+                    </div>                   
+                    
                 </div>
                 <div class="subdivConstantesFlex" id="sectionLateralite" style="display: none;">
                     <label for="lateralite"> Latéralité : </label>
@@ -213,49 +221,58 @@
                     </select>
                 </div>
                 <div class="subdivConstantesFlex" id="sectionDiurese" style="display: none;">
-                    <label for="constant_diurese_jour"></label>
-                    <input type="number" id="constant_diurese_jour" placeholder="Diurèse"
-                        style="width: 55px; height: 15px;"> ml/24h
-                    <br><i style="font-size: 0.9em;">Soit : <span id="constant_diurese_horraire">xx,xx</span>
-                        ml/kg/h</i>
+                    <div class="subdivinline">
+                    <input type="number" id="constant_diurese_jour" placeholder="Diurèse" style="width: 65px;"
+                        > ml/24h
+                    </div>
+                    <div class="subdivinline">
+                        <i style="font-size: 0.9em;">Soit : <span id="constant_diurese_horraire">xx,xx</span>
+                            ml/kg/h</i>
+                    </div>
                 </div>                
                 <div class="subdivConstantesFlex" id="sectionTRC" style="display: none;">
                     <label for="constante_TRC"></label>
-                    <input type="number" id="constante_TRC" placeholder="TRC"
-                        style="width: 35px; height: 15px;"> sec
+                    <input type="number" id="constante_TRC" placeholder="TRC"> sec
                 </div>
                 <div class="subdivConstantesFlex" id="sectionGlycemie" style="display: none;">
-                    <label for="constant_glycemie"></label>
-                    <input type="number" id="constant_glycemie" placeholder="Glycémie"
-                        style="width: 55px; height: 15px;">
-                    <select name="uniteGlycemie" id="uniteGlycemie">
-                        <option value="0">g/L</option>
-                        <option value="1">mmol/L</option>
-                    </select>
-                    <br><i style="font-size: 0.9em;">Soit : <span id="constant_glycemieConvert">xx,xx
+                    <div class="subdivinline">
+                        <label for="constant_glycemie"></label>
+                        <input type="number" id="constant_glycemie" placeholder="Glycémie" style="width: 65px;">
+                        <select name="uniteGlycemie" id="uniteGlycemie" style="width: 45px;">
+                            <option value="0">g/L</option>
+                            <option value="1">mmol/L</option>
+                        </select>
+                    </div>
+                    <div class="subdivinline">
+                    <i style="font-size: 0.9em;">Soit : <span id="constant_glycemieConvert">xx,xx
                             mmol/L</span></i>
+                    </div>
                 </div>
+
                 <div class="subdivConstantesFlex" id="sectionVarPoids" style="display: none;">
                     <label for="constante_poids_anterieur"></label>
                     <input type="number" id="constante_poids_anterieur" placeholder="Poids"
-                        style="width: 55px; height: 15px;"> kg il y a
+                        > kg il y a
                     <label for="constante_poids_anterieur_date"></label>
                     <input type="number" id="constante_poids_date" placeholder="Date"
-                        style="width: 55px; height: 15px;"> mois, soit
+                        > mois, soit
                     <span id="constante_pertePoids">xx</span> %
                 </div>
+
                 <div class="subdivConstantesFlex" id="sectionTrouMollet" style="display: none;">
-                    <label for="constante_TourMolletG">G :</label>
-                    <input type="number" id="constante_TourMolletG" placeholder="Mollet"
-                        style="width: 35px; height: 15px;"> cm
-                    <label for="constante_TourMolletD">D :</label>
-                    <input type="number" id="constante_TourMolletD" placeholder="Mollet"
-                        style="width: 35px; height: 15px;"> cm 
+                    <div class="subdivinline">
+                        <label for="constante_TourMolletG">G :</label>
+                        <input type="number" id="constante_TourMolletG" placeholder="Mollet" > cm
+                    </div>
+                    <div class="subdivinline" style="margin-top: 5px;">
+                        <label for="constante_TourMolletD">D :</label>
+                    <input type="number" id="constante_TourMolletD" placeholder="Mollet"> cm 
+                    </div>                   
+                    
                 </div>
                 <div class="subdivConstantesFlex" id="sectionTrouTaille" style="display: none;">
                     <label for="constante_TourTaille"></label>
-                    <input type="number" id="constante_TourTaille" placeholder="TT"
-                        style="width: 35px; height: 15px;"> cm
+                    <input type="number" id="constante_TourTaille" placeholder="TT"> cm
                 </div>
                 <div class="subdivConstantesFlex" id="sectionPed" style="display: none;">
                     - Tour de crane <i>⇒ si âge inf à 5 ans </i><br>
@@ -284,14 +301,46 @@
                         <option value="1">Occasionnelle</option>
                         <option value="2">Régulière</option>
                     </select>
+                </div>
+                <div id="grammeAlcool" class="subdivobservationFlex" style="display: none">
+                    <span id="grammeAlcoolConst">Soit xx gramme/jour</span>
+
+                    <div id="grammeAlcool1" class="subdivinline">
+                        <label>Alcool 1 :</label>
+                        <input id="volumeOH1" placeholder="cL" autocomplete="off" style="width: 50px;">
+                        <input id="degré1" placeholder="°" autocomplete="off" style="width: 50px;">
+                    </div>
+                    <div id="grammeAlcool2" class="subdivinline">
+                        <label>Alcool 2 :</label>
+                        <input id="volumeOH2" placeholder="cL " autocomplete="off" style="width: 50px;">
+                        <input id="degré2" placeholder="°" autocomplete="off" style="width: 50px;">
+                    </div>
+                    <div id="grammeAlcool3" class="subdivinline">
+                        <label>Alcool 3 :</label>
+                        <input id="volumeOH2" placeholder="cL " autocomplete="off" style="width: 50px;">
+                        <input id="degré3" placeholder="°" autocomplete="off" style="width: 50px;">
+                    </div>
                 </div>                
                 <div class="subdivobservationFlex">
                     <label for="toxique">Autres toxiques : </label>
                     <input id="toxique" type="text" style="width: 125px;">
                 </div>                             
-                <div class="subdivobservationFlex">
+                <div class="subdivobservationFlex" id="ModuleVaccinEnfant" style="display: none">
+                    <button class="btnVaccin" id="btnVaccin" onclick="calendrierVaccinal()">Calendrier vaccinal</button><br>
+                    <span id="etatVaccinal">N'est pas à jour de ses vaccinations</span><br>
+                    <span id="etatVaccinal">Vaccins devant être prescrits : </span>
                 </div>                             
-                <div class="subdivobservationFlex">
+                <div class="subdivobservationFlex"  id="ModuleAlimentationEnfant" style="display: none">
+                    <label for="diversification">Diversification :</label>                  
+                    <input id="diversification" placeholder="Date et difficulté" autocomplete="off" style="width: 300px;">
+                    <label for="alimentation">Alimentation :</label>  
+                    <input id="alimentation" placeholder="Stade et difficulé" autocomplete="off" style="width: 300px;">
+                </div>                                          
+                <div class="subdivobservationFlex" style="display: none">
+                </div>                          
+                <div class="subdivobservationFlex" style="display: none">
+                </div>                          
+                <div class="subdivobservationFlex" style="display: none">
                 </div>
             </div>
         </div> <br>
