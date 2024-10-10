@@ -34,18 +34,27 @@
         </nav>
     </header>
 
+    <!-- <div class="input-group type-google">
+        <input type="text" name="name" id="name" required>
+        <label for="name">Contenu</label>
+    </div> -->
+
     <main>
         <br>
         <div id="Identité" class="observation">
             <h3>Identité et informations générales</h3>
-            <div class="divobsersationFlex">
+            <div class="divobsersationFlex">                
                 <div class="subdivobservationFlex">
-                    <label for="prenom">Prénom : </label>
-                    <input id="prenom" placeholder="Prénom" autocomplete="off">
-                </div>
+                    <div class="input-group type-google">
+                        <input type="text" id="prenom" autocomplete="off" required>
+                        <label for="prenom">Prénom </label>
+                    </div>
+                </div>                 
                 <div class="subdivobservationFlex">
-                    <label for="nom">Nom : </label>
-                    <input id="nom" placeholder="Nom" autocomplete="off">
+                    <div class="input-group type-google">
+                        <input id="nom" autocomplete="off" required>
+                        <label for="nom">Nom </label>
+                    </div>
                 </div>
                 <div class="subdivobservationFlex">
                     <label for="sex">Sexe : </label>
@@ -147,38 +156,61 @@
             <div class="divConstantesFlex">
                 <div class="subdivConstantesFlex">
                     <select id="constante_pressionArterielleCote1">
-                        <option value="0">G</option>
-                        <option value="1">D</option>
+                        <option value="0" style="text-align: left;">G</option>
+                        <option value="1" style="text-align: left;">D</option>
                     </select>
-                    <input id="constante_pressionArterielleS1" placeholder="PaS" "
-                        autocomplete="off">/
-                    <input id="constante_pressionArterielleD1" placeholder="PaD""
-                        autocomplete="off">
+                    <div class="input-group type-google constantes" >
+                        <input type="text" id="constante_pressionArterielleS1" autocomplete="off" required style="background-color: #054293">
+                        <label for="constante_pressionArterielleS1" style="background-color: #054293">PaS</label>                        
+                    </div>
+                    /
+                    <div class="input-group type-google constantes">
+                        <input type="text" id="constante_pressionArterielleD1" autocomplete="off" required style="background-color: #054293">
+                        <label for="constante_pressionArterielleD1" style="background-color: #054293">PaD</label>                        
+                    </div>
                     <br><i style="font-size: 0.9em;">PAM = <span id="PAM1">xx</span> mmHg</i>
                 </div>
-                <div class="subdivConstantesFlex">
-                    <label for="constante_frequenceCardiaque"></label>
-                    <input type="number" id="constante_frequenceCardiaque" placeholder="FC"> bpm
+                <div class="subdivConstantesFlex" >
+                    <div class="input-group type-google constantes" >
+                        <input type="text" id="constante_frequenceCardiaque" autocomplete="off" required style="background-color: #054293">
+                        <label for="constante_frequenceCardiaque" style="background-color: #054293">Fc </label>                        
+                    </div>
+                    bpm
                 </div>
                 <div class="subdivConstantesFlex">
                     <div class="subdivinline">
-                        <label for="constante_frequenceRespiratoire"></label>
-                        <input type="number" id="constante_frequenceRespiratoire" placeholder="FR"> rpm 
+                        <div class="input-group type-google constantes" >
+                            <input type="text" id="constante_frequenceRespiratoire" autocomplete="off" required style="background-color: #054293">
+                            <label for="constante_frequenceRespiratoire" style="background-color: #054293">FR</label>                        
+                        </div>
+                        rpm
                     </div>
                     <div class="subdivinline" style="width:180px;">
-                        <input type="number" id="constante_saturation" placeholder="SpO₂">% sous
-                        <input type="number" id="constante_02" placeholder="O₂">L
+                        <div class="input-group type-google constantes" style="margin-top: 0px;">
+                            <input type="text" id="constante_saturation" autocomplete="off" required style="background-color: #054293">
+                            <label for="constante_saturation" style="background-color: #054293">Sat</label>                        
+                        </div>
+                        % sous
+                        <div class="input-group type-google constantes" style="margin-top: 0px;">
+                            <input type="text" id="constante_02" autocomplete="off" required style="background-color: #054293">
+                            <label for="constante_02" style="background-color: #054293">O₂</label>                        
+                        </div>
+                        L
                     </div>
                 </div>                
                 <div class="subdivConstantesFlex">
-                    <label for="constante_temperature"></label>
-                    <input type="number" id="constante_temperature" placeholder="T°">
+                    <div class="input-group type-google constantes" >
+                        <input type="text" id="constante_temperature" autocomplete="off" required style="background-color: #054293">
+                        <label for="constante_temperature" style="background-color: #054293">T°</label>                        
+                    </div>
                     °C
                 </div>
                 <div class="subdivConstantesFlex">
                     <div class="subdivinline">
-                        <label for="constante_poids"></label>
-                        <input type="number" id="constante_poids" placeholder="Poids">kg
+                        <div class="input-group type-google constantes poids">
+                            <input type="number" id="constante_poids" autocomplete="off" required style="background-color: #054293">
+                            <label for="constante_poids" style="background-color: #054293">Poids</label>                        
+                        </div>kg
                         <label for="constante_taille"></label>
                         <input type="number" id="constante_taille" placeholder="Taille" >cm                    
                     </div>
@@ -287,12 +319,16 @@
             <h3>Mode de vie</h3>
             <div class="subSectionTemporaire">
                 <div class="subdivobservationTemporaire">
-                    <label for="tabac">Tabagisme : </label><input id="tabac" type="checkbox" onchange="paquetAnneeDisp()">                    
+                    <label for="tabac">Tabagisme : </label>
+                    <input id="tabac" type="checkbox" onchange="paquetAnneeDisp()">                    
                 </div>
-                <div id="paquetAnnee" class="subdivobservationTemporaire" style="display: none">
+                <div id="paquetAnnee" class="subdivinlineModeDeVie" style="display: none">
                     <input id="nbAnneeT" placeholder="Années" autocomplete="off" style="width: 50px;">
                     <input id="cParJour" placeholder="cig/jour" autocomplete="off" style="width: 50px;">
                     <span id="paquetAnneeConst">Soit xx PA</span>
+                    <br>
+                    <label for="sevrageTabac">Sevré :</label>
+                    <input id="sevrageTabac" type="checkbox">
                 </div>
                 <div class="subdivobservationTemporaire">
                     <label for="alcool">Consommation OH : </label>
@@ -308,23 +344,23 @@
                     <div id="grammeAlcool1" class="subdivinlineModeDeVie" style="width: 100%; justify-content: flex-start">
                         <label>🍷 1 :</label>
                         <input id="volumeOH1" autocomplete="off">
-                        <span class="unitcL">cL</span>
+                        <span class="unit">cL </span>
                         <input id="degre1" autocomplete="off">
-                        <span class="unitdegre">°</span>
+                        <span class="unit">° </span>
                     </div>
                     <div id="grammeAlcool2" class="subdivinlineModeDeVie" style="width: 100%; justify-content: flex-start">
                         <label>🍷 2 :</label>
                         <input id="volumeOH2" autocomplete="off">
-                        <span class="unitcL">cL</span>
+                        <span class="unit">cL </span>
                         <input id="degre2" autocomplete="off">
-                        <span class="unitdegre">°</span>
+                        <span class="unit">° </span>
                     </div>
                     <div id="grammeAlcool3" class="subdivinlineModeDeVie" style="width: 100%; justify-content: flex-start">
                         <label>🍷 3 :</label>
                         <input id="volumeOH3" autocomplete="off">
-                        <span class="unit">cL</span>
+                        <span class="unit">cL </span>
                         <input id="degre3" autocomplete="off">
-                        <span class="unit">°</span>
+                        <span class="unit">° </span>
                     </div>
                 </div>
                 <div id="consoSemaine" class="subdivobservationTemporaire" style="display: none"> 
@@ -522,37 +558,8 @@
             </div>
         </div>
 
-        <div>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
+        <div style="height: 1000px;">
+             
         </div>
 
     </main>

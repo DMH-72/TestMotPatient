@@ -6,6 +6,7 @@ body {
   padding: 0;
 }
 
+/* ######################## EN-TETE ######################## */
 header {
   background-color: #054293;
   
@@ -70,25 +71,6 @@ nav {
   border-radius: 8px;
 }
 
-@media (max-width: 835px) {
-  header {
-    grid-template-columns: 3em 1fr; /* Passer en disposition sur une seule colonne */
-    grid-template-rows: auto; /* Ajustement automatique des lignes */
-  }
-
-  img {
-    width: auto;
-    margin: 0 auto;
-    max-height: 3em;
-  }
-
-  nav {
-    order: 3; /* Déplacer nav sous l'image et le titre */
-    grid-column: 1 / span 2;
-    width: 100%; /* Occuper toute la largeur */
-    margin-top: 10px;
-  }
-}
 
 main {
   padding: 20px;
@@ -127,48 +109,11 @@ input[type="date"] {
   text-align: center;
 }
 input[type="date"]:hover {  
-  border: 2px solid #c00606; 
+  border: 2px solid rgb(227, 0, 46); 
 }
 input[type="date"]:focus {  
-  border: 2px solid #c00606; 
+  border: 2px solid rgb(227, 0, 46); 
 }
-
-/* input[type="checkbox"] {
-  display: none;
-}
-input[type="checkbox"] + label {
-  box-sizing: border-box;
-  display: inline-block;
-  width: 1.5rem;
-  height: 1rem;
-  border-radius: 1rem;
-  padding:2px;
-  background-color: #c0ceda ;
-  transition: all 0.5s ;
-}
-input[type="checkbox"] + label::before {
-  box-sizing: border-box;
-  display: block;
-  content: "";
-  height: calc(1rem - 2px);
-  width: calc(1rem - 2px);
-  border-radius: 50%;
-  background-color: #fff;
-  transition: all 0.5s ;
-}
-input[type="checkbox"]:checked + label {
-  background-color: #00B7E8 ;
-}
-input[type="checkbox"]:checked + label::before {
-  margin-left: 1rem ;
-} */
-
-
-
-
-
-
-
 
 .fieldDeroulant {
   font-size: 0.8em;
@@ -248,16 +193,109 @@ input[type="checkbox"]:checked + label::before {
 }
 
 .divobsersationFlex {
-  display: flex;
-  justify-content: flex-start;
-  flex-wrap: wrap;
-  align-content: center;
+  display: grid;
+  grid-template-columns: minmax(140px, 1fr) minmax(140px, 1fr) minmax(120px, 1fr) minmax(240px, 1fr) minmax(260px, 1fr) minmax(200px, 1fr);
+  align-content: center;  
+  align-items: baseline;
+  justify-items: start;
   padding: 10px;
+  gap:10px
 }
 
+.input-group {
+  position: relative;
+  width: 7rem;
+  margin: 1rem 0;
+  margin-bottom: 0px;
+  margin-top: 0.5rem;
+}
+
+.input-group.constantes{
+  width: 3.5rem;
+}
+
+.input-group.constantes.poids{
+  width: 7rem;
+}
+
+.input-group input {
+  width : 100%;
+  padding : 0.6rem;
+  font-size: 0.9rem;
+  background-color: rgb(255, 255, 255);
+  border: none;
+  outline: none;
+}
+
+.input-group.type-google input{
+  border: 2px solid #ccc;
+  border-radius: .4rem;
+}
+
+.input-group.type-google.constantes input{
+  border: 2px solid #ffffff;
+  border-radius: .4rem;
+  color : #ffff;
+}
+
+.input-group.type-google input:focus{
+  border: .1rem solid rgb(227, 0, 46);
+  color : rgb(227, 0, 46);
+}
+
+.input-group label {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-65%);
+  color: #000000;
+  background-color: rgb(255, 255, 255);
+  font-size : 0.9rem;
+  transition: .2s ease-in-out;
+}
+
+.input-group.type-google label{
+  left: 0.5rem;
+  padding: .4rem;
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+.input-group input:focus + label,
+.input-group input:valid + label
+{
+  top:7%;
+  font-size: .7rem;
+  color : rgb(227, 0, 46);
+}
+
+.input-group input:not(:focus) + label {
+  color: #a5a5a5;
+}
+
+.input-group.constantes input:not(:focus) + label {
+  color: #ffffff;
+}
+
+.input-group .boder {
+  position: absolute;
+  left:0;
+  bottom: 0;
+  height: .1rem;
+  width:100%;
+  background-color: rgb(227, 0, 46) ;
+  transform: scaleX(0);
+}
+
+.input-group.type-md input:focus ~ .border {
+  transform: scaleX(1);
+}
+
+
+
+
+
 .subdivobservationFlex {
-  padding: 5px;
-  width: 260px;
+  width: auto;
   display: grid;
   grid-auto-flow: column;
   justify-items: stretch;
@@ -279,34 +317,22 @@ input[type="checkbox"]:checked + label::before {
   gap: 5px;
 }
 
-.subdivobservationFlex input {
-  width: fit-content;
-  height: 1.6em;
-  margin: 0px;
-  border-radius: 5px;
-  border: 2px solid rgb(204, 204, 204);
-  box-shadow: none;
-}
-.subdivobservationFlex input:hover {
-  border: 2px solid #c00606; 
-}
-.subdivobservationFlex input:focus {
-  outline: none;
-  border: 2px solid #c00606; 
-}
-
 .subdivobservationFlex select {  
   border-radius: 5px;
   border: 2px solid rgb(204, 204, 204);
   box-shadow: none;
-  height: 1.9em;
+  height: 1.9rem;
   outline:none;
 }
 .subdivobservationFlex select:hover {  
-  border: 2px solid #c00606; 
+  border: 2px solid rgb(227, 0, 46); 
 }
 .subdivobservationFlex select:focus {
-  border: 2px solid #c00606; 
+  border: 2px solid rgb(227, 0, 46); 
+}
+
+.divConstantesFlex option {
+  background-color: #054293; 
 }
 
 .divConstantesFlex {
@@ -351,27 +377,29 @@ input[type="checkbox"]:checked + label::before {
   outline: none;
 }
 .subdivConstantesFlex input:hover {  
-  border: 2px solid #c00606; 
+  border: 2px solid rgb(227, 0, 46); 
 }
 .subdivConstantesFlex input:focus {
-  border: 2px solid #c00606; 
+  border: 2px solid rgb(227, 0, 46); 
 }
 .subdivConstantesFlex select {
-  height: 30px;
+  height: 31px;
   margin: 0px;
   padding : 2px;
   text-align: center;
   line-height: 2px;
   border-radius: 5px;
-  border: 2px solid rgb(204, 204, 204);
+  border: 2px solid #ffffff;
+  background-color: transparent;
+  color: #ffffff;
   box-shadow: none;
   outline: none;
 }
 .subdivConstantesFlex select:hover {  
-  border: 2px solid #c00606; 
+  border: 2px solid rgb(227, 0, 46); 
 }
 .subdivConstantesFlex select:focus {
-  border: 2px solid #c00606; 
+  border: 2px solid rgb(227, 0, 46); 
 }
 
 
@@ -379,7 +407,7 @@ input[type="checkbox"]:checked + label::before {
   width: 100%;
   display: flex;
   justify-content: center;
-  gap: 8px;
+  gap: 0px;
   align-items: baseline;
   flex-direction: row;
   flex-wrap: nowrap;
@@ -418,12 +446,12 @@ input[type="checkbox"]:checked + label::before {
 }
 
 .subdivobservationTemporaire input:hover {
-  border: 2px solid #c00606;
+  border: 2px solid rgb(227, 0, 46);
 }
 
 .subdivobservationTemporaire input:focus {
   outline: none;
-  border: 2px solid #c00606;
+  border: 2px solid rgb(227, 0, 46);
 }
 
 .subdivobservationTemporaire select {
@@ -435,11 +463,11 @@ input[type="checkbox"]:checked + label::before {
 }
 
 .subdivobservationTemporaire select:hover {
-  border: 2px solid #c00606;
+  border: 2px solid rgb(227, 0, 46);
 }
 
 .subdivobservationTemporaire select:focus {
-  border: 2px solid #c00606;
+  border: 2px solid rgb(227, 0, 46);
 }
 
 #volumeOH1,#volumeOH2,#volumeOH3,#degre1,#degre3,#degre2, #verreSemaine{
@@ -453,7 +481,7 @@ input[type="checkbox"]:checked + label::before {
 }
 
 .unit {
-  margin-left: -5px;
+  margin-left: -2px;
 }
 
 .clinic {
@@ -482,12 +510,12 @@ input[type="checkbox"]:checked + label::before {
 
 .fieldsetText:hover {
   border-radius: 8px;
-  border: 2px solid #c00606; 
+  border: 2px solid rgb(227, 0, 46); 
 }
 
 .fieldsetText.focused {
   border-radius: 8px;
-  border: 2px solid #c00606; 
+  border: 2px solid rgb(227, 0, 46); 
   padding-top: 0px;
 }
 
@@ -511,22 +539,12 @@ input[type="checkbox"]:checked + label::before {
 }
 
 .clinicButton:hover {
-  border: 2px solid #c00606;
+  border: 2px solid rgb(227, 0, 46);
   font-size: 101%;
 }
 
 .clinicButton:active {
   background-color: #d8d8d8;
-}
-
-textarea {
-  width: 90%;
-  height: fit-content(100%);
-  padding: 10px;
-  font-size: 16px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  resize: vertical;
 }
 
 input {
@@ -640,10 +658,6 @@ input {
   margin-bottom: 5px;
 }
 
-/* button {
-    display: block;
-    margin-top: 20px;
-} */
 
 .modal-content {
   position: relative;
@@ -693,4 +707,56 @@ input {
 
 .remove-score-btn:hover {
   background-color: darkred;
+}
+
+
+
+@media (max-width: 1240px) {
+  .divobsersationFlex {
+    grid-template-columns: minmax(200px, 1fr) minmax(140px, 1fr) minmax(120px, 1fr) minmax(240px, 1fr) minmax(260px, 1fr) ;
+  }
+}
+
+@media (max-width: 1085px) {
+  .divobsersationFlex {
+    grid-template-columns: minmax(260px, 1fr) minmax(200px, 1fr) minmax(120px, 1fr) minmax(240px, 1fr);
+  }
+}
+
+@media (max-width: 935px) {
+  .divobsersationFlex {
+    grid-template-columns: minmax(240px, 1fr) minmax(260px, 1fr) minmax(200px, 1fr) ;
+  }
+}
+
+@media (max-width: 835px) {
+  header {
+    grid-template-columns: 3em 1fr; /* Passer en disposition sur une seule colonne */
+    grid-template-rows: auto; /* Ajustement automatique des lignes */
+  }
+
+  img {
+    width: auto;
+    margin: 0 auto;
+    max-height: 3em;
+  }
+
+  nav {
+    order: 3; /* Déplacer nav sous l'image et le titre */
+    grid-column: 1 / span 2;
+    width: 100%; /* Occuper toute la largeur */
+    margin-top: 10px;
+  }
+}
+
+@media (max-width: 805px) {
+  .divobsersationFlex {
+    grid-template-columns: minmax(240px, 1fr) minmax(260px, 1fr) ;
+  }
+}
+
+@media (max-width: 615px) {
+  .divobsersationFlex {
+    grid-template-columns: minmax(260px, 1fr) ;
+  }
 }
