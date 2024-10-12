@@ -192,7 +192,7 @@ input[type="date"]:focus {
   box-shadow: 0px 0px 5px 1px rgb(80, 80, 80);
 }
 
-.divobsersationFlex {
+/* .divobsersationFlex {
   display: grid;
   grid-template-columns: minmax(140px, 1fr) minmax(140px, 1fr) minmax(120px, 1fr) minmax(240px, 1fr) minmax(260px, 1fr) minmax(200px, 1fr);
   align-content: center;  
@@ -200,11 +200,20 @@ input[type="date"]:focus {
   justify-items: start;
   padding: 10px;
   gap:10px
+} */
+
+.divobsersationFlex {
+  display: inline-flex;
+  margin: 15px;
+  flex-wrap: wrap;
+  align-items: baseline;
+  align-content: center;
+  justify-content: flex-start;
+  gap: 10px;
 }
 
 .input-group {
   position: relative;
-  width: 7rem;
   margin: 1rem 0;
   margin-bottom: 0px;
   margin-top: 0.5rem;
@@ -230,6 +239,7 @@ input[type="date"]:focus {
 .input-group.type-google input{
   border: 2px solid #ccc;
   border-radius: .4rem;
+  width: 7rem;
 }
 
 .input-group.type-google.constantes input{
@@ -295,25 +305,12 @@ input[type="date"]:focus {
 
 
 .subdivobservationFlex {
-  width: auto;
-  display: grid;
-  grid-auto-flow: column;
+  display: inline-block;
+  /* grid-auto-flow: column;
   justify-items: stretch;
   justify-content: start;
   align-content: center;
-  align-items: normal;
-  gap: 5px;
-}
-
-.subdivobservationFlexDate {
-  padding: 5px;
-  width: 290px;
-  display: grid;
-  grid-auto-flow: column;
-  justify-items: stretch;
-  justify-content: start;
-  align-content: center;
-  align-items: normal;
+  align-items: normal; */
   gap: 5px;
 }
 
@@ -321,7 +318,7 @@ input[type="date"]:focus {
   border-radius: 5px;
   border: 2px solid rgb(204, 204, 204);
   box-shadow: none;
-  height: 1.9rem;
+  height: 2.4rem;
   outline:none;
 }
 .subdivobservationFlex select:hover {  

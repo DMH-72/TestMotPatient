@@ -34,13 +34,14 @@
         </nav>
     </header>
 
-    <!-- <div class="input-group type-google">
-        <input type="text" name="name" id="name" required>
-        <label for="name">Contenu</label>
-    </div> -->
-
     <main>
-        <br>
+        <br>        
+        <div id="Modification" class="observation">
+            <h3>Nouvels ajouts</h3>
+            <div class="divobsersationFlex"> 
+            
+            </div>
+        </div>
         <div id="Identité" class="observation">
             <h3>Identité et informations générales</h3>
             <div class="divobsersationFlex">                
@@ -57,20 +58,21 @@
                     </div>
                 </div>
                 <div class="subdivobservationFlex">
-                    <label for="sex">Sexe : </label>
-                    <select id="sex">
-                        <option value="0">Femme</option>
-                        <option value="1">Homme</option>
-                    </select>
+                    <div class="select-group">
+                        <select id="sex">
+                            <option value="0">🚺 Femme</option>
+                            <option value="1">🚹 Homme</option>
+                        </select>
+                    </div>
                 </div>
-                <div class="subdivobservationFlexDate">
-                    <label for="dateNaissance">Date de naissance </label>
-                    <input type="date" id="dateNaissance" placeholder="JJ/MM/AAAA" style="width: 84px" autocomplete="off">
-                    <span id="age"></span>
+                <div class="subdivobservationFlex">
+                        <label for="dateNaissance">Naissance :</label>
+                        <input type="date" id="dateNaissance" placeholder="JJ/MM/AAAA" style="width: 84px" autocomplete="off">
+                        <span id="age" style="display:block;position: relative;top: -0.7rem;left: 1rem;;font-size: small;margin-bottom: -20px;"></span>
                 </div>
                 <div class="subdivobservationFlex">
                     <label for="modeArrivee">Mode d'arrivée : </label>
-                    <select name="modeArrivee" id="selectModeArrivee">
+                    <select name="modeArrivee" id="selectModeArrivee" titre="Mode d'arrivée">
                         <option value="0">Pompiers</option>
                         <option value="1">Propres moyens</option>
                         <option value="2">Ambulance privée</option>
@@ -78,9 +80,9 @@
                     </select>
                 </div>
                 <div class="subdivobservationFlex">
-                    <label for="groupeSanguin"> Groupe sanguin : </label>
-                    <select name="groupeSanguin" id="groupeSanguin">
-                        <option value="0">Inconnu</option>
+                    <label for="groupeSanguin"> 🩸 : </label>
+                    <select name="groupeSanguin" id="groupeSanguin" style="text-align: center;">
+                        <option value="0">?</option>
                         <option value="1">A+</option>
                         <option value="2">A-</option>
                         <option value="3">AB+</option>
@@ -211,8 +213,10 @@
                             <input type="number" id="constante_poids" autocomplete="off" required style="background-color: #054293">
                             <label for="constante_poids" style="background-color: #054293">Poids</label>                        
                         </div>kg
-                        <label for="constante_taille"></label>
-                        <input type="number" id="constante_taille" placeholder="Taille" >cm                    
+                        <div class="input-group type-google constantes poids">
+                            <input type="number" id="constante_taille" autocomplete="off" required style="background-color: #054293">
+                            <label for="constante_taille" style="background-color: #054293">Taille</label>                        
+                        </div>cm                    
                     </div>
                     <div class="subdivinline" style="margin-top:-5px; margin-bottom: -6px;">
                         IMC = <span id="constante_IMC">xx,x</span> kg/m²
@@ -233,16 +237,19 @@
 
                 <div class="subdivConstantesFlex" id="sectionPAControlat" style="display: none;">                    
                     <div class="subdivinline" style="margin-top: 0px;"">
-                        <p id="constante_pressionArterielleCoteControlat" style="margin-right: 10px;">D :</p>
-                        <input id="constante_pressionArterielleSControlat" placeholder="PaS""
-                        autocomplete="off"> /
-                    <input id="constante_pressionArterielleDControlat" placeholder="PaD"
-                        autocomplete="off">
+                        <p id="constante_pressionArterielleCoteControlat" style="margin-right: 10px;">D</p>
+                        <div class="input-group type-google constantes poids">
+                            <input type="number" id="constante_pressionArterielleSControlat" autocomplete="off" required style="background-color: #054293">
+                            <label for="constante_pressionArterielleSControlat" style="background-color: #054293">PaS</label>                        
+                        </div>/
+                        <div class="input-group type-google constantes poids">
+                            <input type="number" id="constante_pressionArterielleDControlat" autocomplete="off" required style="background-color: #054293">
+                            <label for="constante_pressionArterielleDControlat" style="background-color: #054293">PaD</label>                        
+                        </div>
                     </div>
                     <div class="subdivinline" style="margin-top: 0px;">
                         <i style="font-size: 0.9em;">PAM = <span id="PAMControlat">xx</span> mmHg</i>
-                    </div>                   
-                    
+                    </div>                        
                 </div>
                 <div class="subdivConstantesFlex" id="sectionLateralite" style="display: none;">
                     <label for="lateralite"> Latéralité : </label>
@@ -254,8 +261,10 @@
                 </div>
                 <div class="subdivConstantesFlex" id="sectionDiurese" style="display: none;">
                     <div class="subdivinline">
-                    <input type="number" id="constant_diurese_jour" placeholder="Diurèse" style="width: 65px;"
-                        > ml/24h
+                        <div class="input-group type-google constantes poids">
+                            <input type="number" id="constant_diurese_jour" autocomplete="off" required style="background-color: #054293">
+                            <label for="constant_diurese_jour" style="background-color: #054293">Diurèse</label>                        
+                        </div>ml/24h
                     </div>
                     <div class="subdivinline">
                         <i style="font-size: 0.9em;">Soit : <span id="constant_diurese_horraire">xx,xx</span>
@@ -263,13 +272,17 @@
                     </div>
                 </div>                
                 <div class="subdivConstantesFlex" id="sectionTRC" style="display: none;">
-                    <label for="constante_TRC"></label>
-                    <input type="number" id="constante_TRC" placeholder="TRC"> sec
+                    <div class="input-group type-google constantes poids">
+                        <input type="number" id="constante_TRC" autocomplete="off" required style="background-color: #054293">
+                        <label for="constante_TRC" style="background-color: #054293">TRC</label>                        
+                    </div>sec
                 </div>
                 <div class="subdivConstantesFlex" id="sectionGlycemie" style="display: none;">
                     <div class="subdivinline">
-                        <label for="constant_glycemie"></label>
-                        <input type="number" id="constant_glycemie" placeholder="Glycémie" style="width: 65px;">
+                        <div class="input-group type-google constantes poids">
+                            <input type="number" id="constant_glycemie" autocomplete="off" required style="background-color: #054293">
+                            <label for="constant_glycemie" style="background-color: #054293">Glycémie</label>                        
+                        </div>
                         <select name="uniteGlycemie" id="uniteGlycemie" style="width: 45px;">
                             <option value="0">g/L</option>
                             <option value="1">mmol/L</option>
@@ -282,29 +295,39 @@
                 </div>
 
                 <div class="subdivConstantesFlex" id="sectionVarPoids" style="display: none;">
-                    <label for="constante_poids_anterieur"></label>
-                    <input type="number" id="constante_poids_anterieur" placeholder="Poids"
-                        > kg il y a
-                    <label for="constante_poids_anterieur_date"></label>
-                    <input type="number" id="constante_poids_date" placeholder="Date"
-                        > mois, soit
+                    <div class="input-group type-google constantes poids">
+                        <input type="number" id="constante_poids_anterieur" autocomplete="off" required style="background-color: #054293">
+                        <label for="constante_poids_anterieur" style="background-color: #054293">Poids</label>                        
+                    </div> kg il y a
+                    <div class="input-group type-google constantes poids">
+                        <input type="number" id="constante_poids_anterieur_date" autocomplete="off" required style="background-color: #054293">
+                        <label for="constante_poids_anterieur_date" style="background-color: #054293">Date</label>                        
+                    </div> mois, soit
                     <span id="constante_pertePoids">xx</span> %
                 </div>
 
                 <div class="subdivConstantesFlex" id="sectionTrouMollet" style="display: none;">
                     <div class="subdivinline">
-                        <label for="constante_TourMolletG">G :</label>
-                        <input type="number" id="constante_TourMolletG" placeholder="Mollet" > cm
+                        G:
+                        <div class="input-group type-google constantes poids">
+                            <input type="number" id="constante_TourMolletG" autocomplete="off" required style="background-color: #054293">
+                            <label for="constante_TourMolletG" style="background-color: #054293">Mollet</label>                        
+                        </div> cm
                     </div>
                     <div class="subdivinline" style="margin-top: 5px;">
-                        <label for="constante_TourMolletD">D :</label>
-                    <input type="number" id="constante_TourMolletD" placeholder="Mollet"> cm 
+                        D:
+                        <div class="input-group type-google constantes poids">
+                            <input type="number" id="constante_TourMolletD" autocomplete="off" required style="background-color: #054293">
+                            <label for="constante_TourMolletD" style="background-color: #054293">Mollet</label>                        
+                        </div> cm
                     </div>                   
                     
                 </div>
                 <div class="subdivConstantesFlex" id="sectionTrouTaille" style="display: none;">
-                    <label for="constante_TourTaille"></label>
-                    <input type="number" id="constante_TourTaille" placeholder="TT"> cm
+                        <div class="input-group type-google constantes poids">
+                            <input type="number" id="constante_TourTaille" autocomplete="off" required style="background-color: #054293">
+                            <label for="constante_TourTaille" style="background-color: #054293">TT</label>                        
+                        </div> cm
                 </div>
                 <div class="subdivConstantesFlex" id="sectionPed" style="display: none;">
                     - Tour de crane <i>⇒ si âge inf à 5 ans </i><br>
@@ -313,7 +336,7 @@
                 </div>
             </div>
 
-        </div> <br>
+        </div> 
 
         <div id="ModeDeVie" class="observation">
             <h3>Mode de vie</h3>
@@ -392,19 +415,53 @@
                 <div class="subdivobservationTemporaire" style="display: none">
                 </div>
             </div>
-        </div> <br>
+        </div> 
 
         <div id="ATCD_Allergie_TRT" class="observation">
             <h3>Antécédents, Allergies et Traitements : </h3>
             <div class="subSectionTemporaire">
-                <label for="ATCD">Antécédents :</label>
-                <div id="ATCD" contenteditable="true" class="clinic"></div>
-                <label>Traitements actuels :</label>
-                <div id="TRT" contenteditable="true" class="clinic"></div>
-                <label for="allergie">Allergie :</label>
-                <div id="allergie" contenteditable="true" class="clinic"></div>
+                <fieldset class="fieldsetText" id="SectionClinicApprofondiGeneral">
+                    <legend>
+                        <!-- <button id="BtnClinicApprofondiGeneral" class="clinicButton" title="Examen approfondi">🔎</button> -->
+                        <button id="BtnClinicATCD" class="clinicButton" title="Boite à outil">🧰</button>
+                        Antécédents :
+                    </legend>
+                    <div id="ATCD" contenteditable="true" class="editable-div"></div>
+                </fieldset>
+                <fieldset class="fieldsetText" id="SectionClinicApprofondiGeneral">
+                    <legend>
+                        <button id="BtnClinicTRT" class="clinicButton" title="Boite à outil">🧰</button>
+                        Traitements actuels :
+                    </legend>
+                    <div id="TRT" contenteditable="true" class="editable-div">
+                        <table class="tableTRT" style="border: 1px solid black;width:100%;border-radius: 5px;">
+                            <thead >
+                                <th></th>
+                                <th >Traitements</td>
+                                <th>Posologie</th>
+                                <th>Fréquences et voie</th>
+                                <th>ATCD lié</th>
+                            </thead>
+                            <tbody style="text-align: center;" >                                
+                                <tr >
+                                    <th>1</th>
+                                    <td>Metformine</td>
+                                    <td>150mg</td>
+                                    <td>1-1-1 per os</td>
+                                    <td>1</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </fieldset>
+                <fieldset class="fieldsetText" id="SectionClinicApprofondiGeneral">
+                    <legend>
+                        <button id="BtnClinicAllergie" class="clinicButton" title="Boite à outil">🧰</button>
+                        Allergie :
+                    </legend>
+                    <div id="allergie" contenteditable="true" class="editable-div"></div>
+                </fieldset>
             </div>
-        </div>
         </div>
 
         <div id="HDM" class="observation">
@@ -412,7 +469,7 @@
             <div class="subSectionTemporaire">
                 <div id="HistoireDeLaMaladie" contenteditable="true" class="clinic"></div>
             </div>
-        </div> <br>
+        </div>
 
         <div id="examenClinique" class="observation">
             <h3>Examen clinique</h3>
@@ -543,7 +600,7 @@
                     <!-- Les scores remplis seront ajoutés ici -->
                 </div>
             </div>
-        </div> <br>
+        </div> 
 
         <div id="Paraclinique" class="observation">
             <h3>Examens paracliniques</h3>
