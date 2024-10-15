@@ -35,13 +35,13 @@
     </header>
 
     <main>
-        <br>        
+        <!-- <br>        
         <div id="Modification" class="observation">
             <h3>Nouvels ajouts</h3>
             <div class="divobsersationFlex"> 
             
             </div>
-        </div>
+        </div> -->
         <div id="Identité" class="observation">
             <h3>Identité et informations générales</h3>
             <div class="divobsersationFlex">                
@@ -67,7 +67,7 @@
                 </div>
                 <div class="subdivobservationFlex">
                         <label for="dateNaissance">Naissance :</label>
-                        <input type="date" id="dateNaissance" placeholder="JJ/MM/AAAA" style="width: 84px" autocomplete="off">
+                        <input type="date" id="dateNaissance" placeholder="JJ/MM/AAAA" style="width: 84px; height: 1.9rem;" autocomplete="off">
                         <span id="age" style="display:block;position: relative;top: -0.7rem;left: 1rem;;font-size: small;margin-bottom: -20px;"></span>
                 </div>
                 <div class="subdivobservationFlex">
@@ -162,60 +162,60 @@
                         <option value="1" style="text-align: left;">D</option>
                     </select>
                     <div class="input-group type-google constantes" >
-                        <input type="text" id="constante_pressionArterielleS1" autocomplete="off" required style="background-color: #054293">
-                        <label for="constante_pressionArterielleS1" style="background-color: #054293">PaS</label>                        
+                        <input type="text" id="constante_pressionArterielleS1" autocomplete="off" required style="background-color: var(--couleurElement)">
+                        <label for="constante_pressionArterielleS1" style="background-color: var(--couleurElement)">PaS</label>                        
                     </div>
                     /
                     <div class="input-group type-google constantes">
-                        <input type="text" id="constante_pressionArterielleD1" autocomplete="off" required style="background-color: #054293">
-                        <label for="constante_pressionArterielleD1" style="background-color: #054293">PaD</label>                        
+                        <input type="text" id="constante_pressionArterielleD1" autocomplete="off" required style="background-color: var(--couleurElement)">
+                        <label for="constante_pressionArterielleD1" style="background-color: var(--couleurElement)">PaD</label>                        
                     </div>
                     <br><i style="font-size: 0.9em;">PAM = <span id="PAM1">xx</span> mmHg</i>
                 </div>
                 <div class="subdivConstantesFlex" >
                     <div class="input-group type-google constantes" >
-                        <input type="text" id="constante_frequenceCardiaque" autocomplete="off" required style="background-color: #054293">
-                        <label for="constante_frequenceCardiaque" style="background-color: #054293">Fc </label>                        
+                        <input type="text" id="constante_frequenceCardiaque" autocomplete="off" required style="background-color: var(--couleurElement)">
+                        <label for="constante_frequenceCardiaque" style="background-color: var(--couleurElement)">Fc </label>                        
                     </div>
                     bpm
                 </div>
                 <div class="subdivConstantesFlex">
                     <div class="subdivinline">
                         <div class="input-group type-google constantes" >
-                            <input type="text" id="constante_frequenceRespiratoire" autocomplete="off" required style="background-color: #054293">
-                            <label for="constante_frequenceRespiratoire" style="background-color: #054293">FR</label>                        
+                            <input type="text" id="constante_frequenceRespiratoire" autocomplete="off" required style="background-color: var(--couleurElement)">
+                            <label for="constante_frequenceRespiratoire" style="background-color: var(--couleurElement)">FR</label>                        
                         </div>
                         rpm
                     </div>
                     <div class="subdivinline" style="width:180px;">
                         <div class="input-group type-google constantes" style="margin-top: 0px;">
-                            <input type="text" id="constante_saturation" autocomplete="off" required style="background-color: #054293">
-                            <label for="constante_saturation" style="background-color: #054293">Sat</label>                        
+                            <input type="text" id="constante_saturation" autocomplete="off" required style="background-color: var(--couleurElement)">
+                            <label for="constante_saturation" style="background-color: var(--couleurElement)">Sat</label>                        
                         </div>
                         % sous
                         <div class="input-group type-google constantes" style="margin-top: 0px;">
-                            <input type="text" id="constante_02" autocomplete="off" required style="background-color: #054293">
-                            <label for="constante_02" style="background-color: #054293">O₂</label>                        
+                            <input type="text" id="constante_02" autocomplete="off" required style="background-color: var(--couleurElement)">
+                            <label for="constante_02" style="background-color: var(--couleurElement)">O₂</label>                        
                         </div>
                         L
                     </div>
                 </div>                
                 <div class="subdivConstantesFlex">
                     <div class="input-group type-google constantes" >
-                        <input type="text" id="constante_temperature" autocomplete="off" required style="background-color: #054293">
-                        <label for="constante_temperature" style="background-color: #054293">T°</label>                        
+                        <input type="text" id="constante_temperature" autocomplete="off" required style="background-color: var(--couleurElement)">
+                        <label for="constante_temperature" style="background-color: var(--couleurElement)">T°</label>                        
                     </div>
                     °C
                 </div>
                 <div class="subdivConstantesFlex">
                     <div class="subdivinline">
                         <div class="input-group type-google constantes poids">
-                            <input type="number" id="constante_poids" autocomplete="off" required style="background-color: #054293">
-                            <label for="constante_poids" style="background-color: #054293">Poids</label>                        
+                            <input type="number" id="constante_poids" autocomplete="off" required style="background-color: var(--couleurElement);width:52px">
+                            <label for="constante_poids" style="background-color: var(--couleurElement)">Poids</label>                        
                         </div>kg
                         <div class="input-group type-google constantes poids">
-                            <input type="number" id="constante_taille" autocomplete="off" required style="background-color: #054293">
-                            <label for="constante_taille" style="background-color: #054293">Taille</label>                        
+                            <input type="number" id="constante_taille" autocomplete="off" required style="background-color: var(--couleurElement);width:52px">
+                            <label for="constante_taille" style="background-color: var(--couleurElement)">Taille</label>                        
                         </div>cm                    
                     </div>
                     <div class="subdivinline" style="margin-top:-5px; margin-bottom: -6px;">
@@ -238,13 +238,13 @@
                 <div class="subdivConstantesFlex" id="sectionPAControlat" style="display: none;">                    
                     <div class="subdivinline" style="margin-top: 0px;"">
                         <p id="constante_pressionArterielleCoteControlat" style="margin-right: 10px;">D</p>
-                        <div class="input-group type-google constantes poids">
-                            <input type="number" id="constante_pressionArterielleSControlat" autocomplete="off" required style="background-color: #054293">
-                            <label for="constante_pressionArterielleSControlat" style="background-color: #054293">PaS</label>                        
+                        <div class="input-group type-google constantes">
+                            <input type="number" id="constante_pressionArterielleSControlat" autocomplete="off" required style="background-color: var(--couleurElement)">
+                            <label for="constante_pressionArterielleSControlat" style="background-color: var(--couleurElement)">PaS</label>                        
                         </div>/
-                        <div class="input-group type-google constantes poids">
-                            <input type="number" id="constante_pressionArterielleDControlat" autocomplete="off" required style="background-color: #054293">
-                            <label for="constante_pressionArterielleDControlat" style="background-color: #054293">PaD</label>                        
+                        <div class="input-group type-google constantes">
+                            <input type="number" id="constante_pressionArterielleDControlat" autocomplete="off" required style="background-color: var(--couleurElement)">
+                            <label for="constante_pressionArterielleDControlat" style="background-color: var(--couleurElement)">PaD</label>                        
                         </div>
                     </div>
                     <div class="subdivinline" style="margin-top: 0px;">
@@ -261,9 +261,9 @@
                 </div>
                 <div class="subdivConstantesFlex" id="sectionDiurese" style="display: none;">
                     <div class="subdivinline">
-                        <div class="input-group type-google constantes poids">
-                            <input type="number" id="constant_diurese_jour" autocomplete="off" required style="background-color: #054293">
-                            <label for="constant_diurese_jour" style="background-color: #054293">Diurèse</label>                        
+                        <div class="input-group type-google constantes">
+                            <input type="number" id="constant_diurese_jour" autocomplete="off" required style="background-color: var(--couleurElement);width:65px">
+                            <label for="constant_diurese_jour" style="background-color: var(--couleurElement)">Diurèse</label>                        
                         </div>ml/24h
                     </div>
                     <div class="subdivinline">
@@ -272,16 +272,16 @@
                     </div>
                 </div>                
                 <div class="subdivConstantesFlex" id="sectionTRC" style="display: none;">
-                    <div class="input-group type-google constantes poids">
-                        <input type="number" id="constante_TRC" autocomplete="off" required style="background-color: #054293">
-                        <label for="constante_TRC" style="background-color: #054293">TRC</label>                        
+                    <div class="input-group type-google constantes">
+                        <input type="number" id="constante_TRC" autocomplete="off" required style="background-color: var(--couleurElement)">
+                        <label for="constante_TRC" style="background-color: var(--couleurElement)">TRC</label>                        
                     </div>sec
                 </div>
                 <div class="subdivConstantesFlex" id="sectionGlycemie" style="display: none;">
                     <div class="subdivinline">
-                        <div class="input-group type-google constantes poids">
-                            <input type="number" id="constant_glycemie" autocomplete="off" required style="background-color: #054293">
-                            <label for="constant_glycemie" style="background-color: #054293">Glycémie</label>                        
+                        <div class="input-group type-google constantes ">
+                            <input type="number" id="constant_glycemie" autocomplete="off" required style="background-color: var(--couleurElement);width:72px">
+                            <label for="constant_glycemie" style="background-color: var(--couleurElement)">Glycémie</label>                        
                         </div>
                         <select name="uniteGlycemie" id="uniteGlycemie" style="width: 45px;">
                             <option value="0">g/L</option>
@@ -295,13 +295,13 @@
                 </div>
 
                 <div class="subdivConstantesFlex" id="sectionVarPoids" style="display: none;">
-                    <div class="input-group type-google constantes poids">
-                        <input type="number" id="constante_poids_anterieur" autocomplete="off" required style="background-color: #054293">
-                        <label for="constante_poids_anterieur" style="background-color: #054293">Poids</label>                        
+                    <div class="input-group type-google constantes">
+                        <input type="number" id="constante_poids_anterieur" autocomplete="off" required style="background-color: var(--couleurElement);width:52px">
+                        <label for="constante_poids_anterieur" style="background-color: var(--couleurElement)">Poids</label>                        
                     </div> kg il y a
-                    <div class="input-group type-google constantes poids">
-                        <input type="number" id="constante_poids_anterieur_date" autocomplete="off" required style="background-color: #054293">
-                        <label for="constante_poids_anterieur_date" style="background-color: #054293">Date</label>                        
+                    <div class="input-group type-google constantes">
+                        <input type="number" id="constante_poids_anterieur_date" autocomplete="off" required style="background-color: var(--couleurElement);width:52px">
+                        <label for="constante_poids_anterieur_date" style="background-color: var(--couleurElement)">Date</label>                        
                     </div> mois, soit
                     <span id="constante_pertePoids">xx</span> %
                 </div>
@@ -309,24 +309,24 @@
                 <div class="subdivConstantesFlex" id="sectionTrouMollet" style="display: none;">
                     <div class="subdivinline">
                         G:
-                        <div class="input-group type-google constantes poids">
-                            <input type="number" id="constante_TourMolletG" autocomplete="off" required style="background-color: #054293">
-                            <label for="constante_TourMolletG" style="background-color: #054293">Mollet</label>                        
+                        <div class="input-group type-google constantes">
+                            <input type="number" id="constante_TourMolletG" autocomplete="off" required style="background-color: var(--couleurElement);width:58px">
+                            <label for="constante_TourMolletG" style="background-color: var(--couleurElement)">Mollet</label>                        
                         </div> cm
                     </div>
                     <div class="subdivinline" style="margin-top: 5px;">
                         D:
-                        <div class="input-group type-google constantes poids">
-                            <input type="number" id="constante_TourMolletD" autocomplete="off" required style="background-color: #054293">
-                            <label for="constante_TourMolletD" style="background-color: #054293">Mollet</label>                        
+                        <div class="input-group type-google constantes">
+                            <input type="number" id="constante_TourMolletD" autocomplete="off" required style="background-color: var(--couleurElement);width:58px">
+                            <label for="constante_TourMolletD" style="background-color: var(--couleurElement)">Mollet</label>                        
                         </div> cm
                     </div>                   
                     
                 </div>
                 <div class="subdivConstantesFlex" id="sectionTrouTaille" style="display: none;">
-                        <div class="input-group type-google constantes poids">
-                            <input type="number" id="constante_TourTaille" autocomplete="off" required style="background-color: #054293">
-                            <label for="constante_TourTaille" style="background-color: #054293">TT</label>                        
+                        <div class="input-group type-google constantes ">
+                            <input type="number" id="constante_TourTaille" autocomplete="off" required style="background-color: var(--couleurElement)">
+                            <label for="constante_TourTaille" style="background-color: var(--couleurElement)">TT</label>                        
                         </div> cm
                 </div>
                 <div class="subdivConstantesFlex" id="sectionPed" style="display: none;">
@@ -345,13 +345,17 @@
                     <label for="tabac">Tabagisme : </label>
                     <input id="tabac" type="checkbox" onchange="paquetAnneeDisp()">                    
                 </div>
-                <div id="paquetAnnee" class="subdivinlineModeDeVie" style="display: none">
-                    <input id="nbAnneeT" placeholder="Années" autocomplete="off" style="width: 50px;">
-                    <input id="cParJour" placeholder="cig/jour" autocomplete="off" style="width: 50px;">
-                    <span id="paquetAnneeConst">Soit xx PA</span>
-                    <br>
+                <div id="paquetAnnee" class="subdivobservationTemporaire" style="display: none">
+                    <div class="subdivinlineModeDeVie">                        
+                        <input id="nbAnneeT" placeholder="Années" autocomplete="off" style="width: 50px;">
+                        <input id="cParJour" placeholder="cig/jour" autocomplete="off" style="width: 50px;">
+                        <span id="paquetAnneeConst">Soit xx PA</span>
+                    </div>
+                    <div class="subdivinlineModeDeVie">   
+                        
                     <label for="sevrageTabac">Sevré :</label>
                     <input id="sevrageTabac" type="checkbox">
+                    </div>
                 </div>
                 <div class="subdivobservationTemporaire">
                     <label for="alcool">Consommation OH : </label>

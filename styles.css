@@ -1,4 +1,12 @@
 /* Style global */
+
+* {
+  --couleurElement : rgb(226, 226, 226);
+  --couleurTexte : rgb(29, 29, 29);
+  --couleurActif : rgb(227, 0, 46);
+  --couleurBordureInactif : #bfbfbf;
+}
+
 body {
   font-family: system-ui;
   background-color: rgb(244, 244, 249);
@@ -87,7 +95,7 @@ h1 {
 h3 {
   padding: 15px;
   padding-bottom: 10px;
-  background-color: rgb(226, 226, 226);
+  background-color: var(--couleurElement);
   border-top-left-radius: 8px;
   border-top-right-radius: 8px;
   border : 1px solid black;
@@ -109,10 +117,10 @@ input[type="date"] {
   text-align: center;
 }
 input[type="date"]:hover {  
-  border: 2px solid rgb(227, 0, 46); 
+  border: 2px solid var(--couleurActif); 
 }
 input[type="date"]:focus {  
-  border: 2px solid rgb(227, 0, 46); 
+  border: 2px solid var(--couleurActif); 
 }
 
 .fieldDeroulant {
@@ -209,22 +217,11 @@ input[type="date"]:focus {
   align-items: baseline;
   align-content: center;
   justify-content: flex-start;
-  gap: 10px;
+  gap: 20px;
 }
 
 .input-group {
   position: relative;
-  margin: 1rem 0;
-  margin-bottom: 0px;
-  margin-top: 0.5rem;
-}
-
-.input-group.constantes{
-  width: 3.5rem;
-}
-
-.input-group.constantes.poids{
-  width: 7rem;
 }
 
 .input-group input {
@@ -243,14 +240,21 @@ input[type="date"]:focus {
 }
 
 .input-group.type-google.constantes input{
-  border: 2px solid #ffffff;
+  border: 2px solid var(--couleurBordureInactif);
   border-radius: .4rem;
-  color : #ffff;
+  color : var(--couleurTexte);
+  width: 2.5rem;
+  padding : 0.1rem;
+  margin : 0.1rem;
 }
 
 .input-group.type-google input:focus{
-  border: .1rem solid rgb(227, 0, 46);
-  color : rgb(227, 0, 46);
+  border: 2px solid var(--couleurActif);
+  color : var(--couleurActif);
+}
+
+.input-group.type-google input:hover{
+  border: 2px solid var(--couleurActif);
 }
 
 .input-group label {
@@ -275,15 +279,15 @@ input[type="date"]:focus {
 {
   top:7%;
   font-size: .7rem;
-  color : rgb(227, 0, 46);
+  color : var(--couleurActif);
 }
 
 .input-group input:not(:focus) + label {
-  color: #a5a5a5;
+  color: var(--couleurTexte);
 }
 
 .input-group.constantes input:not(:focus) + label {
-  color: #ffffff;
+  color: var(--couleurTexte);
 }
 
 .input-group .boder {
@@ -292,7 +296,7 @@ input[type="date"]:focus {
   bottom: 0;
   height: .1rem;
   width:100%;
-  background-color: rgb(227, 0, 46) ;
+  background-color: var(--couleurActif) ;
   transform: scaleX(0);
 }
 
@@ -311,7 +315,7 @@ input[type="date"]:focus {
   justify-content: start;
   align-content: center;
   align-items: normal; */
-  gap: 5px;
+  gap: 10px;
 }
 
 .subdivobservationFlex select {  
@@ -322,14 +326,14 @@ input[type="date"]:focus {
   outline:none;
 }
 .subdivobservationFlex select:hover {  
-  border: 2px solid rgb(227, 0, 46); 
+  border: 2px solid var(--couleurActif); 
 }
 .subdivobservationFlex select:focus {
-  border: 2px solid rgb(227, 0, 46); 
+  border: 2px solid var(--couleurActif); 
 }
 
 .divConstantesFlex option {
-  background-color: #054293; 
+  background-color: var(--couleurElement);
 }
 
 .divConstantesFlex {
@@ -342,14 +346,15 @@ input[type="date"]:focus {
 }
 
 .subdivConstantesFlex {
-  border: 1px solid #a5a5a5;
-  background-color:  #054293;
+  border: 1px solid var(--couleurBordureInactif);
+  background-color:  var(--couleurElement);
   border: 2px solid #333;
-  color: rgb(247, 247, 247);
+  color: rgb(29, 29, 29);
   border-radius : 6px;  
   box-shadow: 0px 0px 3px 1px rgb(155, 155, 155);
   gap: 5px;
-  padding: 5px;
+  padding: 5px;  
+  padding-top: 10px;
   min-width: 100px;
   max-width: 180px;
   text-align: center;
@@ -369,15 +374,15 @@ input[type="date"]:focus {
   text-align: center;
   line-height: 2px;
   border-radius: 5px;
-  border: 2px solid rgb(204, 204, 204);
+  border: 2px solid var(--couleurBordureInactif);
   box-shadow: none;
   outline: none;
 }
 .subdivConstantesFlex input:hover {  
-  border: 2px solid rgb(227, 0, 46); 
+  border: 2px solid var(--couleurActif); 
 }
 .subdivConstantesFlex input:focus {
-  border: 2px solid rgb(227, 0, 46); 
+  border: 2px solid var(--couleurActif); 
 }
 .subdivConstantesFlex select {
   height: 31px;
@@ -386,17 +391,17 @@ input[type="date"]:focus {
   text-align: center;
   line-height: 2px;
   border-radius: 5px;
-  border: 2px solid #ffffff;
+  border: 2px solid var(--couleurBordureInactif);
   background-color: transparent;
-  color: #ffffff;
+  color: var(--couleurTexte);
   box-shadow: none;
   outline: none;
 }
 .subdivConstantesFlex select:hover {  
-  border: 2px solid rgb(227, 0, 46); 
+  border: 2px solid var(--couleurActif); 
 }
 .subdivConstantesFlex select:focus {
-  border: 2px solid rgb(227, 0, 46); 
+  border: 2px solid var(--couleurActif); 
 }
 
 
@@ -443,12 +448,12 @@ input[type="date"]:focus {
 }
 
 .subdivobservationTemporaire input:hover {
-  border: 2px solid rgb(227, 0, 46);
+  border: 2px solid var(--couleurActif);
 }
 
 .subdivobservationTemporaire input:focus {
   outline: none;
-  border: 2px solid rgb(227, 0, 46);
+  border: 2px solid var(--couleurActif);
 }
 
 .subdivobservationTemporaire select {
@@ -460,11 +465,11 @@ input[type="date"]:focus {
 }
 
 .subdivobservationTemporaire select:hover {
-  border: 2px solid rgb(227, 0, 46);
+  border: 2px solid var(--couleurActif);
 }
 
 .subdivobservationTemporaire select:focus {
-  border: 2px solid rgb(227, 0, 46);
+  border: 2px solid var(--couleurActif);
 }
 
 #volumeOH1,#volumeOH2,#volumeOH3,#degre1,#degre3,#degre2, #verreSemaine{
@@ -507,12 +512,12 @@ input[type="date"]:focus {
 
 .fieldsetText:hover {
   border-radius: 8px;
-  border: 2px solid rgb(227, 0, 46); 
+  border: 2px solid var(--couleurActif); 
 }
 
 .fieldsetText.focused {
   border-radius: 8px;
-  border: 2px solid rgb(227, 0, 46); 
+  border: 2px solid var(--couleurActif); 
   padding-top: 0px;
 }
 
@@ -536,7 +541,7 @@ input[type="date"]:focus {
 }
 
 .clinicButton:hover {
-  border: 2px solid rgb(227, 0, 46);
+  border: 2px solid var(--couleurActif);
   font-size: 101%;
 }
 

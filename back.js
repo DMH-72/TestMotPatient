@@ -1,7 +1,7 @@
 function toggleSection(checkboxId, sectionId) {
     var checkbox = document.getElementById(checkboxId).checked;
     if (checkbox === true) {
-        document.getElementById(sectionId).style.display = "block";
+        document.getElementById(sectionId).style.display = "";
     } else {
         document.getElementById(sectionId).style.display = "none";
     }
