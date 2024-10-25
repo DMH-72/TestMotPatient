@@ -482,7 +482,7 @@
 
                 <fieldset class="fieldsetText" id="SectionClinicApprofondiGeneral">
                     <legend>
-                        <button id="BtnClinicApprofondiGeneral" class="clinicButton" title="Examen approfondi">🔎</button>
+                        <button id="BtnClinicApprofondiGeneral" class="clinicButton" title="Examen approfondi" onclick="advenceClinic('General')">🔎</button>
                         <button id="BtnClinicOutilGeneral" class="clinicButton" title="Boite à outil">🧰</button>
                         Examen général :
                     </legend>
@@ -491,16 +491,16 @@
 
                 <fieldset class="fieldsetText" id="SectionClinicApprofondiCardio">
                     <legend>
-                        <button id="BtnClinicApprofondiCardio" class="clinicButton" title="Examen approfondi">🔎</button>
+                        <button id="BtnClinicApprofondiCardio" class="clinicButton" title="Examen approfondi" onclick="advenceClinic('Cardio')">🔎</button>
                         <button id="BtnClinicOutilCardio" class="clinicButton" title="Boite à outil">🧰</button>
                         Cardio-vasculaires :
                     </legend>
                     <div id="examenCliniqueCardio" contenteditable="true" class="editable-div"></div>
-                </fieldset>
+                </fieldset>              
 
                 <fieldset class="fieldsetText" id="SectionClinicApprofondiPneumo">
                     <legend>
-                        <button id="BtnClinicApprofondiPneumo" class="clinicButton" title="Examen approfondi">🔎</button>
+                        <button id="BtnClinicApprofondiPneumo" class="clinicButton" title="Examen approfondi" onclick="advenceClinic('Pneumo')">🔎</button>
                         <button id="BtnClinicOutilPneumo" class="clinicButton" title="Boite à outil">🧰</button>
                         Pneumologique :
                     </legend>
@@ -509,7 +509,7 @@
 
                 <fieldset class="fieldsetText" id="SectionClinicApprofondiNeuro">
                     <legend>
-                        <button id="BtnClinicApprofondiNeuro" class="clinicButton" title="Examen approfondi">🔎</button>
+                        <button id="BtnClinicApprofondiNeuro" class="clinicButton" title="Examen approfondi" onclick="advenceClinic('Neuro')">🔎</button>
                         <button id="BtnClinicOutilNeuro" class="clinicButton" title="Boite à outil">🧰</button>
                         Neurologique :
                     </legend>
@@ -518,7 +518,7 @@
 
                 <fieldset class="fieldsetText" id="SectionClinicApprofondiDig">
                     <legend>
-                        <button id="BtnClinicApprofondiDig" class="clinicButton" title="Examen approfondi">🔎</button>
+                        <button id="BtnClinicApprofondiDig" class="clinicButton" title="Examen approfondi" onclick="advenceClinic('Dig')">🔎</button>
                         <button id="BtnClinicOutilDig" class="clinicButton" title="Boite à outil">🧰</button>
                         Digestif :
                     </legend>
@@ -527,7 +527,7 @@
 
                 <fieldset class="fieldsetText" id="SectionClinicApprofondiUro">
                     <legend>
-                        <button id="BtnClinicApprofondiUro" class="clinicButton" title="Examen approfondi">🔎</button>
+                        <button id="BtnClinicApprofondiUro" class="clinicButton" title="Examen approfondi" onclick="advenceClinic('Uro')">🔎</button>
                         <button id="BtnClinicOutilUro" class="clinicButton" title="Boite à outil">🧰</button>
                         Urologique :
                     </legend>
@@ -536,7 +536,7 @@
 
                 <fieldset class="fieldsetText" id="SectionClinicApprofondiRhumato">
                     <legend>
-                        <button id="BtnClinicApprofondiRhumato" class="clinicButton" title="Examen approfondi">🔎</button>
+                        <button id="BtnClinicApprofondiRhumato" class="clinicButton" title="Examen approfondi" onclick="advenceClinic('Rhumato')">🔎</button>
                         <button id="BtnClinicOutilRhumato" class="clinicButton" title="Boite à outil">🧰</button>
                         Locomoteur / Rhumatologie :
                     </legend>
@@ -545,7 +545,7 @@
 
                 <fieldset class="fieldsetText" id="SectionClinicApprofondiGO">
                     <legend>
-                        <button id="BtnClinicApprofondiGO" class="clinicButton" title="Examen approfondi">🔎</button>
+                        <button id="BtnClinicApprofondiGO" class="clinicButton" title="Examen approfondi" onclick="advenceClinic('Gyneco')">🔎</button>
                         <button id="BtnClinicOutilGO" class="clinicButton" title="Boite à outil">🧰</button>
                         Gynécologique-Obstétrique :
                     </legend>
@@ -554,7 +554,7 @@
 
                 <fieldset class="fieldsetText" id="SectionClinicApprofondiPsy">
                     <legend>
-                        <button id="BtnClinicApprofondiPsy" class="clinicButton" title="Examen approfondi">🔎</button>
+                        <button id="BtnClinicApprofondiPsy" class="clinicButton" title="Examen approfondi" onclick="advenceClinic('Psy')">🔎</button>
                         <button id="BtnClinicOutilPsy" class="clinicButton" title="Boite à outil">🧰</button>
                         Psychiatrique :
                     </legend>
@@ -563,7 +563,7 @@
 
                 <fieldset class="fieldsetText" id="SectionClinicApprofondiORL">
                     <legend>
-                        <button id="BtnClinicApprofondiORL" class="clinicButton" title="Examen approfondi">🔎</button>
+                        <button id="BtnClinicApprofondiORL" class="clinicButton" title="Examen approfondi" onclick="advenceClinic('ORL')">🔎</button>
                         <button id="BtnClinicOutilORL" class="clinicButton" title="Boite à outil">🧰</button>
                         ORL / CMF :
                     </legend>
@@ -572,7 +572,7 @@
 
                 <fieldset class="fieldsetText" id="SectionClinicApprofondiDermato">
                     <legend>
-                        <button id="BtnClinicApprofondiDermato" class="clinicButton" title="Examen approfondi">🔎</button>
+                        <button id="BtnClinicApprofondiDermato" class="clinicButton" title="Examen approfondi" onclick="advenceClinic('Dermato')">🔎</button>
                         <button id="BtnClinicOutilDermato" class="clinicButton" title="Boite à outil">🧰</button>
                         Dermatologique :
                     </legend>
@@ -581,7 +581,7 @@
 
                 <fieldset class="fieldsetText" id="SectionClinicApprofondiPed">
                     <legend>
-                        <button id="BtnClinicApprofondiPed" class="clinicButton" title="Examen approfondi">🔎</button>
+                        <button id="BtnClinicApprofondiPed" class="clinicButton" title="Examen approfondi" onclick="advenceClinic('Ped')">🔎</button>
                         <button id="BtnClinicOutilPed" class="clinicButton" title="Boite à outil">🧰</button>
                         Pédiatrique :
                     </legend>
@@ -619,11 +619,18 @@
             </div>
         </div>
 
-        <div style="height: 1000px;">
-             
+        <div style="height: 500px;">
         </div>
 
     </main>
+
+    <footer>
+       <div class="piedDePage">
+            <div class="subSectionPiedDePage">Annuaire</div>
+            <div class="subSectionPiedDePage">Lien utiles</div>
+            <div class="subSectionPiedDePage">Outils</div>
+       </div> 
+    </footer>
 
     <script src="back.js"></script>
 </body>
