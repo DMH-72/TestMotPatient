@@ -1,0 +1,246 @@
+Type         ,Hopital           ,Spécialité                                 ,DECT
+Avis         ,Timone            ,Cardiologie                                ,86005
+Avis         ,Timone            ,Dermatologie                               ,88815
+Avis         ,Timone            ,Endocrinologie                             ,82962 / 82974
+Avis         ,Timone            ,Epileptologie                              ,84640 / 84637
+Avis         ,Timone            ,Gastrologie                                ,84395
+Avis         ,Timone            ,Gynecologie                                ,83664
+Avis         ,Timone            ,Obstétrique                                ,35900
+Avis         ,Timone            ,Bloc Accouchement                          ,83668
+Avis         ,Timone            ,Gériatrie (EMG)                            ,88733
+Avis         ,Timone            ,Infectieux                                 ,32323 / N 87227
+Avis         ,Timone            ,Neurologie                                 ,86231
+Avis         ,Timone            ,AVC Stroke                                 ,89697
+Avis         ,Timone            ,Néphrologie                                ,84168 / 83984 (G)
+Avis         ,Timone            ,Oncologie                                  ,87466
+Avis         ,Timone            ,Psychiatrie senior                         ,84948
+Avis         ,Timone            ,Psychiatrie Interne                        ,29233
+Avis         ,Timone            ,Pharmacien                                 ,87042
+Avis         ,Timone            ,Pneumologie                                ,65899
+Avis         ,Timone            ,Soins pall                                 ,84550
+Avis         ,Timone            ,Légiste                                    ,04.91.48.22.45
+Avis         ,Timone            ,Hémophilie                                 ,87749 / N 86782
+Avis         ,Timone            ,IDG conception                             ,82007
+Avis         ,Timone            ,IDG Sud                                    ,74050
+Avis         ,Timone            ,Maxillo-facial/ORL                         ,35853/35736
+Avis         ,Timone            ,ORL hors PDS                               ,88880
+Avis         ,Timone            ,Main                                       ,29271
+Avis         ,Timone            ,NeuroChirurgie                             ,84332
+Avis         ,Timone            ,Orthopédie                                 ,84405
+Avis         ,Timone            ,Ophtalmologie hors PDS                     ,88888
+Avis         ,Timone            ,Ophtalmologie Nord PDS                     ,64203
+Avis         ,Timone            ,Vasculaire                                 ,20160
+Avis         ,Timone            ,Bartoli Interne                            ,29204
+Avis         ,Timone            ,Gaudry Interne                             ,29166
+Avis         ,Timone            ,Gaudry Sénior                              ,29049
+Avis         ,Timone            ,Viscerale                                  ,84400
+Avis         ,Timone            ,Urologie (service)                         ,35177
+Avis         ,Timone            ,Urologie hors PDS                          ,35044
+Avis         ,Timone            ,Coronarographie                            ,85995+ / 85996
+Avis         ,Timone            ,Caisson                                    ,44996
+Avis         ,Timone            ,Endoscopie                                 ,29616 / 86024
+Avis         ,Timone            ,Anesthésiste                               ,84700 / 89400
+Avis         ,Timone            ,Regulation Bloc                            ,29168
+Avis         ,Timone            ,Angiographie                               ,29067
+Avis         ,Timone            ,Greffes                                    ,70737
+Avis         ,Timone            ,SOS Isché mésent A                         ,84810
+Avis         ,Timone            ,SOS Aorte                                  ,29360
+Service      ,Timone            ,Médecine Interne : UMAP                    ,88093 / 88607
+Service      ,Timone            ,Médecine Interne : Ebbo                    ,86036
+Service      ,Timone            ,Médecine Interne : Schleinitz              ,88787
+Service      ,Timone            ,Gériatrie : Villani                        ,88711
+Service      ,Timone            ,Gastrologie                                ,85112
+Service      ,Timone            ,Hepatologie                                ,85113
+Service      ,Timone            ,Oncologie : Dig et neuro Dahan/Chinot      ,86393 / 84279
+Service      ,Timone            ,Oncologie : Générale Duffaut               ,84373 / 87424
+Service      ,Timone            ,Dermatologie : Richard                     ,88821
+Service      ,Timone            ,Neurologie : Azoulay                       ,84350/86582
+Service      ,Timone            ,Neurologie : Pelletier                     ,85932 / 85933 / 85934
+Service      ,Timone            ,IHU (1er étage): Stein                     ,32104
+Service      ,Timone            ,IHU (2er étage): Parola                    ,32204
+Service      ,Timone            ,IHU (3er étage): Brouqui                   ,32304
+Service      ,Timone            ,Bonnet UDT (10e)                           ,86978
+Service      ,Timone            ,Bonnet (10e)                               ,85981
+Service      ,Timone            ,Rythmo Deharo (9e)                         ,86035
+Service      ,Timone            ,Habib (11e)                                ,85984
+Service      ,Nord              ,Cardiologie Interne                        ,65817
+Service      ,Nord              ,Cardiologie Service                        ,68858
+Service      ,Nord              ,Pneumologie Charpin                        ,67101
+Service      ,Nord              ,Pneumologie Astoul                         ,65977
+Service      ,Conception        ,Endocrinologie                             ,82962 / 82963
+Service      ,Conception        ,Soins Intensifs Nephro                     ,83046 / 83984
+Service      ,Conception        ,Médecine Interne : Kaplanski               ,83522
+Service      ,Sainte-Marguerite ,Gériatrie : Villani                        ,44535 / 45569
+Service      ,Sainte-Marguerite ,Rhumatologie                               ,46310 / 46312
+Service      ,Timone            ,Réanimation RDU Sénior                     ,691 / 29635
+Service      ,Timone            ,Réanimation RDU Interne                    ,29542
+Service      ,Timone            ,Réanimation RDU Réanimation                ,29633 / 29634 / 29635
+Service      ,Timone            ,Réanimation RDU USC                        ,29640
+Service      ,Timone            ,Réanimation Albanese Sénior                ,89888
+Service      ,Timone            ,Réanimation Albanese Interne               ,88611
+Service      ,Timone            ,Réanimation Albanese Réanimation           ,88609
+Service      ,Timone            ,Réanimation Bruder Sénior                  ,29842
+Service      ,Timone            ,Réanimation Bruder Interne                 ,29850
+Service      ,Timone            ,Réanimation Bruder Réanimation             ,29454
+Service      ,Timone            ,Réanimation Bruder USC (1er BMT)           ,29469
+Service      ,Timone            ,Réanimation Chirugie Cardiaque URCV Sénior ,85720 / 85721 / 85722
+Service      ,Nord              ,Réanimation Polytraumatisé Léone Sénior    ,65330
+Service      ,Nord              ,Réanimation Polytraumatisé Léone Interne   ,67299 / 68663 / 67125
+Service      ,Nord              ,Réanimation Papazian Sénior                ,66664
+Service      ,Nord              ,Réanimation Papazian Interne               ,66665-66849
+Service      ,Conception        ,Réanimation Brûlé Bruder Sénior            ,83931
+Service      ,Conception        ,Réanimation Brûlé Bruder Interne           ,83938
+Service      ,Conception        ,Réanimation Brûlé Bruder Service           ,35818
+Service      ,Hors APHM         ,Hopital Européen USIC                      ,04.13.42.83.03
+Service      ,Hors APHM         ,Vert Cot USIC                              ,04.91.18.66.19
+Service      ,Hors APHM         ,St-Joseph USIC                             ,04.91.80.67.17
+Service      ,Hors APHM         ,Clairval USIC                              ,04.91.17.17.50
+Service      ,Hors APHM         ,Beauregard USIC                            ,04.91.12.12.26
+Service      ,Hors APHM         ,Casamance USIC                             ,04.91.88.40.06
+Service      ,Hors APHM         ,Hopital Européen Réanimation               ,04.13.42.73.51
+Service      ,Hors APHM         ,Hopital Européen USC                       ,04.13.42.73.52
+Service      ,Hors APHM         ,Vert Cot Réanimation                       ,04.91.18.65.90
+Service      ,Hors APHM         ,Vert Cot USC                               ,04.91.18.65.10
+Service      ,Hors APHM         ,St-Joseph Réanimation                      ,04.91.80.66.56
+Service      ,Hors APHM         ,St-Joseph USC                              ,04.91.80.66.58
+Service      ,Hors APHM         ,Clairval Réanimation                       ,04.91.17.17.18
+Service      ,Hors APHM         ,Clarival Chir Cardiologie Réanimation      ,04.91.17.15.54
+Service      ,Hors APHM         ,Beauregard Réanimation                     ,04.91.12.11.10
+Service      ,Hors APHM         ,Beauregard USC                             ,04.91.12.10.67
+Service      ,Hors APHM         ,Bouchard Réanimation                       ,04.91.15.90.14
+Service      ,Hors APHM         ,Res du Parc Réanimation                    ,04.91.83.88.64
+Service      ,Hors APHM         ,Casamance Réanimation                      ,04.91.88.43.30
+Service      ,Hors APHM         ,Hematologie IPC Réanimation                ,04.91.22.38.51
+Service      ,Timone            ,Ophtalmologie                              ,86545
+Service      ,Timone            ,Cardiaque Collart                          ,29122 / 29123
+Service      ,Timone            ,Main Jaloux                                ,29270
+Service      ,Timone            ,NeuroChirurgie Regis                       ,86565
+Service      ,Timone            ,NeuroChirurgie Dufour                      ,85555 / 85539
+Service      ,Timone            ,Orthopédie Tropiano                        ,88071
+Service      ,Timone            ,Orthopédie Argenson                        ,88008 / 88302
+Service      ,Timone            ,Vasculaire  Bartoli                        ,29201 / 29202
+Service      ,Timone            ,Vasculaire Gaudry                          ,29160 / 29161
+Service      ,Timone            ,Viscérale Pirrot                           ,85861 / 86638
+Service      ,Timone            ,Viscérale Hardwigsen                       ,88668 / 84545
+Service      ,Conception        ,Stomatologie Chossegros                    ,85957
+Service      ,Conception        ,ORL                                        ,86067 / 86066
+Service      ,Conception        ,Urologie                                   ,35177
+Service      ,Nord              ,Chirurgie thoracique                       ,66007 / 66020
+Paraclinique ,Timone            ,Radio : Echo + aide radio                  ,29730
+Paraclinique ,Timone            ,Radio : Scanner Interne                    ,84953 / N:84694
+Paraclinique ,Timone            ,Radio : IRM Interne                        ,38115 / 38135+ / N:84953
+Paraclinique ,Timone            ,Radio : Manip IRM                          ,29054 / 38118
+Paraclinique ,Timone            ,Radio : Manip Radio Urgences               ,29727 (G 89700)
+Paraclinique ,Timone            ,Radio : Manip Scanner                      ,29056(scanner2) / N:38113
+Paraclinique ,Timone            ,Radio : Doppler                            ,87022 / 87023 / 84224+
+Paraclinique ,Timone            ,Radio : Interventionnelle                  ,29057
+Paraclinique ,Timone            ,Radio : Scanner 1                          ,38111
+Paraclinique ,Timone            ,EEG Manip                                  ,85827
+Paraclinique ,Timone            ,EEG Med                                    ,86099
+Paraclinique ,Timone            ,Labo : Central / Pré-analyse               ,88310
+Paraclinique ,Timone            ,Labo : Biochimie Interne                   ,88357 / Nuit 88323
+Paraclinique ,Timone            ,Labo : Biochimie                           ,88321
+Paraclinique ,Timone            ,Labo : Hemato Interne ?                    ,88358 / Nuit 88343
+Paraclinique ,Timone            ,Labo : Hemato                              ,88201
+Paraclinique ,Timone            ,Labo : Coagulation                         ,88342
+Paraclinique ,Timone            ,Labo : Anapath                             ,86417
+Paraclinique ,Timone            ,Labo : Bacterio                            ,32064 / 32065 / 32088 / 86988+
+Paraclinique ,Timone            ,Labo : Virologie                           ,32066+ / 32067 / 86998
+Paraclinique ,Timone            ,Labo : POC                                 ,32060
+Paraclinique ,Timone            ,Labo : Parasito                            ,86090/2
+Paraclinique ,Timone            ,Labo : EFS                                 ,87543
+Paraclinique ,Timone            ,Labo : CAP Toxique                         ,87567
+Paraclinique ,Timone            ,Labo : Pharmaco                            ,89714 / 87656
+Paraclinique ,Timone            ,Labo : Bio Med                             ,87630
+Paraclinique ,Timone            ,Labo : Immuno                              ,81893 / 81478
+Urgences     ,Timone            ,CHARTIER                                   ,29713
+Urgences     ,Timone            ,COULIBALY                                  ,89853
+Urgences     ,Timone            ,LAGHZAOUI                                  ,29498
+Urgences     ,Timone            ,AUDOUARD                                   ,29643
+Urgences     ,Timone            ,OLIVIER                                    ,86103
+Urgences     ,Timone            ,SAULT                                      ,86318
+Urgences     ,Timone            ,Alexie GARDON                              ,89831
+Urgences     ,Timone            ,Audrey MOUKARZEL                           ,85103
+Urgences     ,Timone            ,Aurélia RUF                                ,86317
+Urgences     ,Timone            ,Bruno ELA ONDO                             ,86101
+Urgences     ,Timone            ,Camille BARALLA                            ,89842
+Urgences     ,Timone            ,Cécilia REYMONET                           ,88033
+Urgences     ,Timone            ,Céline MEGUERDITCHIAN                      ,89855
+Urgences     ,Timone            ,Charlotte BADER                            ,85569
+Urgences     ,Timone            ,Dalia AHRIZ                                ,85051
+Urgences     ,Timone            ,Damien CHAKOUR                             ,85101
+Urgences     ,Timone            ,Damien PERRUCHETTI                         ,29540
+Urgences     ,Timone            ,Eric AUBERT                                ,88030
+Urgences     ,Timone            ,Gilles GAMBINI                             ,89849
+Urgences     ,Timone            ,Guillaume DOUCET                           ,85550
+Urgences     ,Timone            ,Jérémy MONTEIRO                            ,86104
+Urgences     ,Timone            ,Joelle RAKOTO                              ,89850
+Urgences     ,Timone            ,Juliette SCAPIN                            ,85076
+Urgences     ,Timone            ,Laura CLUZOL                               ,89825
+Urgences     ,Timone            ,Laurence GILLY                             ,89844
+Urgences     ,Timone            ,Magali PESAPIA                             ,89852
+Urgences     ,Timone            ,Manue PELLICCIA                            ,85063
+Urgences     ,Timone            ,Marion CHAZARA                             ,89843
+Urgences     ,Timone            ,Marine GRZEMBOWSKI                         ,89847
+Urgences     ,Timone            ,Patrick GERBEAUX                           ,29714
+Urgences     ,Timone            ,Thibaut MARKARIAN                          ,29732
+Urgences     ,Timone            ,Traumatologie                              ,29486
+Urgences     ,Timone            ,Vincent FEHRENBACH                         ,89829
+Urgences     ,Timone            ,DJ                                         ,85109 / 86319 / 86102
+Urgences     ,Timone            ,Securité Urg Mod 1                         ,37197 / 37187
+Urgences     ,Timone            ,IaO ZAC                                    ,38201 / 29521 / 29522(IRF)
+Urgences     ,Timone            ,IaO Piéton                                 ,29701
+Urgences     ,Timone            ,Ambu                                       ,29356 / 29357 / 29358 / 29359
+Urgences     ,Timone            ,IDE ambu                                   ,88019
+Urgences     ,Timone            ,Equipe 1 Interne                           ,29723
+Urgences     ,Timone            ,Equipe 1 IDE                               ,85131
+Urgences     ,Timone            ,Equipe 1 AS                                ,80042
+Urgences     ,Timone            ,Equipe 2 Interne                           ,29717
+Urgences     ,Timone            ,Equipe 2 IDE                               ,85132
+Urgences     ,Timone            ,Equipe 2 AS                                ,80045
+Urgences     ,Timone            ,Equipe 3 Interne                           ,89838
+Urgences     ,Timone            ,Equipe 3 IDE                               ,85133
+Urgences     ,Timone            ,Equipe 3 AS                                ,80048
+Urgences     ,Timone            ,Equipe 4 Interne                           ,29718
+Urgences     ,Timone            ,Equipe 4 IDE                               ,85134
+Urgences     ,Timone            ,Equipe 4 AS                                ,80051
+Urgences     ,Timone            ,Traumato Interne                           ,29547
+Urgences     ,Timone            ,Traumato IDE                               ,80058
+Urgences     ,Timone            ,Traumato AS                                ,80054
+Urgences     ,Timone            ,Sauv                                       ,29720
+Urgences     ,Timone            ,SAS                                        ,89830
+Urgences     ,Timone            ,UHCD                                       ,29724/5
+Urgences     ,Timone            ,MAO                                        ,37257
+Urgences     ,Timone            ,Senior SAUV                                ,89833
+Urgences     ,Timone            ,Interne SAUV                               ,89827
+Urgences     ,Timone            ,IGU                                        ,29104 / 29304
+Urgences     ,Timone            ,Cadres                                     ,29650 / 29651 / 29652 / 29653
+Urgences     ,Timone            ,IDEC UH                                    ,29655
+Urgences     ,Timone            ,IDE UH                                     ,29724 / 29725
+Urgences     ,Timone            ,Majors                                     ,88037 / 88039
+Urgences     ,Timone            ,Logisticienne                              ,88025 / 88026 / 29729
+Urgences     ,Timone            ,Assistante Sociale                         ,89653
+Urgences     ,Timone            ,Secrétariat                                ,29715
+Urgences     ,Timone            ,Accueil admin                              ,29703 / 29701
+Urgences     ,Timone            ,Accueil infirmier Vitre                    ,29721
+Urgences     ,Timone            ,IDE fly                                    ,29518
+Urgences     ,Timone            ,ASH                                        ,29639 / 29649
+Urgences     ,Timone            ,Médiateur                                  ,89834
+Urgences     ,Timone            ,ASB1                                       ,37326
+Urgences     ,Timone            ,ASB2                                       ,37327
+Urgences     ,Timone            ,ASB3                                       ,37047
+Urgences     ,Timone            ,ASB4                                       ,37048
+Urgences     ,Timone            ,ASB5                                       ,37049
+Urgences     ,Timone            ,ASB6                                       ,37051
+Urgences     ,Timone            ,Main IDE                                   ,85385
+Urgences     ,Timone            ,Garage Urg                                 ,82740/1
+Urgences     ,Timone            ,Cadre PCI Urg                              ,85020 / 85021
+Urgences     ,Timone            ,PASS Urg                                   ,87879
+N° Utiles    ,Timone            ,Securité Urg Mod 2                         ,85253
+N° Utiles    ,Timone            ,Brancard régulation                        ,38359
+N° Utiles    ,Timone            ,Brancard pool                              ,29400
+N° Utiles    ,Timone            ,Coursier Urg                               ,88566
+N° Utiles    ,Timone            ,Coursier nuit Urg                          ,88835 / 88836
+N° Utiles    ,Timone            ,Informatique                               ,84444
+N° Utiles    ,Timone            ,Dispatching                                ,82222
+N° Utiles    ,Timone            ,Dépositoire                                ,85082

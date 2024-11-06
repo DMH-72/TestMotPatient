@@ -294,10 +294,6 @@ input[type="date"]:focus {
   transform: scaleX(1);
 }
 
-
-
-
-
 .subdivobservationFlex {
   display: inline-block;
   /* grid-auto-flow: column;
@@ -646,6 +642,7 @@ input {
   justify-content: center;
   align-items: center;
   z-index: 4;
+  overflow-y: auto; 
 }
 
 .form-group {
@@ -703,11 +700,75 @@ input {
   background-color: darkred;
 }
 
+.tableAnnuaire {
+  width : 100%;
+}
+
 .piedDePage {
   background-color: var(--couleurElement);
+  position: fixed;
+  width: 100%;
+  bottom: 0px;
+  left: 0px;
   display: flex;
   justify-content: space-evenly;
+  padding: 5px;
+  border-top: solid 2px black;
 }
+
+.subSectionPiedDePage {
+  padding-left: 45px;
+  padding-right: 45px;
+  position: relative; /* Permet le positionnement absolu de TestLien */
+  z-index: 2;
+}
+
+.subSectionPiedDePage p {
+  margin: 0;
+}
+
+.TestLien {
+  display: none;
+  position: absolute;
+  bottom: 100%; /* Aligne TestLien juste au-dessus de subSectionPiedDePage */
+  left: 50px;
+  pointer-events: none;
+  background-color: var(--couleurElement);
+  text-align: center;
+  opacity: 0;
+  border: solid 2px black;
+  border-bottom: solid 0px;
+  border-top-left-radius: 6px;
+  border-top-right-radius: 6px;
+  padding: 10px;
+  width: 150px;
+  z-index: 1;
+  transform: translateY(100px); /* Départ de l’animation en dessous */
+  transition: opacity 0.3s ease 0.5s, transform 1s ease 0.5s;
+}
+
+.TestLien a {
+  text-decoration: none;
+  color: black;
+}
+
+.TestLien a:hover {
+  font-weight: bold;
+  color: black;
+}
+
+.subSectionPiedDePage:hover .TestLien {
+  display: block;
+  transform: translateY(-5px); /* Lien remonte dans sa position normale */
+  opacity: 1;
+  transition: opacity 0.3s ease, transform 1s ease;
+  pointer-events: auto;
+}
+
+.subSectionPiedDePage p:hover {
+  font-weight: bold;
+}
+
 
 @media (max-width: 1240px) {
   .divobsersationFlex {
