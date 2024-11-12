@@ -712,6 +712,189 @@ function updateScorePreview(affichage_debutResultat, unite) {
     .slice(0, -1)})</p>`;
 }
 
+function burnFunction() {
+  // Insertion du contenu dans le modal
+  const modalContent = `
+        <div class="modal-overlay">
+            <div class="modal-content">
+                <div class="drawStyle">
+                  <button class="close-button" onclick="closeModal()">×</button>
+                  <h2>E-BURN Maison</h2>
+                  <canvas id="surfaceCanvas" width="300" height="600"></canvas>
+                  <div id="controls">
+                  <button id="drawMode">Dessiner</button>
+                  <button id="eraseMode">Effacer</button>
+                  <button id="clearCanvas">Réinitialiser</button>
+                  <p id="surfacePercent">Surface brûlée : 0%</p>
+                  <label for="sizeSlider">Taille du pinceau/effaceur :</label>
+                  <input type="range" id="sizeSlider" min="5" max="30" value="5">
+                <!-- <button id="countRedPixelsButton">Compter les pixels rouges</button> -->
+              </div>
+            </div>
+          </div>
+        </div>
+    `;
+
+  document.body.insertAdjacentHTML("beforeend", modalContent);
+
+  // // **E-BURN** SUPER mais légérement décaller
+  const canvas = document.getElementById("surfaceCanvas");
+  const context = canvas.getContext("2d");
+
+  const drawCanvas = document.createElement("canvas");
+  drawCanvas.width = canvas.width;
+  drawCanvas.height = canvas.height;
+  const drawContext = drawCanvas.getContext("2d");
+
+  let isDrawing = false;
+  let isErasing = false;
+
+  // Charger l'image de la silhouette et l'afficher en fond du canvas principal
+  const silhouetteImage = new Image();
+  silhouetteImage.src = "humain.png";
+  silhouetteImage.onload = () => {
+    context.drawImage(silhouetteImage, 0, 0, canvas.width, canvas.height);
+  };
+
+  // Afficher le calque de dessin par-dessus le canvas principal
+  canvas.parentElement.appendChild(drawCanvas);
+  drawCanvas.style.position = "absolute";
+  drawCanvas.style.top = canvas.offsetTop + 2 + "px";
+  drawCanvas.style.left = canvas.offsetLeft + 2 + "px";
+
+  // Événements de dessin et d'effacement sur le calque de dessin
+  drawCanvas.addEventListener("mousedown", startDrawing);
+  drawCanvas.addEventListener("mousemove", draw);
+  drawCanvas.addEventListener("mouseup", endDrawing);
+
+  // Gestion des boutons pour le mode dessin et effacement
+  document.getElementById("drawMode").addEventListener("click", () => {
+    isErasing = false;
+    drawContext.globalCompositeOperation = "source-over"; // Mode de dessin normal
+    drawContext.strokeStyle = "red";
+  });
+
+  document.getElementById("eraseMode").addEventListener("click", () => {
+    isErasing = true;
+    drawContext.globalCompositeOperation = "destination-out"; // Mode d'effacement
+  });
+
+  document.getElementById("clearCanvas").addEventListener("click", clearCanvas);
+
+  // Ajustement de la taille du pinceau
+  const sizeSlider = document.getElementById("sizeSlider");
+  sizeSlider.addEventListener("input", () => {
+    drawContext.lineWidth = sizeSlider.value;
+  });
+
+  function startDrawing(event) {
+    isDrawing = true;
+    drawContext.beginPath();
+    drawContext.moveTo(event.offsetX, event.offsetY);
+  }
+
+  function draw(event) {
+    if (!isDrawing) return;
+
+    const x = event.offsetX;
+    const y = event.offsetY;
+
+    // Applique la taille du pinceau en fonction de la valeur du curseur
+    drawContext.lineWidth = sizeSlider.value;
+
+    // Limite le dessin ou l’effacement à la silhouette uniquement
+    if (isInsideMask(x, y)) {
+      drawContext.lineTo(x, y);
+      drawContext.stroke();
+    } else {
+      drawContext.beginPath();
+      drawContext.moveTo(x, y);
+    }
+  }
+
+  function endDrawing() {
+    isDrawing = false;
+    drawContext.closePath();
+    removeOutsideDrawing(); // Efface les pixels rouges en dehors de la silhouette
+    countRedPixels(); // Met à jour le pourcentage de surface brûlée
+  }
+
+  // Fonction pour vérifier si un point est dans la silhouette
+  function isInsideMask(x, y) {
+    const maskData = context.getImageData(x, y, 1, 1).data;
+    return maskData[3] > 0; // True si le pixel de la silhouette est non transparent
+  }
+
+  // Fonction pour effacer les zones rouges en dehors de la silhouette
+  function removeOutsideDrawing() {
+    const imageData = drawContext.getImageData(
+      0,
+      0,
+      drawCanvas.width,
+      drawCanvas.height
+    );
+    const maskData = context.getImageData(0, 0, canvas.width, canvas.height);
+
+    for (let i = 0; i < imageData.data.length; i += 4) {
+      const r = imageData.data[i];
+      const g = imageData.data[i + 1];
+      const b = imageData.data[i + 2];
+      const alpha = maskData.data[i + 3];
+
+      // Si le pixel est rouge et en dehors de la silhouette, on l'efface
+      if (r === 255 && g === 0 && b === 0 && alpha === 0) {
+        imageData.data[i] = 0; // R
+        imageData.data[i + 1] = 0; // G
+        imageData.data[i + 2] = 0; // B
+        imageData.data[i + 3] = 0; // Alpha
+      }
+    }
+
+    drawContext.putImageData(imageData, 0, 0);
+  }
+
+  // Fonction pour compter les pixels rouges (surface brûlée)
+  function countRedPixels() {
+    const imageData = drawContext.getImageData(
+      0,
+      0,
+      drawCanvas.width,
+      drawCanvas.height
+    );
+    const maskData = context.getImageData(0, 0, canvas.width, canvas.height);
+    let redPixelCount = 0;
+    let silhouettePixelCount = 0;
+
+    for (let i = 0; i < imageData.data.length; i += 4) {
+      const r = imageData.data[i];
+      const g = imageData.data[i + 1];
+      const b = imageData.data[i + 2];
+      const alpha = maskData.data[i + 3];
+
+      if (alpha > 0) {
+        silhouettePixelCount++;
+        if (r === 255 && g === 0 && b === 0) {
+          redPixelCount++;
+        }
+      }
+    }
+
+    const burnPercent = (redPixelCount / silhouettePixelCount) * 100;
+    document.getElementById(
+      "surfacePercent"
+    ).textContent = `Surface brûlée : ${burnPercent.toFixed(2)}%`;
+  }
+
+  // Réinitialise le canvas de dessin et redessine la silhouette
+  function clearCanvas() {
+    drawContext.clearRect(0, 0, drawCanvas.width, drawCanvas.height);
+    document.getElementById("surfacePercent").textContent =
+      "Surface brûlée : 0%";
+  }
+}
+
+// ** PIED DE PAGE **
+
 async function annuaire() {
   const response = await fetch("annuaire.csv");
   const csvText = await response.text();
@@ -844,4 +1027,21 @@ function filterTable() {
       row.style.display = "none";
     }
   });
+}
+
+function ouvrirLien(onglet) {
+  const element = document.getElementById(onglet);
+  if (element.style.display === "none" || element.style.display === "") {
+    element.style.display = "block"; // Afficher l'élément
+    setTimeout(function () {
+      element.style.opacity = "1"; // Appliquer la transition d'opacité
+      element.style.pointerEvents = "auto"; // Permettre l'interaction
+    }, 10); // Petite temporisation pour s'assurer que le display est défini avant de changer l'opacité
+  } else {
+    element.style.opacity = "0"; // Rendre l'élément invisible
+    setTimeout(function () {
+      element.style.display = "none"; // Cacher l'élément après la transition
+      element.style.pointerEvents = "none"; // Désactiver l'interaction
+    }, 300); // Attendre la fin de la transition d'opacité
+  }
 }

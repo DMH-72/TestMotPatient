@@ -1,10 +1,10 @@
 /* Style global */
 
 * {
-  --couleurElement : rgb(226, 226, 226);
-  --couleurTexte : rgb(29, 29, 29);
-  --couleurActif : rgb(227, 0, 46);
-  --couleurBordureInactif : #bfbfbf;
+  --couleurElement: rgb(226, 226, 226);
+  --couleurTexte: rgb(29, 29, 29);
+  --couleurActif: rgb(227, 0, 46);
+  --couleurBordureInactif: #bfbfbf;
 }
 
 body {
@@ -17,7 +17,7 @@ body {
 /* ######################## EN-TETE ######################## */
 header {
   background-color: #054293;
-  
+
   border-bottom: 4px solid #333;
   color: white;
   padding: 0px;
@@ -61,7 +61,7 @@ nav {
   flex-basis: auto;
   flex-grow: 1;
   min-height: 25px;
-  height: 1fr;  
+  height: 1fr;
 }
 
 .enTete a {
@@ -70,7 +70,7 @@ nav {
   text-decoration: none;
   color: rgb(255, 255, 255);
   font-size: 16px;
-  padding: 3px;  
+  padding: 3px;
   transition: font-weight 0.1s ease;
 }
 
@@ -98,7 +98,7 @@ h3 {
   background-color: var(--couleurElement);
   border-top-left-radius: 8px;
   border-top-right-radius: 8px;
-  border : 1px solid black;
+  border: 1px solid black;
   margin: 0px;
   color: rgb(39, 39, 39);
 }
@@ -111,29 +111,34 @@ input[type="date"] {
   font-family: system-ui;
   outline: none;
   height: 22px;
-  padding : 2px;
+  padding: 2px;
   border-radius: 4px;
-  border: 2px solid rgb(204, 204, 204); 
+  border: 2px solid rgb(204, 204, 204);
   text-align: center;
 }
-input[type="date"]:hover {  
-  border: 2px solid var(--couleurActif); 
+
+input[type="date"]:hover {
+  border: 2px solid var(--couleurActif);
 }
-input[type="date"]:focus {  
-  border: 2px solid var(--couleurActif); 
+
+input[type="date"]:focus {
+  border: 2px solid var(--couleurActif);
 }
 
 .fieldDeroulant {
   font-size: 0.8em;
   border: 0px solid;
   padding-bottom: 0px;
-} 
+}
 
 
 .fieldDeroulant div {
-  max-height: 0; /* Hauteur initiale à 0 */
-  overflow: hidden; /* Cache le contenu quand la hauteur est 0 */
-  transition: max-height 0.3s ease-out; /* Transition fluide sur max-height */
+  max-height: 0;
+  /* Hauteur initiale à 0 */
+  overflow: hidden;
+  /* Cache le contenu quand la hauteur est 0 */
+  transition: max-height 0.3s ease-out;
+  /* Transition fluide sur max-height */
   transition-delay: 0s;
   display: flex;
   flex-direction: row;
@@ -143,16 +148,17 @@ input[type="date"]:focus {
 }
 
 .fieldDeroulant:hover div {
-  max-height: 300px; /* Hauteur maximale après le survol */
+  max-height: 300px;
+  /* Hauteur maximale après le survol */
   transition-delay: 0.4s;
 }
 
 .fieldDeroulant summary {
   display: flex;
-    align-items: baseline;
-    flex-wrap: nowrap;
-    justify-content: flex-start;
-    gap: 15px;
+  align-items: baseline;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+  gap: 15px;
 }
 
 .fieldDeroulant .arrow {
@@ -161,13 +167,15 @@ input[type="date"]:focus {
   display: inline-block;
   padding: 5px;
   margin-bottom: 15px;
-  transform: rotate(45deg); /* Flèche pointant vers le bas */
+  transform: rotate(45deg);
+  /* Flèche pointant vers le bas */
   transition: transform 0.5s ease;
   transition-delay: 0.3s;
 }
 
 .fieldDeroulant:hover .arrow {
-  transform:  translate(0px, 5px) rotate(-135deg); /* Flèche pointant vers le haut */
+  transform: translate(0px, 5px) rotate(-135deg);
+  /* Flèche pointant vers le haut */
 }
 
 .btnCt {
@@ -178,14 +186,14 @@ input[type="date"]:focus {
 .observationConstantes {
   scroll-margin-top: 85px;
   background-color: white;
-  border : 1px solid black;  
+  border: 1px solid black;
   border-radius: 8px;
   margin: 5px;
   margin-bottom: 20px;
   box-shadow: 0px 0px 5px 1px rgb(80, 80, 80);
 }
 
-.observationConstantes h3{
+.observationConstantes h3 {
   display: grid;
   grid-template-columns: 120px 1fr;
 }
@@ -193,7 +201,7 @@ input[type="date"]:focus {
 .observation {
   scroll-margin-top: 85px;
   background-color: white;
-  border : 1px solid black;  
+  border: 1px solid black;
   border-radius: 8px;
   margin: 5px;
   margin-bottom: 20px;
@@ -215,35 +223,35 @@ input[type="date"]:focus {
 }
 
 .input-group input {
-  width : 100%;
-  padding : 0.6rem;
+  width: 100%;
+  padding: 0.6rem;
   font-size: 0.9rem;
   background-color: rgb(255, 255, 255);
   border: none;
   outline: none;
 }
 
-.input-group.type-google input{
+.input-group.type-google input {
   border: 2px solid #ccc;
   border-radius: .4rem;
   width: 7rem;
 }
 
-.input-group.type-google.constantes input{
+.input-group.type-google.constantes input {
   border: 2px solid var(--couleurBordureInactif);
   border-radius: .4rem;
-  color : var(--couleurTexte);
+  color: var(--couleurTexte);
   width: 2.5rem;
-  padding : 0.1rem;
-  margin : 0.1rem;
+  padding: 0.1rem;
+  margin: 0.1rem;
 }
 
-.input-group.type-google input:focus{
+.input-group.type-google input:focus {
   border: 2px solid var(--couleurActif);
-  color : var(--couleurActif);
+  color: var(--couleurActif);
 }
 
-.input-group.type-google input:hover{
+.input-group.type-google input:hover {
   border: 2px solid var(--couleurActif);
 }
 
@@ -253,44 +261,43 @@ input[type="date"]:focus {
   transform: translateY(-65%);
   color: #000000;
   background-color: rgb(255, 255, 255);
-  font-size : 0.9rem;
+  font-size: 0.9rem;
   transition: .2s ease-in-out;
 }
 
-.input-group.type-google label{
+.input-group.type-google label {
   left: 0.5rem;
   padding: .4rem;
   padding-top: 0;
   padding-bottom: 0;
 }
 
-.input-group input:focus + label,
-.input-group input:valid + label
-{
-  top:7%;
+.input-group input:focus+label,
+.input-group input:valid+label {
+  top: 7%;
   font-size: .7rem;
-  color : var(--couleurActif);
+  color: var(--couleurActif);
 }
 
-.input-group input:not(:focus) + label {
+.input-group input:not(:focus)+label {
   color: var(--couleurTexte);
 }
 
-.input-group.constantes input:not(:focus) + label {
+.input-group.constantes input:not(:focus)+label {
   color: var(--couleurTexte);
 }
 
 .input-group .boder {
   position: absolute;
-  left:0;
+  left: 0;
   bottom: 0;
   height: .1rem;
-  width:100%;
-  background-color: var(--couleurActif) ;
+  width: 100%;
+  background-color: var(--couleurActif);
   transform: scaleX(0);
 }
 
-.input-group.type-md input:focus ~ .border {
+.input-group.type-md input:focus~.border {
   transform: scaleX(1);
 }
 
@@ -304,20 +311,22 @@ input[type="date"]:focus {
   gap: 10px;
 }
 
-.subdivobservationFlex select {  
+.subdivobservationFlex select {
   border-radius: 5px;
   border: 2px solid rgb(204, 204, 204);
   box-shadow: none;
   height: 2.4rem;
-  outline:none;
+  outline: none;
   appearance: none;
-  padding : 0 5px;
+  padding: 0 5px;
 }
-.subdivobservationFlex select:hover {  
-  border: 2px solid var(--couleurActif); 
+
+.subdivobservationFlex select:hover {
+  border: 2px solid var(--couleurActif);
 }
+
 .subdivobservationFlex select:focus {
-  border: 2px solid var(--couleurActif); 
+  border: 2px solid var(--couleurActif);
 }
 
 .divConstantesFlex option {
@@ -335,13 +344,13 @@ input[type="date"]:focus {
 
 .subdivConstantesFlex {
   border: 1px solid var(--couleurBordureInactif);
-  background-color:  var(--couleurElement);
+  background-color: var(--couleurElement);
   border: 2px solid #333;
   color: rgb(29, 29, 29);
-  border-radius : 6px;  
+  border-radius: 6px;
   box-shadow: 0px 0px 3px 1px rgb(155, 155, 155);
   gap: 5px;
-  padding: 5px;  
+  padding: 5px;
   padding-top: 10px;
   min-width: 100px;
   max-width: 180px;
@@ -358,7 +367,7 @@ input[type="date"]:focus {
   width: 40px;
   height: 26px;
   margin: 0px;
-  padding : 0px;
+  padding: 0px;
   text-align: center;
   line-height: 2px;
   border-radius: 5px;
@@ -366,16 +375,19 @@ input[type="date"]:focus {
   box-shadow: none;
   outline: none;
 }
-.subdivConstantesFlex input:hover {  
-  border: 2px solid var(--couleurActif); 
+
+.subdivConstantesFlex input:hover {
+  border: 2px solid var(--couleurActif);
 }
+
 .subdivConstantesFlex input:focus {
-  border: 2px solid var(--couleurActif); 
+  border: 2px solid var(--couleurActif);
 }
+
 .subdivConstantesFlex select {
   height: 31px;
   margin: 0px;
-  padding : 2px;
+  padding: 2px;
   text-align: center;
   line-height: 2px;
   border-radius: 5px;
@@ -385,11 +397,13 @@ input[type="date"]:focus {
   box-shadow: none;
   outline: none;
 }
-.subdivConstantesFlex select:hover {  
-  border: 2px solid var(--couleurActif); 
+
+.subdivConstantesFlex select:hover {
+  border: 2px solid var(--couleurActif);
 }
+
 .subdivConstantesFlex select:focus {
-  border: 2px solid var(--couleurActif); 
+  border: 2px solid var(--couleurActif);
 }
 
 
@@ -403,10 +417,10 @@ input[type="date"]:focus {
   flex-wrap: nowrap;
 }
 
-.subSectionTemporaire{
-  display : flex;
+.subSectionTemporaire {
+  display: flex;
   flex-direction: column;
-  padding:15px;
+  padding: 15px;
 }
 
 .subdivobservationTemporaire {
@@ -421,7 +435,7 @@ input[type="date"]:focus {
   gap: 5px;
 }
 
-.subdivinlineModeDeVie{
+.subdivinlineModeDeVie {
   justify-content: flex-start;
   padding-left: 15px;
 }
@@ -460,7 +474,13 @@ input[type="date"]:focus {
   border: 2px solid var(--couleurActif);
 }
 
-#volumeOH1,#volumeOH2,#volumeOH3,#degre1,#degre3,#degre2, #verreSemaine{
+#volumeOH1,
+#volumeOH2,
+#volumeOH3,
+#degre1,
+#degre3,
+#degre2,
+#verreSemaine {
   width: 25px;
   height: 17px;
 }
@@ -475,14 +495,21 @@ input[type="date"]:focus {
 }
 
 .clinic {
-  border: 2px solid #ccc; 
-  width: 100%; /* Largeur de l'élément */
-  overflow-y: auto; /* Activation du défilement vertical si le contenu dépasse */
-  background-color: #ffffff; /* Couleur de fond claire */
-  font-family: Arial, sans-serif; /* Police du texte */
-  font-size: 14px; /* Taille du texte */
-  line-height: 1.6; /* Espacement entre les lignes */
-  color: #333; /* Couleur du texte */
+  border: 2px solid #ccc;
+  width: 100%;
+  /* Largeur de l'élément */
+  overflow-y: auto;
+  /* Activation du défilement vertical si le contenu dépasse */
+  background-color: #ffffff;
+  /* Couleur de fond claire */
+  font-family: Arial, sans-serif;
+  /* Police du texte */
+  font-size: 14px;
+  /* Taille du texte */
+  line-height: 1.6;
+  /* Espacement entre les lignes */
+  color: #333;
+  /* Couleur du texte */
   border-radius: 8px;
   overflow: hidden;
   display: inline-block;
@@ -500,12 +527,12 @@ input[type="date"]:focus {
 
 .fieldsetText:hover {
   border-radius: 8px;
-  border: 2px solid var(--couleurActif); 
+  border: 2px solid var(--couleurActif);
 }
 
 .fieldsetText.focused {
   border-radius: 8px;
-  border: 2px solid var(--couleurActif); 
+  border: 2px solid var(--couleurActif);
   padding-top: 0px;
 }
 
@@ -515,7 +542,7 @@ input[type="date"]:focus {
   outline: 0px solid transparent
 }
 
-.fieldsetText legend{
+.fieldsetText legend {
   font-weight: bold;
 }
 
@@ -524,7 +551,7 @@ input[type="date"]:focus {
   padding: 4px;
   padding-bottom: 6px;
   border-radius: 6px;
-  border: 2px solid #ccc;  
+  border: 2px solid #ccc;
   transition: border 0.15s ease, border-radius 0.15s ease, font-size 0.15s ease;
 }
 
@@ -546,7 +573,8 @@ input {
   background-color: #f9f9f9;
   padding: 10px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-  width: 150px; /* Largeur du menu */
+  width: 150px;
+  /* Largeur du menu */
 }
 
 .menu-content div {
@@ -564,10 +592,14 @@ input {
   border: 1px solid #ccc;
   text-align: left;
   width: 350px;
-  background-color: #ffffff; /* Couleur de fond claire */
-  font-family: Arial, sans-serif; /* Police du texte */
-  font-size: 13px; /* Taille du texte */
-  color: #333; /* Couleur du texte */
+  background-color: #ffffff;
+  /* Couleur de fond claire */
+  font-family: Arial, sans-serif;
+  /* Police du texte */
+  font-size: 13px;
+  /* Taille du texte */
+  color: #333;
+  /* Couleur du texte */
   border-radius: 2px;
   margin-bottom: 1px;
   margin-top: 0px;
@@ -604,8 +636,10 @@ input {
   flex-direction: column;
   height: 100%;
   overflow-y: auto;
-  border: 1px solid #ccc; /* Ajouter une bordure si nécessaire */
-  font-size: 14px; /* Ajuster la taille de la police si besoin */
+  border: 1px solid #ccc;
+  /* Ajouter une bordure si nécessaire */
+  font-size: 14px;
+  /* Ajuster la taille de la police si besoin */
 }
 
 .scoreSuggestion {
@@ -623,10 +657,14 @@ input {
   border: 1px solid #ccc;
   text-align: left;
   width: 350px;
-  background-color: #ffffff; /* Couleur de fond claire */
-  font-family: Arial, sans-serif; /* Police du texte */
-  font-size: 13px; /* Taille du texte */
-  color: #333; /* Couleur du texte */
+  background-color: #ffffff;
+  /* Couleur de fond claire */
+  font-family: Arial, sans-serif;
+  /* Police du texte */
+  font-size: 13px;
+  /* Taille du texte */
+  color: #333;
+  /* Couleur du texte */
   border-radius: 2px;
   z-index: 4;
 }
@@ -642,7 +680,7 @@ input {
   justify-content: center;
   align-items: center;
   z-index: 4;
-  overflow-y: auto; 
+  overflow-y: auto;
 }
 
 .form-group {
@@ -676,7 +714,8 @@ input {
 }
 
 .close-button:hover {
-  color: #ff0000; /* Rouge pour indiquer un hover */
+  color: #ff0000;
+  /* Rouge pour indiquer un hover */
 }
 
 .score-entry {
@@ -700,8 +739,22 @@ input {
   background-color: darkred;
 }
 
+#surfaceCanvas {
+  border: 2px solid #333;
+  cursor: crosshair;
+  margin-top: 10px;
+}
+
+#controls {
+  margin-top: 10px;
+  display: flex;
+  gap: 10px;
+}
+
+
+
 .tableAnnuaire {
-  width : 100%;
+  width: 100%;
 }
 
 .piedDePage {
@@ -719,7 +772,8 @@ input {
 .subSectionPiedDePage {
   padding-left: 45px;
   padding-right: 45px;
-  position: relative; /* Permet le positionnement absolu de TestLien */
+  position: relative;
+  /* Permet le positionnement absolu de TestLien */
   z-index: 2;
 }
 
@@ -730,8 +784,8 @@ input {
 .TestLien {
   display: none;
   position: absolute;
-  bottom: 100%; /* Aligne TestLien juste au-dessus de subSectionPiedDePage */
-  left: 50px;
+  bottom: 28px;
+  left: 0px;
   pointer-events: none;
   background-color: var(--couleurElement);
   text-align: center;
@@ -743,8 +797,8 @@ input {
   padding: 10px;
   width: 150px;
   z-index: 1;
-  transform: translateY(100px); /* Départ de l’animation en dessous */
-  transition: opacity 0.3s ease 0.5s, transform 1s ease 0.5s;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  /* Transition douce */
 }
 
 .TestLien a {
@@ -757,22 +811,9 @@ input {
   color: black;
 }
 
-.subSectionPiedDePage:hover .TestLien {
-  display: block;
-  transform: translateY(-5px); /* Lien remonte dans sa position normale */
-  opacity: 1;
-  transition: opacity 0.3s ease, transform 1s ease;
-  pointer-events: auto;
-}
-
-.subSectionPiedDePage p:hover {
-  font-weight: bold;
-}
-
-
 @media (max-width: 1240px) {
   .divobsersationFlex {
-    grid-template-columns: minmax(200px, 1fr) minmax(140px, 1fr) minmax(120px, 1fr) minmax(240px, 1fr) minmax(260px, 1fr) ;
+    grid-template-columns: minmax(200px, 1fr) minmax(140px, 1fr) minmax(120px, 1fr) minmax(240px, 1fr) minmax(260px, 1fr);
   }
 }
 
@@ -784,14 +825,16 @@ input {
 
 @media (max-width: 935px) {
   .divobsersationFlex {
-    grid-template-columns: minmax(240px, 1fr) minmax(260px, 1fr) minmax(200px, 1fr) ;
+    grid-template-columns: minmax(240px, 1fr) minmax(260px, 1fr) minmax(200px, 1fr);
   }
 }
 
 @media (max-width: 835px) {
   header {
-    grid-template-columns: 3em 1fr; /* Passer en disposition sur une seule colonne */
-    grid-template-rows: auto; /* Ajustement automatique des lignes */
+    grid-template-columns: 3em 1fr;
+    /* Passer en disposition sur une seule colonne */
+    grid-template-rows: auto;
+    /* Ajustement automatique des lignes */
   }
 
   img {
@@ -801,21 +844,23 @@ input {
   }
 
   nav {
-    order: 3; /* Déplacer nav sous l'image et le titre */
+    order: 3;
+    /* Déplacer nav sous l'image et le titre */
     grid-column: 1 / span 2;
-    width: 100%; /* Occuper toute la largeur */
+    width: 100%;
+    /* Occuper toute la largeur */
     margin-top: 10px;
   }
 }
 
 @media (max-width: 805px) {
   .divobsersationFlex {
-    grid-template-columns: minmax(240px, 1fr) minmax(260px, 1fr) ;
+    grid-template-columns: minmax(240px, 1fr) minmax(260px, 1fr);
   }
 }
 
 @media (max-width: 615px) {
   .divobsersationFlex {
-    grid-template-columns: minmax(260px, 1fr) ;
+    grid-template-columns: minmax(260px, 1fr);
   }
 }
