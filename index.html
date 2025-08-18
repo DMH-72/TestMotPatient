@@ -652,13 +652,13 @@
         <div id="scoreSection" class="observation">
             <h3>Scores</h3>
             <div class="subSectionTemporaire">
-                <button id="testBtn" onclick="extraireTitre()">Afficher la base de donnée des
-                    scores</button>
                 <div class="input-score">
+                    <button id="testBtn" onclick="extraireTitre()">Tous les scores</button>
                     <label for="ajoutScore">Rechercher un score : </label>
                     <input type="text" id="ajoutScore" autocomplete="off">
                     <button id="ajoutSelectionScore" onclick="addScore()">Ajouter le score</button>
                 </div>
+                <div id="tableContainer"></div>
                 <div id="compteRendu">
                     <!-- Les scores remplis seront ajoutés ici -->
                 </div>
@@ -707,7 +707,12 @@
         </div>
     </footer>
 
+
+    <!-- Firebase App (version compat) -->
+    <script src="https://www.gstatic.com/firebasejs/10.12.3/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.12.3/firebase-firestore-compat.js"></script>
     <script src="back.js"></script>
+
 </body>
 
 </html>

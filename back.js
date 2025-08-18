@@ -1,3 +1,72 @@
+// // // --- Firebase ---
+
+// Configuration Firebase
+const firebaseConfig = {
+  apiKey: "AIzaSyDPzj-cl8ea7xXb_3QiJkPmVWOb02xTfUY",
+  authDomain: "lebadiz-clinic.firebaseapp.com",
+  projectId: "lebadiz-clinic",
+  storageBucket: "lebadiz-clinic.firebasestorage.app",
+  messagingSenderId: "1053524574093",
+  appId: "1:1053524574093:web:65b3b120e4ee4ca82207c4",
+};
+
+// Initialisation Firebase
+firebase.initializeApp(firebaseConfig);
+
+// Récupération de Firestore
+const db = firebase.firestore();
+
+// Exemple simple : lire tous les documents d'une collection
+db.collection("maCollection")
+  .get()
+  .then((querySnapshot) => {
+    querySnapshot.forEach((doc) => {
+      console.log(doc.id, "=>", doc.data());
+    });
+  })
+  .catch((error) => {
+    console.error("Erreur lors de la lecture :", error);
+  });
+
+// Fonction pour extraire et afficher les titres
+function extraireTitre() {
+  db.collection("score")
+    .get()
+    .then((querySnapshot) => {
+      // Construire le tableau HTML
+      let tableHTML =
+        "<table border='1' style='border-collapse: collapse; width: 100%;'>";
+      tableHTML += "<tr><th>Titre</th></tr>";
+
+      querySnapshot.forEach((doc) => {
+        const data = doc.data();
+        tableHTML += `<tr><td>${data.titre || ""}</td></tr>`;
+      });
+
+      tableHTML += "</table>";
+
+      // Créer la structure de la modale
+      const modalContent = `
+        <div class="modal-overlay">
+          <div class="modal-content">
+            <button class="close-button" onclick="closeModal()">×</button>
+            <br>
+            <h2>Liste des scores</h2>
+            ${tableHTML}
+          </div>
+        </div>
+      `;
+
+      // Ajouter la modale au DOM
+      document.body.insertAdjacentHTML("beforeend", modalContent);
+    })
+    .catch((error) => {
+      console.error("Erreur lors de la lecture :", error);
+      alert("Impossible de récupérer les données.");
+    });
+}
+// // --- End Firebase ---
+
 function toggleSection(checkboxId, sectionId) {
   var checkbox = document.getElementById(checkboxId).checked;
   if (checkbox === true) {
@@ -1062,63 +1131,3 @@ function ouvrirLien(onglet) {
     }, 300); // Attendre la fin de la transition d'opacité
   }
 }
-
-// Imports Firebase
-import {
-  getFirestore,
-  collection,
-  getDocs,
-} from "https://www.gstatic.com/firebasejs/10.12.3/firebase-firestore.js";
-import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.3/firebase-app.js";
-
-// Config Firebase (déjà dans ton fichier d’init, mais je le laisse si back.js est autonome)
-const firebaseConfig = {
-  apiKey: "AIzaSyDPzj-cl8ea7xXb_3QiJkPmVWOb02xTfUY",
-  authDomain: "lebadiz-clinic.firebaseapp.com",
-  projectId: "lebadiz-clinic",
-  storageBucket: "lebadiz-clinic.firebasestorage.app",
-  messagingSenderId: "1053524574093",
-  appId: "1:1053524574093:web:65b3b120e4ee4ca82207c4",
-};
-
-// Init Firebase
-const app = initializeApp(firebaseConfig);
-const db = getFirestore(app);
-
-// Fonction déclenchée par le bouton
-export async function extraireTitre() {
-  try {
-    const querySnapshot = await getDocs(collection(db, "scores"));
-
-    let tableRows = "";
-    querySnapshot.forEach((doc) => {
-      const data = doc.data();
-      tableRows += `<tr><td>${data.titre}</td></tr>`;
-    });
-
-    const modalContent = `
-      <div class="modal-overlay">
-        <div class="modal-content">
-          <button class="close-button" onclick="closeModal()">×</button>
-          <h2>Liste des scores</h2>
-          <table border="1" style="width:100%; border-collapse:collapse; text-align:left;">
-            <thead><tr><th>Titre</th></tr></thead>
-            <tbody>
-              ${tableRows}
-            </tbody>
-          </table>
-        </div>
-      </div>
-    `;
-
-    document.body.insertAdjacentHTML("beforeend", modalContent);
-  } catch (error) {
-    console.error("Erreur lors de la récupération des titres :", error);
-  }
-}
-
-// Fonction pour fermer la modale
-window.closeModal = function () {
-  const overlay = document.querySelector(".modal-overlay");
-  if (overlay) overlay.remove();
-};
