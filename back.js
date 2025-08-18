@@ -294,7 +294,7 @@ function grammeOHDisp() {
 }
 
 let contentAdvanceMap = {
-  General: `Etat hydratation :`,
+  General: `Etat hydratation`,
   Cardio: `
         <u>A l’interrogatoire:</u> Pas de douleur thoracique, pas de dyspnée, pas de palpitation <br>
         <u>A l’inspection :</u> Pas de turgescence jugulaires, pas d’œdème des membres inférieurs/lombes, pas de troubles trophiques, en résumé, pas de signes d’insuffisance cardiaque<br>
@@ -412,6 +412,7 @@ editableDivs.forEach((editableDiv) => {
 
 let scores = [];
 let selectedIndex = -1; // Index de l'élément sélectionné
+let suggestionsContainer;
 
 fetch("score.json") // Remplacez par le chemin de votre fichier JSON
   .then((response) => response.json())
@@ -450,7 +451,7 @@ fetch("score.json") // Remplacez par le chemin de votre fichier JSON
 function initializeSearchInput(scores) {
   const searchInput = document.getElementById("ajoutScore");
   const localisationButton = document.getElementById("ajoutSelectionScore");
-  let suggestionsContainer = document.createElement("div");
+  suggestionsContainer = document.createElement("div");
   localisationButton.parentNode.insertBefore(
     suggestionsContainer,
     localisationButton.nextSibling
