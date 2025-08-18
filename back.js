@@ -1062,3 +1062,63 @@ function ouvrirLien(onglet) {
     }, 300); // Attendre la fin de la transition d'opacité
   }
 }
+
+// Imports Firebase
+import {
+  getFirestore,
+  collection,
+  getDocs,
+} from "https://www.gstatic.com/firebasejs/10.12.3/firebase-firestore.js";
+import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.3/firebase-app.js";
+
+// Config Firebase (déjà dans ton fichier d’init, mais je le laisse si back.js est autonome)
+const firebaseConfig = {
+  apiKey: "AIzaSyDPzj-cl8ea7xXb_3QiJkPmVWOb02xTfUY",
+  authDomain: "lebadiz-clinic.firebaseapp.com",
+  projectId: "lebadiz-clinic",
+  storageBucket: "lebadiz-clinic.firebasestorage.app",
+  messagingSenderId: "1053524574093",
+  appId: "1:1053524574093:web:65b3b120e4ee4ca82207c4",
+};
+
+// Init Firebase
+const app = initializeApp(firebaseConfig);
+const db = getFirestore(app);
+
+// Fonction déclenchée par le bouton
+export async function extraireTitre() {
+  try {
+    const querySnapshot = await getDocs(collection(db, "scores"));
+
+    let tableRows = "";
+    querySnapshot.forEach((doc) => {
+      const data = doc.data();
+      tableRows += `<tr><td>${data.titre}</td></tr>`;
+    });
+
+    const modalContent = `
+      <div class="modal-overlay">
+        <div class="modal-content">
+          <button class="close-button" onclick="closeModal()">×</button>
+          <h2>Liste des scores</h2>
+          <table border="1" style="width:100%; border-collapse:collapse; text-align:left;">
+            <thead><tr><th>Titre</th></tr></thead>
+            <tbody>
+              ${tableRows}
+            </tbody>
+          </table>
+        </div>
+      </div>
+    `;
+
+    document.body.insertAdjacentHTML("beforeend", modalContent);
+  } catch (error) {
+    console.error("Erreur lors de la récupération des titres :", error);
+  }
+}
+
+// Fonction pour fermer la modale
+window.closeModal = function () {
+  const overlay = document.querySelector(".modal-overlay");
+  if (overlay) overlay.remove();
+};
