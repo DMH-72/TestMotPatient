@@ -294,7 +294,7 @@ function grammeOHDisp() {
 }
 
 let contentAdvanceMap = {
-  General: `Etat hydratation`,
+  General: `Etat hydratation :`,
   Cardio: `
         <u>A l’interrogatoire:</u> Pas de douleur thoracique, pas de dyspnée, pas de palpitation <br>
         <u>A l’inspection :</u> Pas de turgescence jugulaires, pas d’œdème des membres inférieurs/lombes, pas de troubles trophiques, en résumé, pas de signes d’insuffisance cardiaque<br>
