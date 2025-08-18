@@ -412,21 +412,37 @@ editableDivs.forEach((editableDiv) => {
 
 let scores = [];
 let selectedIndex = -1; // Index de l'élément sélectionné
-let suggestionsContainer;
 
-fetch("score.json") // Remplacez par le chemin de votre fichier JSON
-  .then((response) => response.json())
-  .then((data) => {
-    scores = data;
+// fetch("score.json") // Remplacez par le chemin de votre fichier JSON
+//   .then((response) => response.json())
+//   .then((data) => {
+//     scores = data;
+//     initializeSearchInput(scores);
+//     const searchInput = document.getElementById("ajoutScore");
+//     if (searchInput) {
+//       // searchInput.focus();
+//       console.log("Focus placé sur l'input après interaction utilisateur");
+//     }
+//   })
+//   .catch((error) => {
+//     console.error("Erreur lors du chargement du fichier JSON:", error);
+//     alert("Impossible de charger les données des scores.");
+//   });
+
+firebase
+  .firestore()
+  .collection("scores")
+  .get()
+  .then((querySnapshot) => {
+    scores = querySnapshot.docs.map((doc) => doc.data());
     initializeSearchInput(scores);
     const searchInput = document.getElementById("ajoutScore");
     if (searchInput) {
-      // searchInput.focus();
       console.log("Focus placé sur l'input après interaction utilisateur");
     }
   })
   .catch((error) => {
-    console.error("Erreur lors du chargement du fichier JSON:", error);
+    console.error("Erreur lors du chargement des scores Firebase:", error);
     alert("Impossible de charger les données des scores.");
   });
 
@@ -434,7 +450,7 @@ fetch("score.json") // Remplacez par le chemin de votre fichier JSON
 function initializeSearchInput(scores) {
   const searchInput = document.getElementById("ajoutScore");
   const localisationButton = document.getElementById("ajoutSelectionScore");
-  suggestionsContainer = document.createElement("div");
+  let suggestionsContainer = document.createElement("div");
   localisationButton.parentNode.insertBefore(
     suggestionsContainer,
     localisationButton.nextSibling
