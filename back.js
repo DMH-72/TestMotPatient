@@ -1301,6 +1301,18 @@ function showScoreModal(score) {
   textarea.style.height = "80px";
   textarea.value = score.default || "";
 
+  const existingScore = Array.from(
+    document.querySelectorAll("#compteRendu .scoreP")
+  ).find((p) => p.textContent.startsWith(score.titre));
+
+  if (existingScore) {
+    // extraire ce qui est après " : " si présent
+    const parts = existingScore.textContent.split(" : ");
+    textarea.value = parts[1] || "";
+  } else {
+    textarea.value = score.default || "";
+  }
+
   // Bouton Ajouter au CR
   const addButton = document.createElement("button");
   addButton.type = "button";
@@ -1325,16 +1337,55 @@ function showScoreModal(score) {
 // Ajout au CR
 function addScoreToCR(titre) {
   const freeText = document.getElementById("freeText").value;
-  const resultDiv = document.createElement("div");
-  resultDiv.classList.add("score-entry");
-  resultDiv.innerHTML = `
-    <p class="scoreP"><b>${titre}</b> ${freeText ? " : " + freeText : ""}</p>
-    <button type="button" class="remove-score-btn" onclick="removeScore(this)">x</button>
-  `;
-  document.getElementById("compteRendu").appendChild(resultDiv);
+
+  // Cherche si le score est déjà présent
+  const existingScoreDiv = Array.from(
+    document.querySelectorAll("#compteRendu .score-entry")
+  ).find((div) => div.querySelector(".scoreP").textContent.startsWith(titre));
+
+  if (existingScoreDiv) {
+    // Met à jour le texte libre existant
+    const p = existingScoreDiv.querySelector(".scoreP");
+    p.innerHTML = `<b>${titre}</b>${freeText ? " : " + freeText : ""}`;
+  } else {
+    // Sinon, crée une nouvelle entrée
+    const resultDiv = document.createElement("div");
+    resultDiv.classList.add("score-entry");
+    resultDiv.innerHTML = `
+      <p class="scoreP"><b>${titre}</b>${freeText ? " : " + freeText : ""}</p>
+      <button type="button" class="remove-score-btn" onclick="removeScore(this)">x</button>
+    `;
+    document.getElementById("compteRendu").appendChild(resultDiv);
+  }
+
   document.getElementById("ajoutScore").value = "";
   closeModal();
 }
+
+// Quand un score dans le compte rendu est cliqué
+document.getElementById("compteRendu").addEventListener("click", function (e) {
+  // Vérifie si on a cliqué sur un <p> de score
+  const scoreP = e.target.closest(".scoreP");
+  if (!scoreP) return;
+
+  // Récupère le titre du score
+  const titre = scoreP.querySelector("b").textContent;
+
+  // Récupère le texte libre existant (après les " : ")
+  const freeText = scoreP.textContent.includes(" : ")
+    ? scoreP.textContent.split(" : ")[1]
+    : "";
+
+  // Cherche l'objet score correspondant (dans ton tableau de scores)
+  const score = scores.find((s) => s.titre === titre);
+  if (!score) return;
+
+  // Préremplir freeText dans l'objet score pour showScoreModal
+  score.default = freeText;
+
+  // Ouvre la modal
+  showScoreModal(score);
+});
 
 // Fermer & supprimer
 function closeModal() {
