@@ -1271,19 +1271,31 @@ function showScoreModal(score) {
   pScore.style.whiteSpace = "pre-line";
   pScore.innerHTML = `<b>Score :</b> ${score.score || ""}`;
 
+  // Appliquer un style aux tableaux éventuellement présents
+  pScore.querySelectorAll("table").forEach((table) => {
+    table.style.width = "100%";
+    table.style.borderCollapse = "collapse";
+
+    table.querySelectorAll("td, th").forEach((cell) => {
+      cell.style.textAlign = "left";
+      cell.style.border = "1px solid black";
+      cell.style.padding = "4px";
+    });
+  });
+
   // Zone libre
   const textarea = document.createElement("textarea");
   textarea.id = "freeText";
-  textarea.placeholder = "Texte complémentaire...";
   textarea.style.width = "100%";
   textarea.style.height = "80px";
+  textarea.value = score.default || "";
 
   // Bouton Ajouter au CR
   const addButton = document.createElement("button");
   addButton.type = "button";
   addButton.textContent = "Ajouter au CR";
   addButton.addEventListener("click", () => {
-    addScoreToCR(score.titre, score.description, score.score);
+    addScoreToCR(score.titre);
   });
 
   // Ajoute tous les éléments dans la modal
