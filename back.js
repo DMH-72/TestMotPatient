@@ -1243,7 +1243,6 @@ function addScore() {
   }
 }
 
-// Modale : Titre, Description, Score + zone libre
 function showScoreModal(score) {
   // Crée le conteneur modal
   const modalOverlay = document.createElement("div");
@@ -1262,20 +1261,21 @@ function showScoreModal(score) {
   const h2 = document.createElement("h2");
   h2.textContent = score.titre;
 
-  // Description
+  // Description (respecte les retours à la ligne)
   const pDesc = document.createElement("p");
+  pDesc.style.whiteSpace = "pre-line";
   pDesc.textContent = score.description || "";
 
-  // Score
-  const pScore = document.createElement("p");
+  // Score -> utiliser DIV car le contenu peut contenir des <table>
+  const pScore = document.createElement("div");
   pScore.style.whiteSpace = "pre-line";
   pScore.innerHTML = `<b>Score :</b> ${score.score || ""}`;
 
-  // Appliquer un style aux tableaux éventuellement présents
+  // Appliquer un style aux tableaux éventuellement présents DANS pScore
   pScore.querySelectorAll("table").forEach((table) => {
     table.style.width = "100%";
     table.style.borderCollapse = "collapse";
-
+    // style cells
     table.querySelectorAll("td, th").forEach((cell) => {
       cell.style.textAlign = "left";
       cell.style.border = "1px solid black";
@@ -1283,7 +1283,18 @@ function showScoreModal(score) {
     });
   });
 
-  // Zone libre
+  // Préparer (mais ne pas "const" dans le bloc) l'image pour l'insérer plus tard
+  let img = null;
+  if (score.imageUrl) {
+    img = document.createElement("img");
+    img.src = score.imageUrl;
+    img.alt = "Illustration du score";
+    img.style.maxWidth = "50%";
+    img.style.marginBottom = "10px";
+    img.style.display = "block";
+  }
+
+  // Zone libre (préremplie si score.default existe)
   const textarea = document.createElement("textarea");
   textarea.id = "freeText";
   textarea.style.width = "100%";
@@ -1298,11 +1309,12 @@ function showScoreModal(score) {
     addScoreToCR(score.titre);
   });
 
-  // Ajoute tous les éléments dans la modal
+  // Ajoute tous les éléments dans la modal dans l'ordre voulu
   modalContent.appendChild(closeButton);
   modalContent.appendChild(h2);
   modalContent.appendChild(pDesc);
   modalContent.appendChild(pScore);
+  if (img) modalContent.appendChild(img); // n'ajoute que si img != null
   modalContent.appendChild(textarea);
   modalContent.appendChild(addButton);
 
