@@ -415,6 +415,7 @@ let contentAdvanceMap = {
   Psy: `testPsy`,
   ORL: `testORL`,
   Dermato: `testDermato`,
+  Geriatrie: `testGeriatrie`,
   Ped: `testPed`,
 };
 
@@ -1269,7 +1270,7 @@ function showScoreModal(score) {
   // Score -> utiliser DIV car le contenu peut contenir des <table>
   const pScore = document.createElement("div");
   pScore.style.whiteSpace = "pre-line";
-  pScore.innerHTML = `<b>Score :</b> ${score.score || ""}`;
+  pScore.innerHTML = `<b>Score :</b> <br>${score.score || ""}`;
 
   // Appliquer un style aux tableaux éventuellement présents DANS pScore
   pScore.querySelectorAll("table").forEach((table) => {
