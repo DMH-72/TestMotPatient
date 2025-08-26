@@ -366,92 +366,6 @@ function grammeOHDisp() {
   }
 }
 
-// let contentAdvanceMap = {
-//   General: `Etat hydratation`,
-//   Cardio: `
-//         <u>A l’interrogatoire:</u> Pas de douleur thoracique, pas de dyspnée, pas de palpitation <br>
-//         <u>A l’inspection :</u> Pas de turgescence jugulaires, pas d’œdème des membres inférieurs/lombes, pas de troubles trophiques, en résumé, pas de signes d’insuffisance cardiaque<br>
-//         <u>A la palpation :</u>  Pas de reflux abdomino-jugulaire, Pouls périphériques perçus (Radiale, Ulnaire, Tibial postérieur et Pédieux), mollets indolores (tour de mollet droit/gauche)<br>
-//         <u>A l’auscultation </u>: pas de bruits surajoutés, pas de souffles cardiaques perçus, pas de souffles carotidiens, pas de crépitants en bases pulmonaires<br>
-//         <u>En résumé,</u> pas d’anomalies perçues à l’examen cardio-vasculaire, pas de signe d’insuffisance cardiaque ou vasculaire
-//         `,
-//   Pneumo: `
-//         <u>A l’interrogatoire :</u> Pas de douleur thoracique, pas de dyspnée, pas d’expectoration/bronchorrhée, pas de toux, pas d’ATCD de Syndrome d’Apnée Obstructive du Sommeil <br>
-//         <u>A l’inspection :</u> Mouvement thoracique normaux et synchrones, pas de signe de cyanose, pas d’hippocratisme digital, pas de syndrome cave supérieur <br>
-//         <u>A la palpation :</u> Vibrations Vocales perçues <br>
-//         <u>A l’auscultation :</u> Murmures vésiculaires symétriques et perçus clairement, sans bruits surajoutés <br>
-//         <u>En résumé :</u> Pas d’anomalie à l’examen pneumologique, pas de signe de détresse respiratoire
-//         `,
-//   Neuro: `TestNeuro`,
-//   Dig: `
-//         <u>A l’interrogatoire :</u> pas de douleur, pas de trouble transit, pas de signe d’hémorragie haute/basse , pas de signe de syndrome œsophagien ou rectal<br>
-//         <u>A l’inspection :</u> Pas d’hernie, pas de distension abdominale (TT=) pas d’ictère, pas de Circulation Veineuse Collatérale, aspect buccale sans particularité notable (pas d’érosion, langue humide et rosée) pas de signe d’insuffisance hépato-cellulaire (pas d’angiomes stellaires, pas de flapping tremor, pas de fetor hépatique, pas d’hippocratisme digitale)<br>
-//         <u>A l’auscultation :</u>  Bruits hydro-aériques perçus, pas de souffles perçus<br>
-//         <u>A la palpation :</u> Abdomen souple indolore et dépressible, pas de signe de Murphy, pas de douleur au point de Mc-Burnay, pas de signe de syndrome péritonéale (décompression indolore), pas d’anomalies des orifices herniaires, pas d’hépatomégalie perçu, pas de splénomégalie perçu<br>
-//         <u>A la percussion :</u> diffus panache matité/tympanisme, pas de signe du flot, pas de signe du glaçon
-//         `,
-//   Uro: `
-//         <u>A l’interrogatoire :</u> pas de signes fonctionnels urinaires, pas de troubles mictionnels, pas d’écoulements urétraux, aspect normal des urines<br>
-//         <u>A l’inspection :</u> Pas de voussure hypogastrique<br>
-//         <u>A la palpation :</u> pas de globe urinaire<br>
-//         <u>A la percussion:</u> signe de Giordano négatif
-//         `,
-//   Rhumato: `
-//         <u>A l’interrogatoire :</u> pas de douleur, pas de troubles de la marche et pas de troubles articulaires (à base de raideur, gonflement, blocage ou craquement)<br>
-//         <u>A l’examen du rachis :</u> pas d’anomalies des courbures rachidiennes, pas de troubles de la souplesse, pas de douleur  localisée ou projetée à la palpation des épineuses, pas de raideur des muscles paravertébraux<br>
-//         <u>A l’examen sacro-iliaque :</u> pas de troubles de la mobilisation<br>
-//         <u>Articulation périphérique :</u><br>
-//         <li>A l’inspection : pas de signes inflammatoires locaux , pas de déformation, pas d’amyotrophie perçue
-//         <li>A la palpation : pas d’épanchements ,
-//         <li>Pas de troubles de la mobilité active et passive
-//         <li>Pas de douleur ligamentaire ou méniscale
-//         `,
-//   Gyneco: `
-//         La patiente de pense pas avoir la nécessité d’un test de grossesse, et consent à la réalisation de l'examen.<br>
-//         <u>A l’interrogatoire :</u> pas de douleur rapportée (cyclique, dyspareunie, mammaire), pas d’écoulements génitaux et mammaires , pas d’aménorrhée, pas de prurit vulvaire<br>
-//         <u>A l’inspection :</u> pas de masse ou de douleurs abdominale<br>
-//         <u>Examen sénologique :</u> pas d’anomalies à l’inspection et à la palpation, pas d’écoulements provoqués, manœuvre de Tillaux négative, pas d’adénopathies
-//         `,
-//   Psy: `testPsy`,
-//   ORL: `testORL`,
-//   Dermato: `testDermato`,
-//   Geriatrie: `testGeriatrie`,
-//   Ped: `testPed`,
-// };
-
-// // Fonction générale pour ajouter le contenu selon la spécialité
-// function advenceClinic(specialite) {
-//   // On récupère l'élément en fonction de la spécialité
-//   let element = document.getElementById("examenClinique" + specialite);
-
-//   // Vérifier si l'élément existe
-//   if (!element) {
-//     console.error(
-//       "L'élément avec l'ID 'examenClinique" + specialite + "' n'existe pas."
-//     );
-//     return;
-//   }
-
-//   // Récupérer le contenu actuel de l'élément
-//   let curentTexte = element.innerHTML;
-
-//   // Récupérer le contenu associé à la spécialité depuis l'objet contentAdvanceMap
-//   let contentAdvance = contentAdvanceMap[specialite];
-
-//   // Vérifier si du contenu existe pour cette spécialité
-//   if (!contentAdvance) {
-//     console.error("Pas de contenu défini pour la spécialité :", specialite);
-//     return;
-//   }
-
-//   // Ajouter le nouveau contenu en fonction de l'état actuel
-//   if (curentTexte.trim() != "") {
-//     element.innerHTML = `${curentTexte}<br>${contentAdvance}`;
-//   } else {
-//     element.innerHTML = `${contentAdvance}`;
-//   }
-// }
-
 function InitialisationECG() {
   document.getElementById(
     "hold_ECG"
@@ -820,25 +734,6 @@ function ouvrirLien(onglet) {
   }
 }
 
-let scores = [];
-let selectedIndex = -1;
-let suggestionsContainer;
-
-// Charger les scores depuis Firestore (API v8)
-function loadScores() {
-  db.collection("score")
-    .get()
-    .then((querySnapshot) => {
-      scores = querySnapshot.docs.map((doc) => doc.data());
-      initializeSearchInput(scores);
-    })
-    .catch((error) => {
-      console.error("Erreur Firebase :", error);
-      alert("Impossible de charger les données depuis Firebase.");
-    });
-}
-loadScores();
-
 // Initialisation de la recherche (identique à ton code)
 function initializeSearchInput(scores) {
   const searchInput = document.getElementById("ajoutScore");
@@ -1086,13 +981,14 @@ document.getElementById("compteRendu").addEventListener("click", function (e) {
   showScoreModal(score);
 });
 
+function removeScore(button) {
+  button.parentElement.remove();
+}
+
 // Fermer & supprimer
 function closeModal() {
   const modal = document.querySelector(".modal-overlay");
   if (modal) modal.remove();
-}
-function removeScore(button) {
-  button.parentElement.remove();
 }
 
 // Exposer globalement
@@ -1100,72 +996,636 @@ window.addScore = addScore;
 window.closeModal = closeModal;
 window.removeScore = removeScore;
 
+// --- Utilitaires ---
+function slugify(s) {
+  return String(s)
+    .toLowerCase()
+    .normalize("NFD")
+    .replace(/[\u0300-\u036f]/g, "") // enlève accents
+    .replace(/[^a-z0-9]+/g, "-") // remplace par des tirets
+    .replace(/^-+|-+$/g, ""); // trim
+}
+
+// Crée les conteneurs si absents (compatible avec ton index.html actuel)
+function ensureCliniqueContainers() {
+  const examenBloc =
+    document.querySelector("#examenClinique .subSectionTemporaire") ||
+    document.getElementById("examenClinique") ||
+    document.body;
+
+  if (!document.getElementById("specialite-checkboxes")) {
+    const fs = document.createElement("fieldset");
+    fs.className = "fieldDeroulant";
+    fs.innerHTML = `
+      <legend>Choisir les spécialités</legend>
+      <div id="specialite-checkboxes" style="display:flex;flex-wrap:wrap;gap:10px;"></div>
+    `;
+    examenBloc.prepend(fs);
+  }
+
+  if (!document.getElementById("specialite-zones")) {
+    const zones = document.createElement("div");
+    zones.id = "specialite-zones";
+    examenBloc.appendChild(zones);
+  }
+}
+
+// --- Chargement des spécialités + UI dynamique ---
 function loadSpecialites() {
+  ensureCliniqueContainers();
+
   const checkboxesContainer = document.getElementById("specialite-checkboxes");
   const zonesContainer = document.getElementById("specialite-zones");
 
   db.collection("clinique")
     .where("type", "==", "defaultContent")
+    // .orderBy("titre") // optionnel si index Firestore OK
     .get()
     .then((snapshot) => {
       snapshot.forEach((doc) => {
         const data = doc.data();
-        const specialite = data.specialite;
-        const titre = data.titre;
+        const specialite = data.specialite; // utilisé pour Firestore
+        const titre = data.titre || specialite;
+        const key = slugify(specialite); // utilisé pour les IDs DOM
 
-        // Case à cocher
+        // --- Case à cocher ---
+        const container = document.createElement("div");
+        container.classList.add("btnCt");
+
         const checkbox = document.createElement("input");
         checkbox.type = "checkbox";
-        checkbox.id = `chk_${specialite}`;
+        checkbox.id = `chk_${key}`;
         checkbox.value = specialite;
 
         const label = document.createElement("label");
-        label.htmlFor = `chk_${specialite}`;
+        label.htmlFor = `chk_${key}`;
         label.textContent = specialite;
 
-        const container = document.createElement("div");
-        container.classList.add("btnCt");
         container.appendChild(checkbox);
         container.appendChild(label);
         checkboxesContainer.appendChild(container);
 
-        // Zone de texte cachée au départ
+        // --- Zone de texte (cachée au départ) ---
         const fieldset = document.createElement("fieldset");
-        fieldset.id = `zone_${specialite}`;
+        fieldset.id = `zone_${key}`;
         fieldset.classList.add("fieldsetText");
         fieldset.style.display = "none";
+
         fieldset.innerHTML = `
           <legend>
-            <button class="clinicButton" onclick="addDefaultContent('${specialite}')">⏩</button>
-            <button class="clinicButton" onclick="${specialite}Advanced()">🔎</button>
-            <button class="clinicButton" onclick="${specialite}Outils()">🧰</button>
             ${specialite}
+            <button class="clinicButton" data-role="default">⏩</button>
+            <button class="clinicButton" data-role="extra">🔎</button>
+            <button class="clinicButton" data-role="tools">🧰</button>
           </legend>
-          <div id="text_${specialite}" class="editable-div" contenteditable="true" style="white-space: pre-line;"></div>
+          <div id="text_${key}" class="editable-div" contenteditable="true" style="white-space: pre-line;"></div>
         `;
+
         zonesContainer.appendChild(fieldset);
 
-        // Gestion de l'affichage
+        // Affichage/masquage au clic
         checkbox.addEventListener("change", () => {
           fieldset.style.display = checkbox.checked ? "block" : "none";
+        });
+
+        // Boutons ⏩ / 🔎 / 🧰 branchés en JS (pas d'onclick inline)
+        const btnDefault = fieldset.querySelector(
+          'button[data-role="default"]'
+        );
+        const btnExtra = fieldset.querySelector('button[data-role="extra"]');
+        const btnTools = fieldset.querySelector('button[data-role="tools"]');
+
+        btnDefault.addEventListener("click", () =>
+          addDefaultContent(specialite)
+        );
+        btnExtra.addEventListener("click", () =>
+          openExtraContentModal(specialite)
+        );
+        btnTools.addEventListener("click", () => {
+          // Appelle une fonction 'nomDeLaSpeSansAccentEtMinusculesOutils' si elle existe
+          const fnName = slugify(specialite) + "outils"; // ex: pediatrieoutils()
+          const fn = window[fnName];
+          if (typeof fn === "function") fn();
+          else alert("Outil non encore disponible pour " + specialite);
         });
       });
     });
 }
 
-// Fonction pour insérer le contenu "defaultContent" dans la zone correspondante
+// --- ⏩ : insérer le defaultContent ---
 function addDefaultContent(specialite) {
+  const key = slugify(specialite);
   db.collection("clinique")
     .where("specialite", "==", specialite)
     .where("type", "==", "defaultContent")
     .get()
     .then((snapshot) => {
+      const zone = document.getElementById(`text_${key}`);
       snapshot.forEach((doc) => {
         const data = doc.data();
-        const zone = document.getElementById(`text_${specialite}`);
-        zone.innerHTML += (zone.innerHTML.trim() ? "<br>" : "") + data.contenu;
+        zone.innerHTML +=
+          (zone.innerHTML.trim() ? "<br>" : "") + (data.contenu || "");
       });
     });
 }
 
-document.addEventListener("DOMContentLoaded", loadSpecialites);
+// --- 🔎 : modal des extraContent ---
+function openExtraContentModal(specialite) {
+  const key = slugify(specialite);
+
+  db.collection("clinique")
+    .where("specialite", "==", specialite)
+    .where("type", "==", "extraContent")
+    .get()
+    .then((snapshot) => {
+      const old = document.getElementById("extraModal");
+      if (old) old.remove();
+
+      if (snapshot.empty) {
+        alert("Aucun contenu supplémentaire trouvé pour cette spécialité.");
+        return;
+      }
+
+      let modalItems = "";
+      snapshot.forEach((doc) => {
+        const data = doc.data();
+        modalItems += `
+          <div class="extra-item" data-docid="${
+            doc.id
+          }" data-key="${key}" data-specialite="${specialite}">
+            <strong>${data.titre || "(Sans titre)"}</strong><br>
+            <em>${data.description || ""}</em>
+          </div>
+        `;
+      });
+
+      const modalHTML = `
+        <div class="modal-overlay" id="extraModal">
+          <div class="modal-content">
+            <button class="close-button" onclick="closeModal()">×</button>
+            <h2>Contenu supplémentaire - ${specialite}</h2>
+            ${modalItems}
+          </div>
+        </div>
+      `;
+
+      document.body.insertAdjacentHTML("beforeend", modalHTML);
+
+      // Brancher chaque item
+      document.querySelectorAll("#extraModal .extra-item").forEach((item) => {
+        item.addEventListener("click", () => {
+          const docId = item.getAttribute("data-docid");
+          const spec = item.getAttribute("data-specialite");
+          const key = item.getAttribute("data-key");
+          addExtraContent(spec, docId, key);
+        });
+      });
+    });
+}
+
+// Ajoute le contenu choisi à la zone d'édition
+function addExtraContent(specialite, docId, key) {
+  db.collection("clinique")
+    .doc(docId)
+    .get()
+    .then((doc) => {
+      if (doc.exists) {
+        const data = doc.data();
+        const zone = document.getElementById(`text_${key}`);
+        if (!zone) {
+          console.error("Zone introuvable pour", specialite, `(text_${key})`);
+          return;
+        }
+        zone.innerHTML +=
+          (zone.innerHTML.trim() ? "<br>" : "") + (data.contenu || "");
+        closeModal();
+      }
+    });
+}
+
+// Fermer le modal
+function closeModal() {
+  const modal = document.getElementById("extraModal");
+  if (modal) modal.remove();
+}
+
+// --- init ---
+document.addEventListener("DOMContentLoaded", () => {
+  ensureCliniqueContainers();
+  loadSpecialites();
+});
+
+let inlineScoreSuggestions = null;
+let selectedInlineIndex = -1;
+let currentEditableElement = null;
+let scores = [];
+
+// Charger les scores depuis Firebase
+function loadScores() {
+  console.log("🔍 Début du chargement des scores...");
+
+  db.collection("score")
+    .get()
+    .then((querySnapshot) => {
+      scores = querySnapshot.docs.map((doc) => doc.data());
+      console.log("✅ Scores chargés:", scores.length, "scores trouvés");
+      if (scores.length > 0) {
+        console.log("📊 Premier score:", scores[0]);
+      }
+
+      initializeSearchInput(scores); // Fonction déjà existante
+      initializeInlineScoreSystem(); // Nouvelle initialisation
+      console.log("🚀 Système inline initialisé");
+    })
+    .catch((error) => {
+      console.error("❌ Erreur Firebase :", error);
+      alert("Impossible de charger les données depuis Firebase.");
+    });
+}
+
+// Initialisation du système inline
+function initializeInlineScoreSystem() {
+  console.log("🎯 Initialisation du système inline...");
+
+  // Écouter les événements sur les éléments éditables
+  document.addEventListener("input", handleInlineInput, true);
+  document.addEventListener("keydown", handleInlineKeydown, true);
+  document.addEventListener("click", handleInlineClick, true);
+
+  console.log("👂 Event listeners ajoutés");
+}
+
+// Gestion de la saisie
+function handleInlineInput(event) {
+  const element = event.target;
+  if (!isEditableElement(element)) return;
+
+  currentEditableElement = element;
+  const text = getTextContent(element);
+  const caretPos = getCaretPosition(element);
+
+  const beforeCaret = text.substring(0, caretPos);
+  const doubleSlashMatch = beforeCaret.match(/\/\/([^\/\s]*)$/);
+
+  if (doubleSlashMatch) {
+    const query = doubleSlashMatch[1];
+    const startPos = caretPos - doubleSlashMatch[0].length;
+    showInlineScoreSuggestions(query, element, startPos, caretPos);
+  } else {
+    hideInlineScoreSuggestions();
+  }
+}
+
+// Gestion du clavier
+function handleInlineKeydown(event) {
+  if (
+    !inlineScoreSuggestions ||
+    inlineScoreSuggestions.style.display === "none"
+  )
+    return;
+
+  switch (event.key) {
+    case "ArrowDown":
+      event.preventDefault();
+      navigateInlineSuggestions(1);
+      break;
+    case "ArrowUp":
+      event.preventDefault();
+      navigateInlineSuggestions(-1);
+      break;
+    case "Enter":
+    case "Tab":
+      event.preventDefault();
+      selectInlineSuggestion();
+      break;
+    case "Escape":
+      event.preventDefault();
+      hideInlineScoreSuggestions();
+      break;
+  }
+}
+
+// Gestion des clics
+function handleInlineClick(event) {
+  if (
+    inlineScoreSuggestions &&
+    !inlineScoreSuggestions.contains(event.target)
+  ) {
+    hideInlineScoreSuggestions();
+  }
+}
+
+// Vérifications utilitaires
+function isEditableElement(el) {
+  return (
+    el &&
+    (el.tagName === "TEXTAREA" ||
+      (el.tagName === "INPUT" && el.type === "text") ||
+      el.isContentEditable)
+  );
+}
+
+function getTextContent(el) {
+  if (
+    el.tagName === "TEXTAREA" ||
+    (el.tagName === "INPUT" && el.type === "text")
+  ) {
+    return el.value;
+  }
+  return el.innerText || el.textContent || "";
+}
+
+function getCaretPosition(editableDiv) {
+  let caretPos = 0;
+  const selection = window.getSelection();
+  if (!selection || selection.rangeCount === 0) return caretPos;
+
+  const range = selection.getRangeAt(0);
+  const preCaretRange = range.cloneRange();
+  preCaretRange.selectNodeContents(editableDiv);
+  preCaretRange.setEnd(range.endContainer, range.endOffset);
+  caretPos = preCaretRange.toString().length;
+  return caretPos;
+}
+
+function setCaretPosition(element, position) {
+  if (element.tagName === "TEXTAREA" || element.tagName === "INPUT") {
+    element.focus();
+    element.setSelectionRange(position, position);
+  } else {
+    const range = document.createRange();
+    const selection = window.getSelection();
+    let currentPos = 0;
+    const walker = document.createTreeWalker(
+      element,
+      NodeFilter.SHOW_TEXT,
+      null,
+      false
+    );
+
+    let node;
+    while ((node = walker.nextNode())) {
+      const nodeLength = node.textContent.length;
+      if (currentPos + nodeLength >= position) {
+        range.setStart(node, position - currentPos);
+        range.collapse(true);
+        break;
+      }
+      currentPos += nodeLength;
+    }
+
+    selection.removeAllRanges();
+    selection.addRange(range);
+    element.focus();
+  }
+}
+
+// Affichage des suggestions
+function showInlineScoreSuggestions(query, element, startPos, endPos) {
+  if (!scores || scores.length === 0) return;
+
+  const matchingScores = scores.filter(
+    (score) =>
+      Array.isArray(score.motsCle) &&
+      score.motsCle.some((tag) =>
+        tag.toLowerCase().includes(query.toLowerCase())
+      )
+  );
+
+  if (matchingScores.length === 0) {
+    hideInlineScoreSuggestions();
+    return;
+  }
+
+  if (!inlineScoreSuggestions) {
+    inlineScoreSuggestions = document.createElement("div");
+    inlineScoreSuggestions.className = "inline-score-suggestions";
+    inlineScoreSuggestions.style.cssText = `
+      position: fixed;
+      background: white;
+      border: 2px solid #007bff;
+      border-radius: 4px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+      max-height: 200px;
+      overflow-y: auto;
+      z-index: 99999;
+      font-size: 14px;
+      min-width: 250px;
+    `;
+    document.body.appendChild(inlineScoreSuggestions);
+  }
+
+  inlineScoreSuggestions.innerHTML = "";
+  selectedInlineIndex = -1;
+
+  matchingScores.forEach((score, index) => {
+    const item = document.createElement("div");
+    item.className = "inline-suggestion-item";
+    item.style.cssText = `
+      padding: 8px 12px;
+      cursor: pointer;
+      border-bottom: 1px solid #eee;
+    `;
+    item.innerHTML = `
+      <div style="font-weight: bold; color: #333;">${score.titre}</div>
+      <div style="font-size: 12px; color: #666; margin-top: 2px;">
+        ${score.description || ""}
+      </div>
+    `;
+
+    item.addEventListener("click", () => {
+      selectedInlineIndex = index;
+      selectInlineSuggestion();
+    });
+
+    item.addEventListener("mouseenter", () => {
+      inlineScoreSuggestions
+        .querySelectorAll(".inline-suggestion-item")
+        .forEach((el) => {
+          el.style.backgroundColor = "";
+        });
+      item.style.backgroundColor = "#f0f0f0";
+      selectedInlineIndex = index;
+    });
+
+    inlineScoreSuggestions.appendChild(item);
+  });
+
+  positionInlineSuggestions(element);
+  inlineScoreSuggestions.style.display = "block";
+
+  inlineScoreSuggestions.matchingScores = matchingScores;
+  inlineScoreSuggestions.startPos = startPos;
+  inlineScoreSuggestions.endPos = endPos;
+}
+
+// Positionner les suggestions
+function positionInlineSuggestions(element) {
+  const rect = element.getBoundingClientRect();
+  let left = rect.left + window.scrollX + 10;
+  let top = rect.bottom + window.scrollY + 5;
+
+  const suggestionsWidth = 250;
+  const suggestionsHeight = 200;
+
+  if (left + suggestionsWidth > window.innerWidth + window.scrollX) {
+    left = window.innerWidth + window.scrollX - suggestionsWidth - 10;
+  }
+  if (top + suggestionsHeight > window.innerHeight + window.scrollY) {
+    top = rect.top + window.scrollY - suggestionsHeight - 5;
+  }
+
+  inlineScoreSuggestions.style.left = left + "px";
+  inlineScoreSuggestions.style.top = top + "px";
+}
+
+// Navigation & sélection
+function navigateInlineSuggestions(direction) {
+  const items = inlineScoreSuggestions.querySelectorAll(
+    ".inline-suggestion-item"
+  );
+  if (items.length === 0) return;
+
+  if (selectedInlineIndex >= 0) {
+    items[selectedInlineIndex].style.backgroundColor = "";
+  }
+
+  selectedInlineIndex =
+    (selectedInlineIndex + direction + items.length) % items.length;
+  items[selectedInlineIndex].style.backgroundColor = "#f0f0f0";
+  items[selectedInlineIndex].scrollIntoView({ block: "nearest" });
+}
+
+function selectInlineSuggestion() {
+  if (!inlineScoreSuggestions || selectedInlineIndex < 0) return;
+
+  const matchingScores = inlineScoreSuggestions.matchingScores;
+  const startPos = inlineScoreSuggestions.startPos;
+  const endPos = inlineScoreSuggestions.endPos;
+
+  if (!matchingScores || selectedInlineIndex >= matchingScores.length) return;
+
+  const selectedScore = matchingScores[selectedInlineIndex];
+
+  // 🔑 Sauvegarde avant d’ouvrir la modal
+  const targetElement = currentEditableElement;
+  const targetStart = startPos;
+  const targetEnd = endPos;
+
+  showInlineScoreModal(selectedScore, (result) => {
+    console.log("⚡ Callback reçu avec result :", result);
+    insertScoreResult(targetElement, targetStart, targetEnd, result);
+  });
+
+  hideInlineScoreSuggestions();
+}
+
+// Modal d'insertion
+function showInlineScoreModal(score, onComplete) {
+  const modalOverlay = document.createElement("div");
+  modalOverlay.classList.add("modal-overlay");
+
+  const modalContent = document.createElement("div");
+  modalContent.classList.add("modal-content");
+
+  const closeButton = document.createElement("button");
+  closeButton.classList.add("close-button");
+  closeButton.textContent = "×";
+  closeButton.addEventListener("click", () => {
+    modalOverlay.remove();
+  });
+
+  const h2 = document.createElement("h2");
+  h2.textContent = score.titre;
+
+  const pDesc = document.createElement("p");
+  pDesc.style.whiteSpace = "pre-line";
+  pDesc.textContent = score.description || "";
+
+  const pScore = document.createElement("div");
+  pScore.style.whiteSpace = "pre-line";
+  pScore.innerHTML = `<b>Score :</b><br>${score.score || ""}`;
+
+  if (score.imageUrl) {
+    const img = document.createElement("img");
+    img.src = score.imageUrl;
+    img.alt = "Illustration du score";
+    img.style.maxWidth = "50%";
+    modalContent.appendChild(img);
+  }
+
+  const textarea = document.createElement("textarea");
+  textarea.style.width = "100%";
+  textarea.style.height = "80px";
+  textarea.value = score.default || "";
+
+  const insertButton = document.createElement("button");
+  insertButton.textContent = "Insérer ici";
+  insertButton.addEventListener("click", () => {
+    const result = score.titre + " " + textarea.value;
+    console.log("💾 Bouton Insérer cliqué, résultat :", result);
+
+    if (typeof onComplete === "function") {
+      console.log("👉 Appel du callback onComplete");
+      onComplete(result);
+    } else {
+      console.error("❌ Pas de callback onComplete défini !");
+    }
+
+    modalOverlay.remove();
+  });
+
+  modalContent.append(closeButton, h2, pDesc, pScore, textarea, insertButton);
+  modalOverlay.appendChild(modalContent);
+  document.body.appendChild(modalOverlay);
+}
+
+// Insertion du texte choisi
+function insertScoreResult(element, startPos, endPos, result) {
+  console.log("📝 Insertion demandé:", { element, startPos, endPos, result });
+
+  if (!element) {
+    console.error("❌ Aucun élément cible trouvé pour l’insertion !");
+    return;
+  }
+
+  if (element.tagName === "TEXTAREA" || element.tagName === "INPUT") {
+    const text = element.value;
+    element.value =
+      text.substring(0, startPos) + result + text.substring(endPos);
+    setCaretPosition(element, startPos + result.length);
+    console.log("✅ Texte inséré dans input/textarea");
+  } else {
+    const text = element.textContent;
+    element.textContent =
+      text.substring(0, startPos) + result + text.substring(endPos);
+    setCaretPosition(element, startPos + result.length);
+    console.log("✅ Texte inséré dans contenteditable");
+  }
+
+  element.focus();
+}
+
+// Masquer les suggestions
+function hideInlineScoreSuggestions() {
+  if (inlineScoreSuggestions) {
+    inlineScoreSuggestions.style.display = "none";
+  }
+  selectedInlineIndex = -1;
+}
+
+// Ajouter le CSS
+if (!document.getElementById("inline-score-styles")) {
+  const styleSheet = document.createElement("style");
+  styleSheet.id = "inline-score-styles";
+  styleSheet.textContent = `
+    .inline-score-suggestions { font-family: Arial, sans-serif; }
+    .inline-suggestion-item:last-child { border-bottom: none; }
+    .inline-suggestion-item:hover { background-color: #f0f0f0 !important; }
+  `;
+  document.head.appendChild(styleSheet);
+}
+
+// Lancement
+console.log("🚀 Système inline de scores chargé");
+loadScores();

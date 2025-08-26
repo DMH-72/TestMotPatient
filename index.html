@@ -35,13 +35,6 @@
     </header>
 
     <main>
-        <!-- <br>        
-        <div id="Modification" class="observation">
-            <h3>Nouvels ajouts</h3>
-            <div class="divobsersationFlex"> 
-            
-            </div>
-        </div> -->
         <div id="Identité" class="observation">
             <h3>Identité et informations générales</h3>
             <div class="divobsersationFlex">
@@ -473,11 +466,10 @@
             <div class="subSectionTemporaire">
                 <fieldset class="fieldsetText" id="SectionClinicApprofondiGeneral">
                     <legend>
-                        <!-- <button id="BtnClinicApprofondiGeneral" class="clinicButton" title="Examen approfondi">🔎</button> -->
                         <button id="BtnClinicATCD" class="clinicButton" title="Boite à outil">🧰</button>
                         Antécédents :
                     </legend>
-                    <div id="ATCD" contenteditable="true" class="editable-div"></div>
+                    <div id="ATCD" class="editable-div" contenteditable="true"></div>
                 </fieldset>
                 <fieldset class="fieldsetText" id="SectionClinicApprofondiGeneral">
                     <legend>
@@ -524,8 +516,8 @@
 
         <div id="examenClinique" class="observation">
             <h3>Clinique
-                <fieldset class="fieldDeroulant">
-                    <summary>Spécalités :
+                <fieldset class="sous-titre">
+                    <summary>Spécialités :
                     </summary>
                     <div id="specialite-checkboxes"></div>
                 </fieldset>
@@ -534,7 +526,7 @@
         </div>
 
 
-        <div id="scoreSection" class="observation">
+        <div id="scoreSection" class="observation" style="display: none;">
             <h3>Scores</h3>
             <div class="subSectionTemporaire">
                 <div class="input-score">
@@ -545,7 +537,6 @@
                 </div>
                 <div id="tableContainer"></div>
                 <div id="compteRendu">
-                    <!-- Les scores remplis seront ajoutés ici -->
                 </div>
             </div>
         </div>
