@@ -366,91 +366,91 @@ function grammeOHDisp() {
   }
 }
 
-let contentAdvanceMap = {
-  General: `Etat hydratation`,
-  Cardio: `
-        <u>A l’interrogatoire:</u> Pas de douleur thoracique, pas de dyspnée, pas de palpitation <br>
-        <u>A l’inspection :</u> Pas de turgescence jugulaires, pas d’œdème des membres inférieurs/lombes, pas de troubles trophiques, en résumé, pas de signes d’insuffisance cardiaque<br>
-        <u>A la palpation :</u>  Pas de reflux abdomino-jugulaire, Pouls périphériques perçus (Radiale, Ulnaire, Tibial postérieur et Pédieux), mollets indolores (tour de mollet droit/gauche)<br>
-        <u>A l’auscultation </u>: pas de bruits surajoutés, pas de souffles cardiaques perçus, pas de souffles carotidiens, pas de crépitants en bases pulmonaires<br>
-        <u>En résumé,</u> pas d’anomalies perçues à l’examen cardio-vasculaire, pas de signe d’insuffisance cardiaque ou vasculaire
-        `,
-  Pneumo: `
-        <u>A l’interrogatoire :</u> Pas de douleur thoracique, pas de dyspnée, pas d’expectoration/bronchorrhée, pas de toux, pas d’ATCD de Syndrome d’Apnée Obstructive du Sommeil <br>
-        <u>A l’inspection :</u> Mouvement thoracique normaux et synchrones, pas de signe de cyanose, pas d’hippocratisme digital, pas de syndrome cave supérieur <br>
-        <u>A la palpation :</u> Vibrations Vocales perçues <br>
-        <u>A l’auscultation :</u> Murmures vésiculaires symétriques et perçus clairement, sans bruits surajoutés <br>
-        <u>En résumé :</u> Pas d’anomalie à l’examen pneumologique, pas de signe de détresse respiratoire
-        `,
-  Neuro: `TestNeuro`,
-  Dig: `
-        <u>A l’interrogatoire :</u> pas de douleur, pas de trouble transit, pas de signe d’hémorragie haute/basse , pas de signe de syndrome œsophagien ou rectal<br>
-        <u>A l’inspection :</u> Pas d’hernie, pas de distension abdominale (TT=) pas d’ictère, pas de Circulation Veineuse Collatérale, aspect buccale sans particularité notable (pas d’érosion, langue humide et rosée) pas de signe d’insuffisance hépato-cellulaire (pas d’angiomes stellaires, pas de flapping tremor, pas de fetor hépatique, pas d’hippocratisme digitale)<br>
-        <u>A l’auscultation :</u>  Bruits hydro-aériques perçus, pas de souffles perçus<br>
-        <u>A la palpation :</u> Abdomen souple indolore et dépressible, pas de signe de Murphy, pas de douleur au point de Mc-Burnay, pas de signe de syndrome péritonéale (décompression indolore), pas d’anomalies des orifices herniaires, pas d’hépatomégalie perçu, pas de splénomégalie perçu<br>
-        <u>A la percussion :</u> diffus panache matité/tympanisme, pas de signe du flot, pas de signe du glaçon
-        `,
-  Uro: `
-        <u>A l’interrogatoire :</u> pas de signes fonctionnels urinaires, pas de troubles mictionnels, pas d’écoulements urétraux, aspect normal des urines<br>
-        <u>A l’inspection :</u> Pas de voussure hypogastrique<br>
-        <u>A la palpation :</u> pas de globe urinaire<br>
-        <u>A la percussion:</u> signe de Giordano négatif
-        `,
-  Rhumato: `
-        <u>A l’interrogatoire :</u> pas de douleur, pas de troubles de la marche et pas de troubles articulaires (à base de raideur, gonflement, blocage ou craquement)<br>
-        <u>A l’examen du rachis :</u> pas d’anomalies des courbures rachidiennes, pas de troubles de la souplesse, pas de douleur  localisée ou projetée à la palpation des épineuses, pas de raideur des muscles paravertébraux<br>
-        <u>A l’examen sacro-iliaque :</u> pas de troubles de la mobilisation<br>
-        <u>Articulation périphérique :</u><br>
-        <li>A l’inspection : pas de signes inflammatoires locaux , pas de déformation, pas d’amyotrophie perçue
-        <li>A la palpation : pas d’épanchements ,
-        <li>Pas de troubles de la mobilité active et passive
-        <li>Pas de douleur ligamentaire ou méniscale
-        `,
-  Gyneco: `
-        La patiente de pense pas avoir la nécessité d’un test de grossesse, et consent à la réalisation de l'examen.<br>
-        <u>A l’interrogatoire :</u> pas de douleur rapportée (cyclique, dyspareunie, mammaire), pas d’écoulements génitaux et mammaires , pas d’aménorrhée, pas de prurit vulvaire<br>
-        <u>A l’inspection :</u> pas de masse ou de douleurs abdominale<br>
-        <u>Examen sénologique :</u> pas d’anomalies à l’inspection et à la palpation, pas d’écoulements provoqués, manœuvre de Tillaux négative, pas d’adénopathies
-        `,
-  Psy: `testPsy`,
-  ORL: `testORL`,
-  Dermato: `testDermato`,
-  Geriatrie: `testGeriatrie`,
-  Ped: `testPed`,
-};
+// let contentAdvanceMap = {
+//   General: `Etat hydratation`,
+//   Cardio: `
+//         <u>A l’interrogatoire:</u> Pas de douleur thoracique, pas de dyspnée, pas de palpitation <br>
+//         <u>A l’inspection :</u> Pas de turgescence jugulaires, pas d’œdème des membres inférieurs/lombes, pas de troubles trophiques, en résumé, pas de signes d’insuffisance cardiaque<br>
+//         <u>A la palpation :</u>  Pas de reflux abdomino-jugulaire, Pouls périphériques perçus (Radiale, Ulnaire, Tibial postérieur et Pédieux), mollets indolores (tour de mollet droit/gauche)<br>
+//         <u>A l’auscultation </u>: pas de bruits surajoutés, pas de souffles cardiaques perçus, pas de souffles carotidiens, pas de crépitants en bases pulmonaires<br>
+//         <u>En résumé,</u> pas d’anomalies perçues à l’examen cardio-vasculaire, pas de signe d’insuffisance cardiaque ou vasculaire
+//         `,
+//   Pneumo: `
+//         <u>A l’interrogatoire :</u> Pas de douleur thoracique, pas de dyspnée, pas d’expectoration/bronchorrhée, pas de toux, pas d’ATCD de Syndrome d’Apnée Obstructive du Sommeil <br>
+//         <u>A l’inspection :</u> Mouvement thoracique normaux et synchrones, pas de signe de cyanose, pas d’hippocratisme digital, pas de syndrome cave supérieur <br>
+//         <u>A la palpation :</u> Vibrations Vocales perçues <br>
+//         <u>A l’auscultation :</u> Murmures vésiculaires symétriques et perçus clairement, sans bruits surajoutés <br>
+//         <u>En résumé :</u> Pas d’anomalie à l’examen pneumologique, pas de signe de détresse respiratoire
+//         `,
+//   Neuro: `TestNeuro`,
+//   Dig: `
+//         <u>A l’interrogatoire :</u> pas de douleur, pas de trouble transit, pas de signe d’hémorragie haute/basse , pas de signe de syndrome œsophagien ou rectal<br>
+//         <u>A l’inspection :</u> Pas d’hernie, pas de distension abdominale (TT=) pas d’ictère, pas de Circulation Veineuse Collatérale, aspect buccale sans particularité notable (pas d’érosion, langue humide et rosée) pas de signe d’insuffisance hépato-cellulaire (pas d’angiomes stellaires, pas de flapping tremor, pas de fetor hépatique, pas d’hippocratisme digitale)<br>
+//         <u>A l’auscultation :</u>  Bruits hydro-aériques perçus, pas de souffles perçus<br>
+//         <u>A la palpation :</u> Abdomen souple indolore et dépressible, pas de signe de Murphy, pas de douleur au point de Mc-Burnay, pas de signe de syndrome péritonéale (décompression indolore), pas d’anomalies des orifices herniaires, pas d’hépatomégalie perçu, pas de splénomégalie perçu<br>
+//         <u>A la percussion :</u> diffus panache matité/tympanisme, pas de signe du flot, pas de signe du glaçon
+//         `,
+//   Uro: `
+//         <u>A l’interrogatoire :</u> pas de signes fonctionnels urinaires, pas de troubles mictionnels, pas d’écoulements urétraux, aspect normal des urines<br>
+//         <u>A l’inspection :</u> Pas de voussure hypogastrique<br>
+//         <u>A la palpation :</u> pas de globe urinaire<br>
+//         <u>A la percussion:</u> signe de Giordano négatif
+//         `,
+//   Rhumato: `
+//         <u>A l’interrogatoire :</u> pas de douleur, pas de troubles de la marche et pas de troubles articulaires (à base de raideur, gonflement, blocage ou craquement)<br>
+//         <u>A l’examen du rachis :</u> pas d’anomalies des courbures rachidiennes, pas de troubles de la souplesse, pas de douleur  localisée ou projetée à la palpation des épineuses, pas de raideur des muscles paravertébraux<br>
+//         <u>A l’examen sacro-iliaque :</u> pas de troubles de la mobilisation<br>
+//         <u>Articulation périphérique :</u><br>
+//         <li>A l’inspection : pas de signes inflammatoires locaux , pas de déformation, pas d’amyotrophie perçue
+//         <li>A la palpation : pas d’épanchements ,
+//         <li>Pas de troubles de la mobilité active et passive
+//         <li>Pas de douleur ligamentaire ou méniscale
+//         `,
+//   Gyneco: `
+//         La patiente de pense pas avoir la nécessité d’un test de grossesse, et consent à la réalisation de l'examen.<br>
+//         <u>A l’interrogatoire :</u> pas de douleur rapportée (cyclique, dyspareunie, mammaire), pas d’écoulements génitaux et mammaires , pas d’aménorrhée, pas de prurit vulvaire<br>
+//         <u>A l’inspection :</u> pas de masse ou de douleurs abdominale<br>
+//         <u>Examen sénologique :</u> pas d’anomalies à l’inspection et à la palpation, pas d’écoulements provoqués, manœuvre de Tillaux négative, pas d’adénopathies
+//         `,
+//   Psy: `testPsy`,
+//   ORL: `testORL`,
+//   Dermato: `testDermato`,
+//   Geriatrie: `testGeriatrie`,
+//   Ped: `testPed`,
+// };
 
-// Fonction générale pour ajouter le contenu selon la spécialité
-function advenceClinic(specialite) {
-  // On récupère l'élément en fonction de la spécialité
-  let element = document.getElementById("examenClinique" + specialite);
+// // Fonction générale pour ajouter le contenu selon la spécialité
+// function advenceClinic(specialite) {
+//   // On récupère l'élément en fonction de la spécialité
+//   let element = document.getElementById("examenClinique" + specialite);
 
-  // Vérifier si l'élément existe
-  if (!element) {
-    console.error(
-      "L'élément avec l'ID 'examenClinique" + specialite + "' n'existe pas."
-    );
-    return;
-  }
+//   // Vérifier si l'élément existe
+//   if (!element) {
+//     console.error(
+//       "L'élément avec l'ID 'examenClinique" + specialite + "' n'existe pas."
+//     );
+//     return;
+//   }
 
-  // Récupérer le contenu actuel de l'élément
-  let curentTexte = element.innerHTML;
+//   // Récupérer le contenu actuel de l'élément
+//   let curentTexte = element.innerHTML;
 
-  // Récupérer le contenu associé à la spécialité depuis l'objet contentAdvanceMap
-  let contentAdvance = contentAdvanceMap[specialite];
+//   // Récupérer le contenu associé à la spécialité depuis l'objet contentAdvanceMap
+//   let contentAdvance = contentAdvanceMap[specialite];
 
-  // Vérifier si du contenu existe pour cette spécialité
-  if (!contentAdvance) {
-    console.error("Pas de contenu défini pour la spécialité :", specialite);
-    return;
-  }
+//   // Vérifier si du contenu existe pour cette spécialité
+//   if (!contentAdvance) {
+//     console.error("Pas de contenu défini pour la spécialité :", specialite);
+//     return;
+//   }
 
-  // Ajouter le nouveau contenu en fonction de l'état actuel
-  if (curentTexte.trim() != "") {
-    element.innerHTML = `${curentTexte}<br>${contentAdvance}`;
-  } else {
-    element.innerHTML = `${contentAdvance}`;
-  }
-}
+//   // Ajouter le nouveau contenu en fonction de l'état actuel
+//   if (curentTexte.trim() != "") {
+//     element.innerHTML = `${curentTexte}<br>${contentAdvance}`;
+//   } else {
+//     element.innerHTML = `${contentAdvance}`;
+//   }
+// }
 
 function InitialisationECG() {
   document.getElementById(
@@ -1099,3 +1099,73 @@ function removeScore(button) {
 window.addScore = addScore;
 window.closeModal = closeModal;
 window.removeScore = removeScore;
+
+function loadSpecialites() {
+  const checkboxesContainer = document.getElementById("specialite-checkboxes");
+  const zonesContainer = document.getElementById("specialite-zones");
+
+  db.collection("clinique")
+    .where("type", "==", "defaultContent")
+    .get()
+    .then((snapshot) => {
+      snapshot.forEach((doc) => {
+        const data = doc.data();
+        const specialite = data.specialite;
+        const titre = data.titre;
+
+        // Case à cocher
+        const checkbox = document.createElement("input");
+        checkbox.type = "checkbox";
+        checkbox.id = `chk_${specialite}`;
+        checkbox.value = specialite;
+
+        const label = document.createElement("label");
+        label.htmlFor = `chk_${specialite}`;
+        label.textContent = specialite;
+
+        const container = document.createElement("div");
+        container.classList.add("btnCt");
+        container.appendChild(checkbox);
+        container.appendChild(label);
+        checkboxesContainer.appendChild(container);
+
+        // Zone de texte cachée au départ
+        const fieldset = document.createElement("fieldset");
+        fieldset.id = `zone_${specialite}`;
+        fieldset.classList.add("fieldsetText");
+        fieldset.style.display = "none";
+        fieldset.innerHTML = `
+          <legend>
+            <button class="clinicButton" onclick="addDefaultContent('${specialite}')">⏩</button>
+            <button class="clinicButton" onclick="${specialite}Advanced()">🔎</button>
+            <button class="clinicButton" onclick="${specialite}Outils()">🧰</button>
+            ${specialite}
+          </legend>
+          <div id="text_${specialite}" class="editable-div" contenteditable="true" style="white-space: pre-line;"></div>
+        `;
+        zonesContainer.appendChild(fieldset);
+
+        // Gestion de l'affichage
+        checkbox.addEventListener("change", () => {
+          fieldset.style.display = checkbox.checked ? "block" : "none";
+        });
+      });
+    });
+}
+
+// Fonction pour insérer le contenu "defaultContent" dans la zone correspondante
+function addDefaultContent(specialite) {
+  db.collection("clinique")
+    .where("specialite", "==", specialite)
+    .where("type", "==", "defaultContent")
+    .get()
+    .then((snapshot) => {
+      snapshot.forEach((doc) => {
+        const data = doc.data();
+        const zone = document.getElementById(`text_${specialite}`);
+        zone.innerHTML += (zone.innerHTML.trim() ? "<br>" : "") + data.contenu;
+      });
+    });
+}
+
+document.addEventListener("DOMContentLoaded", loadSpecialites);

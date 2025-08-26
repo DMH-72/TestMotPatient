@@ -539,7 +539,7 @@ input[type="date"]:focus {
 .editable-div {
   padding: 4px;
   background-color: white;
-  outline: 0px solid transparent
+  outline: 0px solid transparent;
 }
 
 .fieldsetText legend {
@@ -863,4 +863,10 @@ input {
   .divobsersationFlex {
     grid-template-columns: minmax(260px, 1fr);
   }
+}
+
+#specialite-checkboxes {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
 }

@@ -523,141 +523,16 @@
         </div>
 
         <div id="examenClinique" class="observation">
-            <h3>Examen clinique</h3>
-            <!-- <button id="CliniqueNormal" onclick="InitialisationClinic()">Examen normal</button> -->
-            <div class="subSectionTemporaire">
-
-                <fieldset class="fieldsetText" id="SectionClinicApprofondiGeneral">
-                    <legend>
-                        <button id="BtnClinicApprofondiGeneral" class="clinicButton" title="Examen approfondi"
-                            onclick="advenceClinic('General')">🔎</button>
-                        <button id="BtnClinicOutilGeneral" class="clinicButton" title="Boite à outil">🧰</button>
-                        Examen général :
-                    </legend>
-                    <div id="examenCliniqueGeneral" contenteditable="true" class="editable-div"></div>
+            <h3>Clinique
+                <fieldset class="fieldDeroulant">
+                    <summary>Spécalités :
+                    </summary>
+                    <div id="specialite-checkboxes"></div>
                 </fieldset>
-
-                <fieldset class="fieldsetText" id="SectionClinicApprofondiCardio">
-                    <legend>
-                        <button id="BtnClinicApprofondiCardio" class="clinicButton" title="Examen approfondi"
-                            onclick="advenceClinic('Cardio')">🔎</button>
-                        <button id="BtnClinicOutilCardio" class="clinicButton" title="Boite à outil">🧰</button>
-                        Cardio-vasculaires :
-                    </legend>
-                    <div id="examenCliniqueCardio" contenteditable="true" class="editable-div"></div>
-                </fieldset>
-
-                <fieldset class="fieldsetText" id="SectionClinicApprofondiPneumo">
-                    <legend>
-                        <button id="BtnClinicApprofondiPneumo" class="clinicButton" title="Examen approfondi"
-                            onclick="advenceClinic('Pneumo')">🔎</button>
-                        <button id="BtnClinicOutilPneumo" class="clinicButton" title="Boite à outil">🧰</button>
-                        Pneumologique :
-                    </legend>
-                    <div id="examenCliniquePneumo" contenteditable="true" class="editable-div"></div>
-                </fieldset>
-
-                <fieldset class="fieldsetText" id="SectionClinicApprofondiNeuro">
-                    <legend>
-                        <button id="BtnClinicApprofondiNeuro" class="clinicButton" title="Examen approfondi"
-                            onclick="advenceClinic('Neuro')">🔎</button>
-                        <button id="BtnClinicOutilNeuro" class="clinicButton" title="Boite à outil">🧰</button>
-                        Neurologique :
-                    </legend>
-                    <div id="examenCliniqueNeuro" contenteditable="true" class="editable-div"></div>
-                </fieldset>
-
-                <fieldset class="fieldsetText" id="SectionClinicApprofondiDig">
-                    <legend>
-                        <button id="BtnClinicApprofondiDig" class="clinicButton" title="Examen approfondi"
-                            onclick="advenceClinic('Dig')">🔎</button>
-                        <button id="BtnClinicOutilDig" class="clinicButton" title="Boite à outil">🧰</button>
-                        Digestif :
-                    </legend>
-                    <div id="examenCliniqueDig" contenteditable="true" class="editable-div"></div>
-                </fieldset>
-
-                <fieldset class="fieldsetText" id="SectionClinicApprofondiUro">
-                    <legend>
-                        <button id="BtnClinicApprofondiUro" class="clinicButton" title="Examen approfondi"
-                            onclick="advenceClinic('Uro')">🔎</button>
-                        <button id="BtnClinicOutilUro" class="clinicButton" title="Boite à outil">🧰</button>
-                        Urologique :
-                    </legend>
-                    <div id="examenCliniqueUro" contenteditable="true" class="editable-div"></div>
-                </fieldset>
-
-                <fieldset class="fieldsetText" id="SectionClinicApprofondiRhumato">
-                    <legend>
-                        <button id="BtnClinicApprofondiRhumato" class="clinicButton" title="Examen approfondi"
-                            onclick="advenceClinic('Rhumato')">🔎</button>
-                        <button id="BtnClinicOutilRhumato" class="clinicButton" title="Boite à outil">🧰</button>
-                        Locomoteur / Rhumatologie :
-                    </legend>
-                    <div id="examenCliniqueRhumato" contenteditable="true" class="editable-div"></div>
-                </fieldset>
-
-                <fieldset class="fieldsetText" id="SectionClinicApprofondiGO">
-                    <legend>
-                        <button id="BtnClinicApprofondiGO" class="clinicButton" title="Examen approfondi"
-                            onclick="advenceClinic('Gyneco')">🔎</button>
-                        <button id="BtnClinicOutilGO" class="clinicButton" title="Boite à outil">🧰</button>
-                        Gynécologique-Obstétrique :
-                    </legend>
-                    <div id="examenCliniqueGyneco" contenteditable="true" class="editable-div"></div>
-                </fieldset>
-
-                <fieldset class="fieldsetText" id="SectionClinicApprofondiPsy">
-                    <legend>
-                        <button id="BtnClinicApprofondiPsy" class="clinicButton" title="Examen approfondi"
-                            onclick="advenceClinic('Psy')">🔎</button>
-                        <button id="BtnClinicOutilPsy" class="clinicButton" title="Boite à outil">🧰</button>
-                        Psychiatrique :
-                    </legend>
-                    <div id="examenCliniquePsy" class="editable-div" contenteditable="true"></div>
-                </fieldset>
-
-                <fieldset class="fieldsetText" id="SectionClinicApprofondiORL">
-                    <legend>
-                        <button id="BtnClinicApprofondiORL" class="clinicButton" title="Examen approfondi"
-                            onclick="advenceClinic('ORL')">🔎</button>
-                        <button id="BtnClinicOutilORL" class="clinicButton" title="Boite à outil">🧰</button>
-                        ORL / CMF :
-                    </legend>
-                    <div id="examenCliniqueORL" class="editable-div" contenteditable="true"></div>
-                </fieldset>
-
-                <fieldset class="fieldsetText" id="SectionClinicApprofondiDermato">
-                    <legend>
-                        <button id="BtnClinicApprofondiDermato" class="clinicButton" title="Examen approfondi"
-                            onclick="advenceClinic('Dermato')">🔎</button>
-                        <button id="BtnClinicOutilDermato" class="clinicButton" title="Boite à outil">🧰</button>
-                        Dermatologique :
-                    </legend>
-                    <div id="examenCliniqueDermato" class="editable-div" contenteditable="true"></div>
-                </fieldset>
-
-                <fieldset class="fieldsetText" id="SectionClinicApprofondiGeriatrie">
-                    <legend>
-                        <button id="BtnClinicApprofondiGeriatrie" class="clinicButton" title="Examen approfondi"
-                            onclick="advenceClinic('Geriatrie')">🔎</button>
-                        <button id="BtnClinicOutilGeriatrie" class="clinicButton" title="Boite à outil">🧰</button>
-                        Gériatrie :
-                    </legend>
-                    <div id="examenCliniqueGeriatrie" class="editable-div" contenteditable="true"></div>
-                </fieldset>
-
-                <fieldset class="fieldsetText" id="SectionClinicApprofondiPed">
-                    <legend>
-                        <button id="BtnClinicApprofondiPed" class="clinicButton" title="Examen approfondi"
-                            onclick="advenceClinic('Ped')">🔎</button>
-                        <button id="BtnClinicOutilPed" class="clinicButton" title="Boite à outil">🧰</button>
-                        Pédiatrique :
-                    </legend>
-                    <div id="examenCliniquePed" class="editable-div" contenteditable="true"></div>
-                </fieldset>
-            </div>
+            </h3>
+            <div id="specialite-zones" style="margin: 7px;"></div>
         </div>
+
 
         <div id="scoreSection" class="observation">
             <h3>Scores</h3>
