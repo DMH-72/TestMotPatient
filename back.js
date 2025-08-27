@@ -1045,7 +1045,6 @@ function loadSpecialites() {
       snapshot.forEach((doc) => {
         const data = doc.data();
         const specialite = data.specialite; // utilisé pour Firestore
-        const titre = data.titre || specialite;
         const key = slugify(specialite); // utilisé pour les IDs DOM
 
         // --- Case à cocher ---
@@ -1074,11 +1073,13 @@ function loadSpecialites() {
         fieldset.innerHTML = `
           <legend>
             ${specialite}
-            <button class="clinicButton" data-role="default">⏩</button>
             <button class="clinicButton" data-role="extra">🔎</button>
             <button class="clinicButton" data-role="tools">🧰</button>
           </legend>
-          <div id="text_${key}" class="editable-div" contenteditable="true" style="white-space: pre-line;"></div>
+          <div id="text_${key}" class="editable-div" contenteditable="true" style="white-space: pre-line;">${
+          data.contenu || ""
+        } 
+          </div>
         `;
 
         zonesContainer.appendChild(fieldset);
@@ -1088,16 +1089,9 @@ function loadSpecialites() {
           fieldset.style.display = checkbox.checked ? "block" : "none";
         });
 
-        // Boutons ⏩ / 🔎 / 🧰 branchés en JS (pas d'onclick inline)
-        const btnDefault = fieldset.querySelector(
-          'button[data-role="default"]'
-        );
         const btnExtra = fieldset.querySelector('button[data-role="extra"]');
         const btnTools = fieldset.querySelector('button[data-role="tools"]');
 
-        btnDefault.addEventListener("click", () =>
-          addDefaultContent(specialite)
-        );
         btnExtra.addEventListener("click", () =>
           openExtraContentModal(specialite)
         );
@@ -1108,23 +1102,6 @@ function loadSpecialites() {
           if (typeof fn === "function") fn();
           else alert("Outil non encore disponible pour " + specialite);
         });
-      });
-    });
-}
-
-// --- ⏩ : insérer le defaultContent ---
-function addDefaultContent(specialite) {
-  const key = slugify(specialite);
-  db.collection("clinique")
-    .where("specialite", "==", specialite)
-    .where("type", "==", "defaultContent")
-    .get()
-    .then((snapshot) => {
-      const zone = document.getElementById(`text_${key}`);
-      snapshot.forEach((doc) => {
-        const data = doc.data();
-        zone.innerHTML +=
-          (zone.innerHTML.trim() ? "<br>" : "") + (data.contenu || "");
       });
     });
 }
@@ -1625,15 +1602,21 @@ function showInlineScoreModal(score, onComplete) {
   const h2 = document.createElement("h2");
   h2.textContent = score.titre;
 
-  const pDesc = document.createElement("p");
-  pDesc.style.whiteSpace = "pre-line";
-  pDesc.textContent = score.description || "";
-
   const pScore = document.createElement("div");
   pScore.style.whiteSpace = "pre-line";
   pScore.innerHTML = `<b>Score :</b><br>${score.score || ""}`;
+  pScore.querySelectorAll("table").forEach((table) => {
+    table.style.width = "100%";
+    table.style.borderCollapse = "collapse";
+    // style cells
+    table.querySelectorAll("td, th").forEach((cell) => {
+      cell.style.textAlign = "left";
+      cell.style.border = "1px solid black";
+      cell.style.padding = "4px";
+    });
+  });
 
-  modalContent.append(closeButton, h2, pDesc, pScore);
+  modalContent.append(closeButton, h2, pScore);
 
   if (score.imageUrl) {
     const img = document.createElement("img");

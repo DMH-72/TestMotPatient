@@ -179,7 +179,7 @@ input[type="date"]:focus {
 }
 
 .btnCt {
-  width: 220px;
+  width: min(140px, 100%);
   padding-top: 5px;
 }
 
