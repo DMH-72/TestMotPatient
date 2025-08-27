@@ -496,10 +496,8 @@ input[type="date"]:focus {
 
 .clinic {
   border: 2px solid #ccc;
-  width: 100%;
+  width: calc(100%-15px);
   /* Largeur de l'élément */
-  overflow-y: auto;
-  /* Activation du défilement vertical si le contenu dépasse */
   background-color: #ffffff;
   /* Couleur de fond claire */
   font-family: Arial, sans-serif;

@@ -1238,21 +1238,41 @@ function loadScores() {
       console.log("🚀 Système inline initialisé");
     })
     .catch((error) => {
-      console.error("❌ Erreur Firebase :", error);
       alert("Impossible de charger les données depuis Firebase.");
     });
 }
 
 // Initialisation du système inline
 function initializeInlineScoreSystem() {
-  console.log("🎯 Initialisation du système inline...");
-
-  // Écouter les événements sur les éléments éditables
   document.addEventListener("input", handleInlineInput, true);
   document.addEventListener("keydown", handleInlineKeydown, true);
   document.addEventListener("click", handleInlineClick, true);
 
-  console.log("👂 Event listeners ajoutés");
+  // Gestion du scroll pour repositionner les suggestions
+  document.addEventListener(
+    "scroll",
+    () => {
+      if (
+        inlineScoreSuggestions &&
+        inlineScoreSuggestions.style.display !== "none" &&
+        currentEditableElement
+      ) {
+        positionInlineSuggestions(currentEditableElement);
+      }
+    },
+    true
+  );
+
+  // Gestion du redimensionnement de la fenêtre
+  window.addEventListener("resize", () => {
+    if (
+      inlineScoreSuggestions &&
+      inlineScoreSuggestions.style.display !== "none" &&
+      currentEditableElement
+    ) {
+      positionInlineSuggestions(currentEditableElement);
+    }
+  });
 }
 
 // Gestion de la saisie
@@ -1316,13 +1336,13 @@ function handleInlineClick(event) {
 }
 
 // Vérifications utilitaires
-function isEditableElement(el) {
-  return (
-    el &&
-    (el.tagName === "TEXTAREA" ||
-      (el.tagName === "INPUT" && el.type === "text") ||
-      el.isContentEditable)
-  );
+function isEditableElement(element) {
+  const isEditable =
+    element &&
+    (element.tagName === "TEXTAREA" ||
+      (element.tagName === "INPUT" && element.type === "text") ||
+      element.isContentEditable);
+  return isEditable;
 }
 
 function getTextContent(el) {
@@ -1380,41 +1400,74 @@ function setCaretPosition(element, position) {
   }
 }
 
-// Affichage des suggestions
+// Afficher les suggestions inline
 function showInlineScoreSuggestions(query, element, startPos, endPos) {
-  if (!scores || scores.length === 0) return;
+  console.log("🎯 Recherche suggestions pour:", query);
+  console.log("📊 Scores disponibles:", scores ? scores.length : 0);
 
-  const matchingScores = scores.filter(
-    (score) =>
-      Array.isArray(score.motsCle) &&
-      score.motsCle.some((tag) =>
-        tag.toLowerCase().includes(query.toLowerCase())
-      )
-  );
+  if (!scores || scores.length === 0) {
+    console.log("❌ Aucun score disponible");
+    return;
+  }
+
+  // Filtrer les scores selon la requête
+  const matchingScores = scores.filter((score) => {
+    if (!Array.isArray(score.motsCle)) {
+      console.log("⚠️ Score sans motsCle array:", score.titre);
+      return false;
+    }
+
+    const match = score.motsCle.some((tag) =>
+      tag.toLowerCase().includes(query.toLowerCase())
+    );
+
+    if (match) {
+      console.log(
+        "✅ Score correspondant:",
+        score.titre,
+        "motsCle:",
+        score.motsCle
+      );
+    }
+
+    return match;
+  });
+
+  console.log("🎯 Scores correspondants trouvés:", matchingScores.length);
 
   if (matchingScores.length === 0) {
     hideInlineScoreSuggestions();
     return;
   }
 
+  // Créer ou mettre à jour le conteneur de suggestions
   if (!inlineScoreSuggestions) {
+    console.log("🆕 Création du conteneur de suggestions");
     inlineScoreSuggestions = document.createElement("div");
     inlineScoreSuggestions.className = "inline-score-suggestions";
     inlineScoreSuggestions.style.cssText = `
-      position: fixed;
-      background: white;
-      border: 2px solid #007bff;
+      position: fixed !important;
+      background: white !important;
+      border: 2px solid #007bff !important;
       border-radius: 4px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.3) !important;
       max-height: 200px;
       overflow-y: auto;
-      z-index: 99999;
+      z-index: 99999 !important;
       font-size: 14px;
       min-width: 250px;
+      display: block !important;
+      visibility: visible !important;
+      opacity: 1 !important;
     `;
     document.body.appendChild(inlineScoreSuggestions);
+    console.log(
+      "📦 Conteneur ajouté au DOM, style:",
+      inlineScoreSuggestions.style.cssText
+    );
   }
 
+  // Vider et remplir les suggestions
   inlineScoreSuggestions.innerHTML = "";
   selectedInlineIndex = -1;
 
@@ -1428,17 +1481,19 @@ function showInlineScoreSuggestions(query, element, startPos, endPos) {
     `;
     item.innerHTML = `
       <div style="font-weight: bold; color: #333;">${score.titre}</div>
-      <div style="font-size: 12px; color: #666; margin-top: 2px;">
-        ${score.description || ""}
-      </div>
+      <div style="font-size: 12px; color: #666; margin-top: 2px;">${
+        score.description || ""
+      }</div>
     `;
 
     item.addEventListener("click", () => {
+      console.log("👆 Clic sur suggestion:", score.titre);
       selectedInlineIndex = index;
       selectInlineSuggestion();
     });
 
     item.addEventListener("mouseenter", () => {
+      // Retirer la sélection précédente
       inlineScoreSuggestions
         .querySelectorAll(".inline-suggestion-item")
         .forEach((el) => {
@@ -1451,34 +1506,66 @@ function showInlineScoreSuggestions(query, element, startPos, endPos) {
     inlineScoreSuggestions.appendChild(item);
   });
 
-  positionInlineSuggestions(element);
+  // Positionner les suggestions près du curseur
+  positionInlineSuggestions(element, startPos);
   inlineScoreSuggestions.style.display = "block";
 
+  // Stocker les informations pour la sélection
   inlineScoreSuggestions.matchingScores = matchingScores;
   inlineScoreSuggestions.startPos = startPos;
   inlineScoreSuggestions.endPos = endPos;
+
+  console.log("✅ Suggestions affichées");
 }
 
-// Positionner les suggestions
-function positionInlineSuggestions(element) {
+// Positionner les suggestions près du curseur
+function positionInlineSuggestions(element, textPosition) {
   const rect = element.getBoundingClientRect();
-  let left = rect.left + window.scrollX + 10;
-  let top = rect.bottom + window.scrollY + 5;
+  // Pour position: fixed, on utilise directement les coordonnées du viewport
+  let left = rect.left + 10; // Petit décalage
+  let top = rect.bottom + 5;
 
+  console.log("📍 Position élément:", rect);
+  console.log("📍 Position calculée initiale:", { left, top });
+  console.log(
+    "📍 Dimensions fenêtre:",
+    window.innerWidth,
+    "x",
+    window.innerHeight
+  );
+
+  // S'assurer que les suggestions restent visibles
   const suggestionsWidth = 250;
   const suggestionsHeight = 200;
 
-  if (left + suggestionsWidth > window.innerWidth + window.scrollX) {
-    left = window.innerWidth + window.scrollX - suggestionsWidth - 10;
+  if (left + suggestionsWidth > window.innerWidth) {
+    left = window.innerWidth - suggestionsWidth - 10;
+    console.log("📍 Ajusté à gauche:", left);
   }
-  if (top + suggestionsHeight > window.innerHeight + window.scrollY) {
-    top = rect.top + window.scrollY - suggestionsHeight - 5;
+
+  if (top + suggestionsHeight > window.innerHeight) {
+    top = rect.top - suggestionsHeight - 5;
+    console.log("📍 Ajusté vers le haut:", top);
   }
+
+  // Assurer des valeurs minimales positives
+  left = Math.max(10, left);
+  top = Math.max(10, top);
+
+  console.log("📍 Position finale:", { left, top });
 
   inlineScoreSuggestions.style.left = left + "px";
   inlineScoreSuggestions.style.top = top + "px";
-}
 
+  // Vérification finale
+  console.log("📍 Style appliqué:", {
+    left: inlineScoreSuggestions.style.left,
+    top: inlineScoreSuggestions.style.top,
+    display: inlineScoreSuggestions.style.display,
+    visibility: inlineScoreSuggestions.style.visibility,
+    zIndex: inlineScoreSuggestions.style.zIndex,
+  });
+}
 // Navigation & sélection
 function navigateInlineSuggestions(direction) {
   const items = inlineScoreSuggestions.querySelectorAll(
@@ -1546,11 +1633,14 @@ function showInlineScoreModal(score, onComplete) {
   pScore.style.whiteSpace = "pre-line";
   pScore.innerHTML = `<b>Score :</b><br>${score.score || ""}`;
 
+  modalContent.append(closeButton, h2, pDesc, pScore);
+
   if (score.imageUrl) {
     const img = document.createElement("img");
     img.src = score.imageUrl;
     img.alt = "Illustration du score";
     img.style.maxWidth = "50%";
+    img.style.display = "block";
     modalContent.appendChild(img);
   }
 
@@ -1575,7 +1665,7 @@ function showInlineScoreModal(score, onComplete) {
     modalOverlay.remove();
   });
 
-  modalContent.append(closeButton, h2, pDesc, pScore, textarea, insertButton);
+  modalContent.append(textarea, insertButton);
   modalOverlay.appendChild(modalContent);
   document.body.appendChild(modalOverlay);
 }
