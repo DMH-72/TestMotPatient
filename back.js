@@ -1095,13 +1095,7 @@ function loadSpecialites() {
         btnExtra.addEventListener("click", () =>
           openExtraContentModal(specialite)
         );
-        btnTools.addEventListener("click", () => {
-          // Appelle une fonction 'nomDeLaSpeSansAccentEtMinusculesOutils' si elle existe
-          const fnName = slugify(specialite) + "outils"; // ex: pediatrieoutils()
-          const fn = window[fnName];
-          if (typeof fn === "function") fn();
-          else alert("Outil non encore disponible pour " + specialite);
-        });
+        btnTools.addEventListener("click", () => openToolsModal(specialite));
       });
     });
 }
@@ -1184,6 +1178,101 @@ function addExtraContent(specialite, docId, key) {
 function closeModal() {
   const modal = document.getElementById("extraModal");
   if (modal) modal.remove();
+}
+
+// --- 🧰 : modal des noneContent (tools) ---
+function openToolsModal(specialite) {
+  const key = slugify(specialite);
+
+  db.collection("clinique")
+    .where("specialite", "==", specialite)
+    .where("type", "==", "noneContent")
+    .get()
+    .then((snapshot) => {
+      const old = document.getElementById("toolsModal");
+      if (old) old.remove();
+
+      if (snapshot.empty) {
+        alert("Aucun outil trouvé pour cette spécialité.");
+        return;
+      }
+
+      let modalItems = "";
+      snapshot.forEach((doc) => {
+        const data = doc.data();
+        modalItems += `
+          <div class="extra-item" data-docid="${
+            doc.id
+          }" data-specialite="${specialite}" data-key="${key}">
+            <strong>${data.titre || "(Sans titre)"}</strong><br>
+            <em>${data.description || ""}</em>
+          </div>
+        `;
+      });
+
+      const modalHTML = `
+        <div class="modal-overlay" id="toolsModal">
+          <div class="modal-content">
+            <button class="close-button" onclick="closeModal()">×</button>
+            <h2>Outils - ${specialite}</h2>
+            ${modalItems}
+          </div>
+        </div>
+      `;
+
+      document.body.insertAdjacentHTML("beforeend", modalHTML);
+
+      // Brancher chaque item
+      document.querySelectorAll("#toolsModal .extra-item").forEach((item) => {
+        item.addEventListener("click", () => {
+          const docId = item.getAttribute("data-docid");
+          const spec = item.getAttribute("data-specialite");
+          showToolContent(spec, docId);
+        });
+      });
+    });
+}
+
+// Affiche le contenu d'un outil dans un nouveau modal
+function showToolContent(specialite, docId) {
+  db.collection("clinique")
+    .doc(docId)
+    .get()
+    .then((doc) => {
+      if (!doc.exists) return;
+
+      const data = doc.data();
+
+      const modalHTML = `
+      <div class="modal-overlay" id="toolContentModal">
+        <div class="modal-content">
+          <button class="close-button" onclick="closeModal()">×</button>
+          <button class="close-button" style="right:40px;" onclick="reopenTools('${specialite}')">←</button>
+          <h2>${data.titre || specialite}</h2>
+          <div class="tool-contenu">
+            ${data.contenu || "<em>Aucun contenu disponible</em>"}
+          </div>
+        </div>
+      </div>
+    `;
+
+      const old = document.getElementById("toolContentModal");
+      if (old) old.remove();
+
+      closeModal(); // fermer la liste des outils
+      document.body.insertAdjacentHTML("beforeend", modalHTML);
+    });
+}
+
+// Bouton retour → relance la liste des outils
+function reopenTools(specialite) {
+  closeModal();
+  openToolsModal(specialite);
+}
+
+// Adapter closeModal pour fermer n'importe quel modal
+function closeModal() {
+  document.querySelectorAll(".modal-overlay").forEach((m) => m.remove());
 }
 
 // --- init ---
