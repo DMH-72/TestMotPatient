@@ -1247,7 +1247,7 @@ function showToolContent(specialite, docId) {
       <div class="modal-overlay" id="toolContentModal">
         <div class="modal-content">
           <button class="close-button" onclick="closeModal()">×</button>
-          <button class="close-button" style="right:40px;" onclick="reopenTools('${specialite}')">←</button>
+          <button class="return-button" onclick="reopenTools('${specialite}')">🔙</button>
           <h2>${data.titre || specialite}</h2>
           <div class="tool-contenu">
             ${data.contenu || "<em>Aucun contenu disponible</em>"}

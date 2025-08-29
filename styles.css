@@ -697,23 +697,33 @@ input {
   /* Autres styles nécessaires pour la modale */
 }
 
-.close-button {
+.close-button,
+.return-button {
   position: absolute;
-  top: 20px;
-  right: 20px;
+  top: 10px;
   background-color: transparent;
   border: none;
   border-radius: 5px;
-  font-size: 1.9rem;
   height: 2.4rem;
   cursor: pointer;
   z-index: 4;
   padding: 0;
 }
 
-.close-button:hover {
+.close-button:hover,
+.return-button:hover {
   color: #ff0000;
   /* Rouge pour indiquer un hover */
+}
+
+.close-button {
+  right: 20px;
+  font-size: 1.9rem;
+}
+
+.return-button {
+  left: 20px;
+  font-size: 1.3rem;
 }
 
 .score-entry {
