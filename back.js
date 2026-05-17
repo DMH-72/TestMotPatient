@@ -71,10 +71,10 @@ function toggleSection(checkboxId, sectionId) {
 document.addEventListener("DOMContentLoaded", function () {
   function PAMCalc1() {
     const PASD = document.getElementById(
-      "constante_pressionArterielleS1"
+      "constante_pressionArterielleS1",
     ).value;
     const PADD = document.getElementById(
-      "constante_pressionArterielleD1"
+      "constante_pressionArterielleD1",
     ).value;
     document.getElementById("PAM1").innerHTML = `${(
       (1 / 3) * PASD +
@@ -84,13 +84,13 @@ document.addEventListener("DOMContentLoaded", function () {
 
   function PAMCalcControlat() {
     const PASD = document.getElementById(
-      "constante_pressionArterielleSControlat"
+      "constante_pressionArterielleSControlat",
     ).value;
     const PADD = document.getElementById(
-      "constante_pressionArterielleDControlat"
+      "constante_pressionArterielleDControlat",
     ).value;
     const cote = parseFloat(
-      document.getElementById("constante_pressionArterielleCote1").value
+      document.getElementById("constante_pressionArterielleCote1").value,
     );
 
     document.getElementById("PAMControlat").innerHTML = `${(
@@ -100,11 +100,11 @@ document.addEventListener("DOMContentLoaded", function () {
 
     if (cote == 1) {
       document.getElementById(
-        "constante_pressionArterielleCoteControlat"
+        "constante_pressionArterielleCoteControlat",
       ).innerHTML = `G`;
     } else {
       document.getElementById(
-        "constante_pressionArterielleCoteControlat"
+        "constante_pressionArterielleCoteControlat",
       ).innerHTML = `D`;
     }
   }
@@ -194,17 +194,17 @@ document.addEventListener("DOMContentLoaded", function () {
   function variationPoids() {
     const poids = document.getElementById("constante_poids").value;
     const poids_ant = document.getElementById(
-      "constante_poids_anterieur"
+      "constante_poids_anterieur",
     ).value;
     document.getElementById("constante_pertePoids").innerHTML = `${Math.abs(
-      ((poids_ant - poids) / poids_ant) * 100
+      ((poids_ant - poids) / poids_ant) * 100,
     ).toFixed(1)}`;
   }
 
   function GlycemieCalc() {
     const uniteGlycemie = document.getElementById("uniteGlycemie").value;
     const glycemie = parseFloat(
-      document.getElementById("constant_glycemie").value
+      document.getElementById("constant_glycemie").value,
     ); // Convertir en nombre
     if (uniteGlycemie === "0") {
       document.getElementById("constant_glycemieConvert").innerHTML = `${(
@@ -230,33 +230,26 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     if (taille != "" && taille != "" && IMC.toFixed(1) < 18.5) {
-      document.getElementById(
-        "interpretIMC"
-      ).innerHTML = `<i style="font-size: 0.8em; color:red;">Maigreur</i>`;
+      document.getElementById("interpretIMC").innerHTML =
+        `<i style="font-size: 0.8em; color:red;">Maigreur</i>`;
     } else if (IMC.toFixed(1) < 25) {
-      document.getElementById(
-        "interpretIMC"
-      ).innerHTML = `<i style="font-size: 0.8em; color:green;">Normal</i>`;
+      document.getElementById("interpretIMC").innerHTML =
+        `<i style="font-size: 0.8em; color:green;">Normal</i>`;
     } else if (IMC.toFixed(1) < 30) {
-      document.getElementById(
-        "interpretIMC"
-      ).innerHTML = `<i style="font-size: 0.8em; color:red;">Surpoids</i>`;
+      document.getElementById("interpretIMC").innerHTML =
+        `<i style="font-size: 0.8em; color:red;">Surpoids</i>`;
     } else if (IMC.toFixed(1) < 35) {
-      document.getElementById(
-        "interpretIMC"
-      ).innerHTML = `<i style="font-size: 0.8em; color:red;">Obésité modérée</i>`;
+      document.getElementById("interpretIMC").innerHTML =
+        `<i style="font-size: 0.8em; color:red;">Obésité modérée</i>`;
     } else if (IMC.toFixed(1) < 40) {
-      document.getElementById(
-        "interpretIMC"
-      ).innerHTML = `<i style="font-size: 0.8em; color:red;">Obésité sévère</i>`;
+      document.getElementById("interpretIMC").innerHTML =
+        `<i style="font-size: 0.8em; color:red;">Obésité sévère</i>`;
     } else if (IMC.toFixed(1) > 40) {
-      document.getElementById(
-        "interpretIMC"
-      ).innerHTML = `<i style="font-size: 0.8em; color:red;"><b>Obésité morbide</b></i>`;
+      document.getElementById("interpretIMC").innerHTML =
+        `<i style="font-size: 0.8em; color:red;"><b>Obésité morbide</b></i>`;
     } else {
-      document.getElementById(
-        "interpretIMC"
-      ).innerHTML = `<i style="font-size: 0.8em;">Interprétation</i>`;
+      document.getElementById("interpretIMC").innerHTML =
+        `<i style="font-size: 0.8em;">Interprétation</i>`;
     }
   }
 
@@ -282,11 +275,8 @@ document.addEventListener("DOMContentLoaded", function () {
         const_volumeOH2 * const_degre2 +
         const_volumeOH3 * const_degre3);
 
-    document.getElementById(
-      "grammeAlcoolConst"
-    ).innerHTML = `${grammeOH} gramme/jour, soit ${(grammeOH / 10).toFixed(
-      1
-    )} U/j`;
+    document.getElementById("grammeAlcoolConst").innerHTML =
+      `${grammeOH} gramme/jour, soit ${(grammeOH / 10).toFixed(1)} U/j`;
   }
 
   dateNaissance.addEventListener("input", ageCalc);
@@ -296,15 +286,15 @@ document.addEventListener("DOMContentLoaded", function () {
   constante_pressionArterielleD1.addEventListener("input", PAMCalcControlat);
   constante_pressionArterielleCote1.addEventListener(
     "change",
-    PAMCalcControlat
+    PAMCalcControlat,
   );
   constante_pressionArterielleSControlat.addEventListener(
     "input",
-    PAMCalcControlat
+    PAMCalcControlat,
   );
   constante_pressionArterielleDControlat.addEventListener(
     "input",
-    PAMCalcControlat
+    PAMCalcControlat,
   );
   constante_poids.addEventListener("input", IMCCalc);
   constante_taille.addEventListener("input", IMCCalc);
@@ -355,16 +345,14 @@ function grammeOHDisp() {
 }
 
 function InitialisationECG() {
-  document.getElementById(
-    "hold_ECG"
-  ).innerHTML = `<div id="examenECG" contenteditable="true" class="clinic">Rythme sinusal et régulier à xx bpm, normo-axé<br>PR = ms, QRS = ms, QTc =  ms<br> Pas de troubles de la conduction <br> Pas de signes de sucharge / hypertrophie ventriculaire et atriale<br>Pas de signes d’ischiémie (pas d’ondes T négatives, pas d’anomalies du segment ST, pas d’ondes Q de nécrose)
+  document.getElementById("hold_ECG").innerHTML =
+    `<div id="examenECG" contenteditable="true" class="clinic">Rythme sinusal et régulier à xx bpm, normo-axé<br>PR = ms, QRS = ms, QTc =  ms<br> Pas de troubles de la conduction <br> Pas de signes de sucharge / hypertrophie ventriculaire et atriale<br>Pas de signes d’ischiémie (pas d’ondes T négatives, pas d’anomalies du segment ST, pas d’ondes Q de nécrose)
 ECG sans anomalie perçue</div>`;
 }
 
 function InitialisationRT() {
-  document.getElementById(
-    "hold_RT"
-  ).innerHTML = `<div id="examenRT" contenteditable="true" class="clinic">Blablabla
+  document.getElementById("hold_RT").innerHTML =
+    `<div id="examenRT" contenteditable="true" class="clinic">Blablabla
     </div>`;
 }
 
@@ -507,7 +495,7 @@ function burnFunction() {
       0,
       0,
       drawCanvas.width,
-      drawCanvas.height
+      drawCanvas.height,
     );
     const maskData = context.getImageData(0, 0, canvas.width, canvas.height);
 
@@ -535,7 +523,7 @@ function burnFunction() {
       0,
       0,
       drawCanvas.width,
-      drawCanvas.height
+      drawCanvas.height,
     );
     const maskData = context.getImageData(0, 0, canvas.width, canvas.height);
     let redPixelCount = 0;
@@ -556,9 +544,8 @@ function burnFunction() {
     }
 
     const burnPercent = (redPixelCount / silhouettePixelCount) * 100;
-    document.getElementById(
-      "surfacePercent"
-    ).textContent = `Surface brûlée : ${burnPercent.toFixed(2)}%`;
+    document.getElementById("surfacePercent").textContent =
+      `Surface brûlée : ${burnPercent.toFixed(2)}%`;
   }
 
   // Réinitialise le canvas de dessin et redessine la silhouette
@@ -617,7 +604,7 @@ async function annuaire() {
   // Création du tableau HTML
   const tableContainer = `<div id="table-container">${generateTableHTML(
     headers,
-    data
+    data,
   )}</div>`;
 
   // Insertion du contenu dans le modal
@@ -659,15 +646,15 @@ function filterTable() {
   // Récupérer les cases à cocher pour la première colonne (types)
   const checkboxestype = document.querySelectorAll(".filter-type:checked");
   const selectedtypeValues = Array.from(checkboxestype).map(
-    (checkbox) => checkbox.value
+    (checkbox) => checkbox.value,
   );
 
   // Récupérer les cases à cocher pour les hôpitaux
   const checkboxesHospital = document.querySelectorAll(
-    ".filter-hospital:checked"
+    ".filter-hospital:checked",
   );
   const selectedHopitaux = Array.from(checkboxesHospital).map(
-    (checkbox) => checkbox.value
+    (checkbox) => checkbox.value,
   );
 
   // Récupérer les valeurs de recherche pour spécialité et DECT
@@ -678,7 +665,7 @@ function filterTable() {
 
   // Sélectionner toutes les lignes du tableau
   const rows = Array.from(
-    document.querySelectorAll("#table-container table tr")
+    document.querySelectorAll("#table-container table tr"),
   ).slice(1);
 
   rows.forEach((row) => {
@@ -729,7 +716,7 @@ function initializeSearchInput(scores) {
   suggestionsContainer = document.createElement("div");
   localisationButton.parentNode.insertBefore(
     suggestionsContainer,
-    localisationButton.nextSibling
+    localisationButton.nextSibling,
   );
 
   searchInput.addEventListener("input", function () {
@@ -769,7 +756,7 @@ function showSuggestions(query, scores) {
   const matchingScores = scores.filter(
     (score) =>
       Array.isArray(score.motsCle) &&
-      score.motsCle.some((tag) => tag.toLowerCase().includes(query))
+      score.motsCle.some((tag) => tag.toLowerCase().includes(query)),
   );
 
   matchingScores.forEach((score, index) => {
@@ -884,7 +871,7 @@ function showScoreModal(score) {
   textarea.value = score.default || "";
 
   const existingScore = Array.from(
-    document.querySelectorAll("#compteRendu .scoreP")
+    document.querySelectorAll("#compteRendu .scoreP"),
   ).find((p) => p.textContent.startsWith(score.titre));
 
   if (existingScore) {
@@ -922,7 +909,7 @@ function addScoreToCR(titre) {
 
   // Cherche si le score est déjà présent
   const existingScoreDiv = Array.from(
-    document.querySelectorAll("#compteRendu .score-entry")
+    document.querySelectorAll("#compteRendu .score-entry"),
   ).find((div) => div.querySelector(".scoreP").textContent.startsWith(titre));
 
   if (existingScoreDiv) {
@@ -1065,8 +1052,8 @@ function loadSpecialites() {
             <button class="clinicButton" data-role="tools">🧰</button>
           </legend>
           <div id="text_${key}" class="editable-div" contenteditable="true" style="white-space: pre-line;">${
-          data.contenu || ""
-        } 
+            data.contenu || ""
+          } 
           </div>
         `;
 
@@ -1081,7 +1068,7 @@ function loadSpecialites() {
         const btnTools = fieldset.querySelector('button[data-role="tools"]');
 
         btnExtra.addEventListener("click", () =>
-          openExtraContentModal(specialite)
+          openExtraContentModal(specialite),
         );
         btnTools.addEventListener("click", () => openToolsModal(specialite));
       });
@@ -1314,7 +1301,7 @@ function initializeInlineScoreSystem() {
         positionInlineSuggestions(currentEditableElement);
       }
     },
-    true
+    true,
   );
 
   // Gestion du redimensionnement de la fenêtre
@@ -1434,7 +1421,7 @@ function setCaretPosition(element, position) {
       element,
       NodeFilter.SHOW_TEXT,
       null,
-      false
+      false,
     );
 
     let node;
@@ -1472,7 +1459,7 @@ function showInlineScoreSuggestions(query, element, startPos, endPos) {
     }
 
     const match = score.motsCle.some((tag) =>
-      tag.toLowerCase().includes(query.toLowerCase())
+      tag.toLowerCase().includes(query.toLowerCase()),
     );
 
     if (match) {
@@ -1480,7 +1467,7 @@ function showInlineScoreSuggestions(query, element, startPos, endPos) {
         "✅ Score correspondant:",
         score.titre,
         "motsCle:",
-        score.motsCle
+        score.motsCle,
       );
     }
 
@@ -1517,7 +1504,7 @@ function showInlineScoreSuggestions(query, element, startPos, endPos) {
     document.body.appendChild(inlineScoreSuggestions);
     console.log(
       "📦 Conteneur ajouté au DOM, style:",
-      inlineScoreSuggestions.style.cssText
+      inlineScoreSuggestions.style.cssText,
     );
   }
 
@@ -1585,7 +1572,7 @@ function positionInlineSuggestions(element, textPosition) {
     "📍 Dimensions fenêtre:",
     window.innerWidth,
     "x",
-    window.innerHeight
+    window.innerHeight,
   );
 
   // S'assurer que les suggestions restent visibles
@@ -1623,7 +1610,7 @@ function positionInlineSuggestions(element, textPosition) {
 // Navigation & sélection
 function navigateInlineSuggestions(direction) {
   const items = inlineScoreSuggestions.querySelectorAll(
-    ".inline-suggestion-item"
+    ".inline-suggestion-item",
   );
   if (items.length === 0) return;
 
@@ -1786,8 +1773,8 @@ function exportObservation() {
   // Récupération des spécialités cochées
   const specialitesActives = Array.from(
     document.querySelectorAll(
-      '#specialite-checkboxes input[type="checkbox"]:checked'
-    )
+      '#specialite-checkboxes input[type="checkbox"]:checked',
+    ),
   ).map((cb) => cb.value.trim());
 
   document
@@ -1890,7 +1877,6 @@ function exportObservation() {
       if (contenuSection.trim()) {
         texte += "\n\n";
         texte += titreSection.toUpperCase() + "\n";
-        texte += "====================\n";
 
         texte += contenuSection;
       }
