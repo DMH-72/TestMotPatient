@@ -16,18 +16,6 @@ firebase.initializeApp(firebaseConfig);
 // Récupération de Firestore
 const db = firebase.firestore();
 
-// Exemple simple : lire tous les documents d'une collection
-db.collection("maCollection")
-  .get()
-  .then((querySnapshot) => {
-    querySnapshot.forEach((doc) => {
-      console.log(doc.id, "=>", doc.data());
-    });
-  })
-  .catch((error) => {
-    console.error("Erreur lors de la lecture :", error);
-  });
-
 // Fonction pour extraire et afficher les titres
 function extraireTitre() {
   db.collection("score")
@@ -1791,3 +1779,129 @@ if (!document.getElementById("inline-score-styles")) {
 // Lancement
 console.log("🚀 Système inline de scores chargé");
 loadScores();
+
+function exportObservation() {
+  let texte = "";
+
+  // Récupération des spécialités cochées
+  const specialitesActives = Array.from(
+    document.querySelectorAll(
+      '#specialite-checkboxes input[type="checkbox"]:checked'
+    )
+  ).map((cb) => cb.value.trim());
+
+  document
+    .querySelectorAll(".observation, .observationConstantes")
+    .forEach((section) => {
+      const style = window.getComputedStyle(section);
+
+      // Ignore sections cachées
+      if (
+        style.display === "none" ||
+        style.visibility === "hidden" ||
+        section.hidden
+      ) {
+        return;
+      }
+
+      const titreSection =
+        section.querySelector("h3")?.childNodes[0]?.textContent.trim() || "";
+
+      let contenuSection = "";
+
+      // =========================
+      // INPUTS
+      // =========================
+      section.querySelectorAll("input").forEach((input) => {
+        if (
+          !input.value ||
+          input.type === "checkbox" ||
+          input.type === "hidden"
+        ) {
+          return;
+        }
+
+        const label =
+          section.querySelector(`label[for="${input.id}"]`)?.innerText ||
+          input.placeholder ||
+          input.id;
+
+        contenuSection += `${label} : ${input.value}\n`;
+      });
+
+      // =========================
+      // SELECTS
+      // =========================
+      section.querySelectorAll("select").forEach((select) => {
+        // Ignore les selects des spécialités
+        if (select.closest("#specialite-checkboxes")) return;
+
+        const valeur = select.options[select.selectedIndex]?.text;
+
+        if (!valeur) return;
+
+        const label =
+          section.querySelector(`label[for="${select.id}"]`)?.innerText ||
+          select.id;
+
+        contenuSection += `${label} : ${valeur}\n`;
+      });
+
+      // =========================
+      // BLOCS TEXTE
+      // =========================
+      section.querySelectorAll(".editable-div, .clinic").forEach((div) => {
+        // Ignore le conteneur des checkboxes spécialités
+        if (div.closest("#specialite-checkboxes")) return;
+
+        const contenu = div.innerText.trim();
+
+        if (!contenu) return;
+
+        const fieldset = div.closest("fieldset");
+
+        const legend =
+          fieldset
+            ?.querySelector("legend")
+            ?.childNodes[0]?.textContent.trim() ||
+          fieldset?.querySelector("legend")?.innerText.trim() ||
+          "";
+
+        // Détection spécialité dynamique
+        const estSpecialite =
+          fieldset && fieldset.id && fieldset.id.startsWith("zone_");
+
+        // Ignore spécialités décochées
+        if (estSpecialite && legend && !specialitesActives.includes(legend)) {
+          return;
+        }
+
+        // Ne pas afficher "Clinique" ou liste des spécialités
+        if (legend && legend !== "Clinique" && legend !== "Spécialités") {
+          contenuSection += `\n${legend}\n`;
+        }
+
+        contenuSection += contenu + "\n";
+      });
+
+      // =========================
+      // AJOUT SECTION
+      // =========================
+      if (contenuSection.trim()) {
+        texte += "\n\n";
+        texte += titreSection.toUpperCase() + "\n";
+        texte += "====================\n";
+
+        texte += contenuSection;
+      }
+    });
+
+  navigator.clipboard
+    .writeText(texte)
+    .then(() => {
+      alert("Compte rendu copié dans le presse-papier");
+    })
+    .catch(() => {
+      alert("Erreur lors de la copie");
+    });
+}

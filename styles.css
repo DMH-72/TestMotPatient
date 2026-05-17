@@ -920,3 +920,18 @@ input {
   font-weight: bold;
   gap: 0.5em
 }
+
+#btnExportClipboard {
+  padding: 10px 16px;
+  border-radius: 8px;
+  border: 2px solid #054293;
+  background-color: #054293;
+  color: white;
+  cursor: pointer;
+  font-weight: bold;
+  margin: 10px;
+}
+
+#btnExportClipboard:hover {
+  opacity: 0.9;
+}
